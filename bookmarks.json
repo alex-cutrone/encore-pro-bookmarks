@@ -145,10 +145,10 @@
   {
     "id": "s14",
     "name": "Provisioning",
-    "url": "https://provisioning.activitystream.com/admin/provisioning/tenant/",
+    "url": "https://provisioning.encorepro.com/tenants/",
     "categories": [
-      "Operations",
-      "Product"
+      "Product",
+      "Client Success"
     ]
   },
   {
