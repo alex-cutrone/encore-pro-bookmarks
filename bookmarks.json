@@ -119,6 +119,17 @@
     ]
   },
   {
+    "id": "s23",
+    "name": "Wiki",
+    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
+    "categories": [
+      "Operations",
+      "Client Success",
+      "Product",
+      "Growth"
+    ]
+  },
+  {
     "id": "s17",
     "name": "cE Code Snippets",
     "url": "https://app.crowdnengage.com/sql/client-seat-information-templates/",
@@ -220,17 +231,6 @@
     "name": "Canva",
     "url": "https://www.canva.com/",
     "categories": [
-      "Growth"
-    ]
-  },
-  {
-    "id": "s23",
-    "name": "Wiki",
-    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
-    "categories": [
-      "Operations",
-      "Client Success",
-      "Product",
       "Growth"
     ]
   }
