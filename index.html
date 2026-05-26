@@ -10,580 +10,246 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Encore Pro brand palette — exact spec */
-      --green:       #212E1D;   /* Encore Pro Green — leads */
-      --green-2:     #374931;   /* secondary green */
-      --green-3:     #536B4B;   /* mid green for borders on green bg */
-      --gold:        #CD9B49;   /* Encore Pro Gold — accents */
-      --gold-light:  #DCB26D;
-      --cream:       #FFF8EC;   /* Encore Pro White — supports */
-      --cream-2:     #ECD5B0;   /* warm secondary surface */
-      --cream-3:     #F5F0E4;   /* card background on cream page */
-      --error:       #582727;   /* burgundy — error states only */
-
-      /* Semantic tokens */
-      --bg:          var(--cream);
-      --surface:     #ffffff;
-      --surface-2:   var(--cream-3);
-      --border:      rgba(33,46,29,.12);
-      --border-mid:  rgba(33,46,29,.22);
+      --green:         #212E1D;
+      --green-2:       #374931;
+      --green-3:       #536B4B;
+      --gold:          #CD9B49;
+      --gold-light:    #DCB26D;
+      --cream:         #FFF8EC;
+      --cream-3:       #F5F0E4;
+      --error:         #582727;
+      --bg:            var(--cream);
+      --surface:       #ffffff;
+      --surface-2:     var(--cream-3);
+      --border:        rgba(33,46,29,.12);
+      --border-mid:    rgba(33,46,29,.22);
       --border-strong: rgba(33,46,29,.35);
-      --text-1:      var(--green);
-      --text-2:      #4a5c44;
-      --text-3:      #7a8c74;
-
-      --serif:  'Nanum Myeongjo', Georgia, serif;
-      --sans:   'Albert Sans', system-ui, sans-serif;
-      --r:      6px;
-      --r-lg:   10px;
+      --text-1:        var(--green);
+      --text-2:        #4a5c44;
+      --text-3:        #7a8c74;
+      --serif: 'Nanum Myeongjo', Georgia, serif;
+      --sans:  'Albert Sans', system-ui, sans-serif;
+      --r:     6px;
+      --r-lg:  10px;
     }
 
-    html, body {
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--text-1);
-      font-family: var(--sans);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
+    html, body { min-height: 100%; background: var(--bg); color: var(--text-1); font-family: var(--sans); font-size: 14px; line-height: 1.5; }
     .shell { display: flex; flex-direction: column; min-height: 100vh; }
 
-    /* ── Header ─────────────────────────────────────────── */
+    /* ── Header ── */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 28px;
-      height: 58px;
-      background: var(--green);
-      border-bottom: 1px solid var(--green-2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; height: 58px;
+      background: var(--green); border-bottom: 1px solid var(--green-2);
+      position: sticky; top: 0; z-index: 100;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    /* Encore Pro E emblem — 4-pointed star / diamond lattice approximation */
-    .logo-emblem {
-      width: 26px;
-      height: 26px;
-      flex-shrink: 0;
-    }
-
-    .logo-wordmark {
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--cream);
-      letter-spacing: .01em;
-    }
-
-    .logo-sep {
-      color: var(--green-3);
-      margin: 0 4px;
-      font-weight: 300;
-    }
-
-    .logo-sub {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(255,248,236,.55);
-    }
-
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-wordmark { font-size: 15px; font-weight: 600; color: var(--cream); letter-spacing: .01em; }
+    .logo-sep { color: var(--green-3); margin: 0 4px; font-weight: 300; }
+    .logo-sub { font-size: 13px; font-weight: 400; color: rgba(255,248,236,.55); }
     .header-right { display: flex; align-items: center; gap: 8px; }
 
+    /* ── Sync status ── */
+    .sync-badge {
+      font-size: 11px; font-weight: 500; padding: 4px 9px;
+      border-radius: 20px; border: 1px solid rgba(255,248,236,.2);
+      color: rgba(255,248,236,.6); display: flex; align-items: center; gap: 5px;
+      transition: all .2s;
+    }
+    .sync-badge.syncing { color: var(--gold); border-color: rgba(205,155,73,.4); }
+    .sync-badge.error   { color: #e07a6a; border-color: rgba(224,122,106,.4); }
+    .sync-badge.saved   { color: #7ec89a; border-color: rgba(126,200,154,.4); }
+    .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+    .sync-badge.syncing .sync-dot { animation: pulse .8s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* ── Buttons ── */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      border-radius: var(--r);
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all .15s;
-      border: 1px solid transparent;
-      line-height: 1;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: var(--r);
+      font-family: var(--sans); font-size: 13px; font-weight: 500;
+      cursor: pointer; transition: all .15s; border: 1px solid transparent; line-height: 1;
     }
-
-    .btn-ghost-light {
-      background: transparent;
-      color: rgba(255,248,236,.7);
-      border-color: rgba(255,248,236,.2);
-    }
-    .btn-ghost-light:hover {
-      background: rgba(255,248,236,.1);
-      color: var(--cream);
-      border-color: rgba(255,248,236,.35);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--green);
-      border-color: var(--gold);
-      font-weight: 600;
-    }
-    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
-
-    .btn-green {
-      background: var(--green);
-      color: var(--cream);
-      border-color: var(--green);
-      font-weight: 600;
-    }
+    .btn-ghost-light { background: transparent; color: rgba(255,248,236,.7); border-color: rgba(255,248,236,.2); }
+    .btn-ghost-light:hover { background: rgba(255,248,236,.1); color: var(--cream); border-color: rgba(255,248,236,.35); }
+    .btn-green { background: var(--green); color: var(--cream); border-color: var(--green); font-weight: 600; }
     .btn-green:hover { background: var(--green-2); border-color: var(--green-2); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-2);
-      border-color: var(--border-mid);
-    }
+    .btn-outline { background: transparent; color: var(--text-2); border-color: var(--border-mid); }
     .btn-outline:hover { background: var(--surface-2); color: var(--text-1); border-color: var(--border-strong); }
 
-    .btn-danger-outline {
-      background: transparent;
-      color: var(--error);
-      border-color: rgba(88,39,39,.3);
-    }
-    .btn-danger-outline:hover { background: rgba(88,39,39,.06); }
+    /* ── Main ── */
+    main { flex: 1; padding: 36px 28px; max-width: 1120px; width: 100%; margin: 0 auto; }
 
-    /* ── Main ───────────────────────────────────────────── */
-    main {
-      flex: 1;
-      padding: 36px 28px;
-      max-width: 1120px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    /* ── Category tabs ──────────────────────────────────── */
+    /* ── Tabs ── */
     .tabs {
-      display: flex;
-      gap: 2px;
-      background: rgba(33,46,29,.07);
-      padding: 3px;
-      border-radius: var(--r-lg);
-      border: 1px solid var(--border-mid);
-      width: fit-content;
-      margin-bottom: 32px;
+      display: flex; gap: 2px; background: rgba(33,46,29,.07); padding: 3px;
+      border-radius: var(--r-lg); border: 1px solid var(--border-mid);
+      width: fit-content; margin-bottom: 32px;
     }
-
     .tab {
-      padding: 8px 18px;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: all .15s;
-      border: 1px solid transparent;
-      background: transparent;
-      font-family: var(--sans);
-      white-space: nowrap;
+      padding: 8px 18px; border-radius: 7px; font-size: 13px; font-weight: 500;
+      color: var(--text-2); cursor: pointer; transition: all .15s;
+      border: 1px solid transparent; background: transparent; font-family: var(--sans); white-space: nowrap;
     }
     .tab:hover { color: var(--green); background: rgba(33,46,29,.05); }
-    .tab.active {
-      background: var(--green);
-      color: var(--cream);
-      border-color: var(--green);
-      box-shadow: 0 1px 4px rgba(33,46,29,.2);
-    }
+    .tab.active { background: var(--green); color: var(--cream); border-color: var(--green); box-shadow: 0 1px 4px rgba(33,46,29,.2); }
 
-    /* ── Bookmark grid ──────────────────────────────────── */
-    .bookmark-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 12px;
-    }
-
+    /* ── Grid ── */
+    .bookmark-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
     .bookmark-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 16px;
-      background: var(--surface);
-      border: 1px solid var(--border-mid);
-      border-radius: var(--r-lg);
-      text-decoration: none;
-      color: var(--text-1);
-      transition: all .15s;
-      min-width: 0;
+      display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+      background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--r-lg);
+      text-decoration: none; color: var(--text-1); transition: all .15s; min-width: 0;
       box-shadow: 0 1px 3px rgba(33,46,29,.06);
     }
-    .bookmark-card:hover {
-      border-color: var(--green);
-      box-shadow: 0 3px 12px rgba(33,46,29,.12);
-      transform: translateY(-1px);
-    }
+    .bookmark-card:hover { border-color: var(--green); box-shadow: 0 3px 12px rgba(33,46,29,.12); transform: translateY(-1px); }
 
     .bookmark-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      width: 36px; height: 36px; border-radius: 8px; background: var(--surface-2);
+      border: 1px solid var(--border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
     .bookmark-icon img { width: 24px; height: 24px; object-fit: contain; }
-    .bookmark-icon .fl {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--green);
-      text-transform: uppercase;
-    }
+    .bookmark-icon .fallback { font-size: 18px; color: var(--green); line-height: 1; }
 
     .bookmark-info { min-width: 0; flex: 1; }
-    .bookmark-name {
-      font-weight: 600;
-      font-size: 13px;
-      color: var(--text-1);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .bookmark-url {
-      font-size: 11px;
-      font-family: monospace;
-      color: var(--text-3);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-top: 2px;
-    }
-
-    .bookmark-arrow {
-      flex-shrink: 0;
-      color: var(--gold);
-      opacity: 0;
-      transition: opacity .15s;
-    }
+    .bookmark-name { font-weight: 600; font-size: 13px; color: var(--text-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bookmark-url  { font-size: 11px; font-family: monospace; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+    .bookmark-arrow { flex-shrink: 0; color: var(--gold); opacity: 0; transition: opacity .15s; }
     .bookmark-card:hover .bookmark-arrow { opacity: 1; }
 
-    .empty-state {
-      text-align: center;
-      padding: 72px 20px;
-      color: var(--text-3);
-      font-size: 13px;
-      grid-column: 1/-1;
-    }
+    .empty-state { text-align: center; padding: 72px 20px; color: var(--text-3); font-size: 13px; grid-column: 1/-1; }
     .empty-state strong { display: block; color: var(--text-2); margin-bottom: 6px; font-size: 15px; font-family: var(--serif); }
 
-    /* ── Admin panel ────────────────────────────────────── */
+    /* ── Loading skeleton ── */
+    .skeleton-card {
+      height: 64px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-lg); animation: shimmer 1.4s infinite;
+      background: linear-gradient(90deg, var(--surface) 25%, var(--cream-3) 50%, var(--surface) 75%);
+      background-size: 200% 100%;
+    }
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+    /* ── Admin overlay ── */
     .admin-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(33,46,29,.45);
-      backdrop-filter: blur(3px);
-      z-index: 200;
-      display: none;
-      align-items: flex-start;
-      justify-content: flex-end;
+      position: fixed; inset: 0; background: rgba(33,46,29,.45); backdrop-filter: blur(3px);
+      z-index: 200; display: none; align-items: flex-start; justify-content: flex-end;
     }
     .admin-overlay.open { display: flex; }
-
     .admin-panel {
-      width: 520px;
-      max-width: 100vw;
-      height: 100vh;
-      background: var(--cream);
-      border-left: 1px solid var(--border-mid);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      animation: slideIn .2s ease;
+      width: 540px; max-width: 100vw; height: 100vh;
+      background: var(--cream); border-left: 1px solid var(--border-mid);
+      display: flex; flex-direction: column; overflow: hidden; animation: slideIn .2s ease;
     }
-
-    @keyframes slideIn {
-      from { transform: translateX(24px); opacity: 0; }
-      to   { transform: translateX(0);    opacity: 1; }
-    }
-
+    @keyframes slideIn { from { transform: translateX(24px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
     .admin-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--border-mid);
-      background: var(--green);
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; border-bottom: 1px solid var(--border-mid);
+      background: var(--green); flex-shrink: 0;
     }
+    .admin-title { font-size: 13px; font-weight: 600; color: var(--cream); letter-spacing: .04em; }
+    .admin-body { flex: 1; overflow-y: auto; padding: 22px 24px; background: var(--cream); }
 
-    .admin-title {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--cream);
-      letter-spacing: .04em;
-    }
-
-    .admin-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 22px 24px;
-      background: var(--cream);
-    }
-
-    /* ── Form ───────────────────────────────────────────── */
+    /* ── Form ── */
     .form-card {
-      background: var(--surface);
-      border: 1px solid var(--border-mid);
-      border-radius: var(--r-lg);
-      padding: 20px;
-      margin-bottom: 22px;
+      background: var(--surface); border: 1px solid var(--border-mid);
+      border-radius: var(--r-lg); padding: 20px; margin-bottom: 22px;
       box-shadow: 0 1px 4px rgba(33,46,29,.06);
     }
-
-    .form-card-title {
-      font-family: var(--serif);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
+    .form-card-title { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--green); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
     .form-row { margin-bottom: 13px; }
+    label { display: block; font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 5px; letter-spacing: .02em; text-transform: uppercase; }
+    input[type="text"], input[type="url"] {
+      width: 100%; padding: 9px 12px; background: var(--cream); border: 1px solid var(--border-mid);
+      border-radius: var(--r); color: var(--text-1); font-family: var(--sans); font-size: 13px;
+      outline: none; transition: border-color .15s, box-shadow .15s;
+    }
+    input[type="text"]:focus, input[type="url"]:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(33,46,29,.08); }
+    input[type="file"] { font-family: var(--sans); font-size: 12px; color: var(--text-2); cursor: pointer; }
 
-    label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-2);
-      margin-bottom: 5px;
-      letter-spacing: .02em;
-      text-transform: uppercase;
+    .icon-source-tabs { display: flex; margin-bottom: 10px; border: 1px solid var(--border-mid); border-radius: var(--r); overflow: hidden; width: fit-content; }
+    .icon-source-tab {
+      padding: 5px 12px; font-size: 12px; font-weight: 500; font-family: var(--sans);
+      background: transparent; border: none; cursor: pointer; color: var(--text-2);
+      transition: all .12s; border-right: 1px solid var(--border-mid);
     }
+    .icon-source-tab:last-child { border-right: none; }
+    .icon-source-tab.active { background: var(--green); color: var(--cream); }
+    .icon-input-panel { display: none; }
+    .icon-input-panel.active { display: block; }
 
-    input[type="text"] {
-      width: 100%;
-      padding: 9px 12px;
-      background: var(--cream);
-      border: 1px solid var(--border-mid);
-      border-radius: var(--r);
-      color: var(--text-1);
-      font-family: var(--sans);
-      font-size: 13px;
-      outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    input[type="text"]:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(33,46,29,.08);
-    }
-
-    .checkbox-group { display: flex; flex-wrap: wrap; gap: 6px; }
-
-    .cat-toggle {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-      padding: 5px 11px;
-      background: var(--cream);
-      border: 1px solid var(--border-mid);
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-2);
-      transition: all .15s;
-      user-select: none;
-    }
-    .cat-toggle:hover { border-color: var(--green); color: var(--green); }
-    .cat-toggle.checked {
-      background: var(--green);
-      border-color: var(--green);
-      color: var(--cream);
-    }
-    .cat-toggle input { display: none; }
-
-    .icon-preview {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 8px;
-    }
+    .icon-preview-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
     .icon-preview-box {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--cream-3);
-      border: 1px solid var(--border-mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      width: 40px; height: 40px; border-radius: 8px; background: var(--cream-3);
+      border: 1px solid var(--border-mid); display: flex; align-items: center;
+      justify-content: center; overflow: hidden; flex-shrink: 0;
     }
     .icon-preview-box img { width: 26px; height: 26px; object-fit: contain; }
+    .icon-preview-box .fallback { font-size: 20px; color: var(--green); line-height: 1; }
     .icon-preview-status { font-size: 12px; color: var(--text-3); }
 
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 6px; }
+    .cat-toggle {
+      display: flex; align-items: center; gap: 5px; cursor: pointer;
+      padding: 5px 11px; background: var(--cream); border: 1px solid var(--border-mid);
+      border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text-2);
+      transition: all .15s; user-select: none;
+    }
+    .cat-toggle:hover { border-color: var(--green); color: var(--green); }
+    .cat-toggle.checked { background: var(--green); border-color: var(--green); color: var(--cream); }
+    .cat-toggle input { display: none; }
     .form-actions { display: flex; gap: 8px; margin-top: 18px; }
 
-    /* ── Admin bookmark list ────────────────────────────── */
-    .section-label {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 12px;
-    }
-
-    .admin-filter {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
+    /* ── Admin list ── */
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
+    .admin-filter { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 14px; }
     .filter-chip {
-      padding: 4px 11px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      font-family: var(--sans);
-      border: 1px solid var(--border-mid);
-      background: transparent;
-      color: var(--text-3);
-      cursor: pointer;
-      transition: all .15s;
-      letter-spacing: .02em;
+      padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 600;
+      font-family: var(--sans); border: 1px solid var(--border-mid);
+      background: transparent; color: var(--text-3); cursor: pointer; transition: all .15s;
     }
-    .filter-chip.active {
-      background: var(--green);
-      border-color: var(--green);
-      color: var(--cream);
-    }
+    .filter-chip.active { background: var(--green); border-color: var(--green); color: var(--cream); }
 
     .bm-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      margin-bottom: 6px;
-      transition: border-color .15s;
+      display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
+      margin-bottom: 6px; transition: border-color .15s, box-shadow .15s;
     }
     .bm-row:hover { border-color: var(--border-mid); }
+    .bm-row.drag-over { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(205,155,73,.2); }
+    .bm-row.dragging  { opacity: .4; }
+
+    .drag-handle { cursor: grab; color: var(--text-3); flex-shrink: 0; display: flex; align-items: center; padding: 2px 2px 2px 0; touch-action: none; }
+    .drag-handle:active { cursor: grabbing; }
 
     .bm-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      background: var(--cream-3);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 6px; background: var(--cream-3);
+      border: 1px solid var(--border); display: flex; align-items: center;
+      justify-content: center; overflow: hidden; flex-shrink: 0;
     }
     .bm-icon img { width: 18px; height: 18px; object-fit: contain; }
-    .bm-icon .fl {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--green);
-      text-transform: uppercase;
-    }
+    .bm-icon .fallback { font-size: 14px; color: var(--green); line-height: 1; }
 
     .bm-info { flex: 1; min-width: 0; }
-    .bm-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-1);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .bm-domain {
-      font-size: 11px;
-      color: var(--text-3);
-      font-family: monospace;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
+    .bm-name   { font-size: 13px; font-weight: 600; color: var(--text-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bm-domain { font-size: 11px; color: var(--text-3); font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .bm-cats { display: flex; gap: 3px; flex-shrink: 0; }
-    .cat-pip {
-      font-size: 10px;
-      font-weight: 600;
-      padding: 2px 7px;
-      border-radius: 20px;
-      background: rgba(33,46,29,.07);
-      color: var(--text-2);
-      border: 1px solid var(--border);
-      letter-spacing: .01em;
-    }
-
+    .cat-pip { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: rgba(33,46,29,.07); color: var(--text-2); border: 1px solid var(--border); }
     .bm-actions { display: flex; gap: 4px; flex-shrink: 0; }
     .icon-btn {
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
-      background: transparent;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-3);
-      transition: all .15s;
+      width: 30px; height: 30px; border-radius: 5px; background: transparent;
+      border: 1px solid transparent; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--text-3); transition: all .15s;
     }
     .icon-btn:hover { background: var(--surface-2); border-color: var(--border); color: var(--text-1); }
     .icon-btn.del:hover { color: var(--error); border-color: rgba(88,39,39,.25); background: rgba(88,39,39,.05); }
 
     .divider { border: none; border-top: 1px solid var(--border-mid); margin: 22px 0; }
 
-    /* ── Gold star motif (brand texture accent) ─────────── */
-    .star-accent {
-      color: var(--gold);
-      font-size: 10px;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
-
-    /* ── Toast ──────────────────────────────────────────── */
-    #toast-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .toast {
-      padding: 10px 16px;
-      background: var(--green);
-      border: 1px solid var(--green-2);
-      border-radius: var(--r);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--cream);
-      animation: toastIn .2s ease;
-    }
-    @keyframes toastIn {
-      from { transform: translateY(8px); opacity: 0; }
-      to   { transform: translateY(0);   opacity: 1; }
-    }
+    /* ── Toast ── */
+    #toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 999; display: flex; flex-direction: column; gap: 6px; }
+    .toast { padding: 10px 16px; background: var(--green); border: 1px solid var(--green-2); border-radius: var(--r); font-size: 13px; font-weight: 500; color: var(--cream); animation: toastIn .2s ease; }
+    @keyframes toastIn { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
     @media (max-width: 600px) {
       .admin-panel { width: 100vw; }
@@ -606,6 +272,10 @@
       </span>
     </a>
     <div class="header-right">
+      <div class="sync-badge" id="sync-badge">
+        <span class="sync-dot"></span>
+        <span id="sync-label">Loading</span>
+      </div>
       <button class="btn btn-ghost-light" onclick="openAdmin()">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
           <circle cx="8" cy="8" r="2.5"/>
@@ -623,15 +293,13 @@
 
 </div>
 
-<!-- Admin overlay -->
+<!-- Admin panel -->
 <div class="admin-overlay" id="admin-overlay" onclick="handleOverlayClick(event)">
   <div class="admin-panel">
-
     <div class="admin-header">
       <span class="admin-title">Manage Bookmarks</span>
       <button class="btn btn-ghost-light" onclick="closeAdmin()" style="padding:5px 10px;font-size:12px;">✕ Close</button>
     </div>
-
     <div class="admin-body">
 
       <div class="form-card">
@@ -641,25 +309,34 @@
           <label>Name</label>
           <input type="text" id="f-name" placeholder="HubSpot" />
         </div>
-
         <div class="form-row">
           <label>URL</label>
-          <input type="text" id="f-url" placeholder="app.hubspot.com" oninput="debounceIconPreview()" />
+          <input type="text" id="f-url" placeholder="app.hubspot.com" oninput="onUrlInput()" />
+        </div>
+
+        <div class="form-row">
+          <label>Icon</label>
+          <div class="icon-source-tabs">
+            <button class="icon-source-tab active" onclick="setIconSource('auto',this)">Auto-detect</button>
+            <button class="icon-source-tab" onclick="setIconSource('url',this)">Link</button>
+            <button class="icon-source-tab" onclick="setIconSource('upload',this)">Upload</button>
+          </div>
+          <div class="icon-input-panel active" id="icon-panel-auto"></div>
+          <div class="icon-input-panel" id="icon-panel-url">
+            <input type="url" id="f-icon-url" placeholder="https://example.com/logo.png" oninput="debounceCustomIconPreview()" />
+          </div>
+          <div class="icon-input-panel" id="icon-panel-upload">
+            <input type="file" id="f-icon-file" accept="image/*" onchange="handleFileUpload()" />
+          </div>
+          <div class="icon-preview-row">
+            <div class="icon-preview-box" id="icon-preview-box"><span class="fallback">✦</span></div>
+            <span class="icon-preview-status" id="icon-preview-status">Enter a URL above</span>
+          </div>
         </div>
 
         <div class="form-row">
           <label>Categories</label>
           <div class="checkbox-group" id="cat-checkboxes"></div>
-        </div>
-
-        <div class="form-row">
-          <label>Icon preview</label>
-          <div class="icon-preview">
-            <div class="icon-preview-box" id="icon-preview-box">
-              <span style="font-size:18px;color:var(--border-mid)">·</span>
-            </div>
-            <span class="icon-preview-status" id="icon-preview-status">Enter a URL above</span>
-          </div>
         </div>
 
         <div class="form-actions">
@@ -672,11 +349,8 @@
       </div>
 
       <hr class="divider" />
-
-      <div class="section-label">All Bookmarks</div>
-
+      <div class="section-label">All Bookmarks <span style="font-weight:400;color:var(--text-3);font-size:10px;margin-left:4px;">drag to reorder</span></div>
       <div class="admin-filter" id="admin-filter"></div>
-
       <div id="admin-bookmark-list"></div>
 
     </div>
@@ -686,158 +360,208 @@
 <div id="toast-container"></div>
 
 <script>
+/* ── Config ── */
+function getToken() {
+  let t = sessionStorage.getItem('ep_gh_token');
+  if (!t) {
+    t = prompt('Enter your GitHub token to load bookmarks:');
+    if (t) sessionStorage.setItem('ep_gh_token', t.trim());
+  }
+  return t ? t.trim() : '';
+}
+const GITHUB_OWNER = 'alex-cutrone';
+const GITHUB_REPO  = 'encore-pro-bookmarks';
+const GITHUB_FILE  = 'bookmarks.json';
+const GITHUB_TOKEN = getToken();
+const API_BASE     = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+
 const CATEGORIES = ['Product', 'Growth', 'Operations', 'Client Success'];
-const STORAGE_KEY = 'ep_bookmarks_v2';
 
-let bookmarks = [];
-let editingId = null;
-let activeTab = 'all';
-let adminFilter = 'all';
+let bookmarks      = [];
+let fileSha        = null;   // GitHub requires the current SHA to update a file
+let editingId      = null;
+let activeTab      = 'all';
+let adminFilter    = 'all';
+let iconSource     = 'auto';
+let customIconData = null;
+let dragSrcId      = null;
 
-function load() {
+/* ── Sync status ── */
+function setSyncStatus(state, text) {
+  const badge = document.getElementById('sync-badge');
+  const label = document.getElementById('sync-label');
+  badge.className = `sync-badge ${state}`;
+  label.textContent = text;
+}
+
+/* ── GitHub read/write ── */
+async function fetchBookmarks() {
+  setSyncStatus('syncing', 'Loading…');
+  showSkeletons();
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    bookmarks = raw ? JSON.parse(raw) : seeds();
-  } catch { bookmarks = seeds(); }
+    const res = await fetch(API_BASE, {
+      headers: { Authorization: `token ${GITHUB_TOKEN}`, Accept: 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) throw new Error(`GitHub ${res.status}`);
+    const data = await res.json();
+    fileSha   = data.sha;
+    bookmarks = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    setSyncStatus('', 'Live');
+    renderTabs();
+    renderGrid();
+  } catch (e) {
+    setSyncStatus('error', 'Offline');
+    console.error(e);
+    toast('Could not load bookmarks — check connection.');
+    document.getElementById('bookmark-grid').innerHTML =
+      `<div class="empty-state"><strong>Could not load.</strong>Check your connection and refresh.</div>`;
+  }
 }
 
-function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks)); }
-
-function seeds() {
-  return [
-    { id: uid(), name: 'HubSpot',         url: 'app.hubspot.com',        categories: ['Client Success', 'Growth'] },
-    { id: uid(), name: 'Google Analytics', url: 'analytics.google.com',  categories: ['Growth'] },
-    { id: uid(), name: 'Notion',           url: 'notion.so',              categories: ['Operations', 'Product'] },
-    { id: uid(), name: 'Slack',            url: 'slack.com',              categories: ['Operations', 'Client Success', 'Product', 'Growth'] },
-    { id: uid(), name: 'GitHub',           url: 'github.com',             categories: ['Product'] },
-    { id: uid(), name: 'Figma',            url: 'figma.com',              categories: ['Product'] },
-    { id: uid(), name: 'Google Drive',     url: 'drive.google.com',       categories: ['Operations', 'Client Success'] },
-    { id: uid(), name: 'Linear',           url: 'linear.app',             categories: ['Product'] },
-    { id: uid(), name: 'Loom',             url: 'loom.com',               categories: ['Operations', 'Client Success'] },
-    { id: uid(), name: 'Confluence',       url: 'confluence.atlassian.com', categories: ['Operations', 'Product'] },
-  ];
+async function pushBookmarks(message) {
+  setSyncStatus('syncing', 'Saving…');
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(bookmarks, null, 2))));
+    const body    = { message, content, sha: fileSha };
+    const res = await fetch(API_BASE, {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) throw new Error(`GitHub ${res.status}`);
+    const data = await res.json();
+    fileSha = data.content.sha;
+    setSyncStatus('saved', 'Saved ✓');
+    setTimeout(() => setSyncStatus('', 'Live'), 2500);
+  } catch (e) {
+    setSyncStatus('error', 'Save failed');
+    console.error(e);
+    toast('Save failed — try again.');
+  }
 }
 
+/* ── Skeletons ── */
+function showSkeletons() {
+  const grid = document.getElementById('bookmark-grid');
+  grid.innerHTML = Array(8).fill(`<div class="skeleton-card"></div>`).join('');
+}
+
+/* ── Helpers ── */
 function uid() { return Math.random().toString(36).slice(2, 10); }
+function getDomain(url) { return url.trim().replace(/^https?:\/\//i,'').split('/')[0]; }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-function getDomain(url) {
-  let u = url.trim().replace(/^https?:\/\//i, '');
-  return u.split('/')[0];
-}
-
-function iconUrl(url) {
-  const d = getDomain(url);
+function resolvedIcon(b) {
+  if (b.customIcon) return b.customIcon;
+  const d = getDomain(b.url);
   return d ? `https://www.google.com/s2/favicons?domain=${d}&sz=64` : null;
 }
 
-/* ── Render ───────────────────────────────────────────── */
-function renderTabs() {
-  const tabs = document.getElementById('tabs');
-  tabs.innerHTML = ['all', ...CATEGORIES].map(cat => `
-    <button class="tab ${activeTab === cat ? 'active' : ''}" onclick="setTab('${cat}')">
-      ${cat === 'all' ? 'All' : cat}
-    </button>
-  `).join('');
+function fallbackHtml() { return `<span class="fallback">✦</span>`; }
+
+function isGlobe(img) {
+  try {
+    const c = document.createElement('canvas');
+    c.width = c.height = img.naturalWidth || 16;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const cx = Math.floor(c.width/2), cy = Math.floor(c.height/2);
+    const [r,g,b,a] = ctx.getImageData(cx, cy, 1, 1).data;
+    if (a < 30) return true;
+    return b > r && b > g && b > 100 && r > 80 && r < 200 && g > 90 && g < 210;
+  } catch { return false; }
 }
 
-function setTab(cat) { activeTab = cat; renderTabs(); renderGrid(); }
+function checkGlobe(img) {
+  if (isGlobe(img)) {
+    img.replaceWith(Object.assign(document.createElement('span'), { className:'fallback', textContent:'✦' }));
+  }
+}
+
+function imgHtml(src, size) {
+  return `<img src="${src}" width="${size}" height="${size}" style="object-fit:contain" alt=""
+    onload="checkGlobe(this)"
+    onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'✦'}))" />`;
+}
+
+/* ── Render grid ── */
+function renderTabs() {
+  document.getElementById('tabs').innerHTML = ['all',...CATEGORIES].map(cat => `
+    <button class="tab ${activeTab===cat?'active':''}" onclick="setTab('${cat}')">
+      ${cat==='all'?'All':cat}
+    </button>`).join('');
+}
+function setTab(cat) { activeTab=cat; renderTabs(); renderGrid(); }
 
 function renderGrid() {
   const grid = document.getElementById('bookmark-grid');
-  const list = activeTab === 'all' ? bookmarks : bookmarks.filter(b => b.categories.includes(activeTab));
-
+  const list = activeTab==='all' ? bookmarks : bookmarks.filter(b=>b.categories.includes(activeTab));
   if (!list.length) {
     grid.innerHTML = `<div class="empty-state"><strong>Nothing here yet.</strong>Open Admin to add bookmarks.</div>`;
     return;
   }
-
   grid.innerHTML = list.map(b => {
-    const icon = iconUrl(b.url);
-    const letter = b.name[0];
-    const href = b.url.startsWith('http') ? b.url : 'https://' + b.url;
+    const src  = resolvedIcon(b);
+    const href = b.url.startsWith('http') ? b.url : 'https://'+b.url;
     return `
-      <a class="bookmark-card" href="${href}" target="_blank" rel="noopener">
-        <div class="bookmark-icon">
-          ${icon
-            ? `<img src="${icon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="fl" style="display:none">${letter}</span>`
-            : `<span class="fl">${letter}</span>`}
-        </div>
+      <a class="bookmark-card" href="${esc(href)}" target="_blank" rel="noopener">
+        <div class="bookmark-icon">${src ? imgHtml(src,24) : fallbackHtml()}</div>
         <div class="bookmark-info">
           <div class="bookmark-name">${esc(b.name)}</div>
           <div class="bookmark-url">${esc(getDomain(b.url))}</div>
         </div>
-        <svg class="bookmark-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M3 8h10M9 4l4 4-4 4"/>
-        </svg>
+        <svg class="bookmark-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>`;
   }).join('');
 }
 
-/* ── Admin ────────────────────────────────────────────── */
-function openAdmin() {
-  document.getElementById('admin-overlay').classList.add('open');
-  buildCatBoxes();
-  renderAdminFilter();
-  renderAdminList();
-}
-function closeAdmin() {
-  document.getElementById('admin-overlay').classList.remove('open');
-  resetForm();
-}
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
-}
+/* ── Admin ── */
+function openAdmin()  { document.getElementById('admin-overlay').classList.add('open'); buildCatBoxes(); renderAdminFilter(); renderAdminList(); }
+function closeAdmin() { document.getElementById('admin-overlay').classList.remove('open'); resetForm(); }
+function handleOverlayClick(e) { if (e.target===document.getElementById('admin-overlay')) closeAdmin(); }
 
-function buildCatBoxes(sel = []) {
+function buildCatBoxes(sel=[]) {
   document.getElementById('cat-checkboxes').innerHTML = CATEGORIES.map(cat => {
     const on = sel.includes(cat);
-    return `
-      <label class="cat-toggle ${on ? 'checked' : ''}" onclick="toggleCat(this)">
-        <input type="checkbox" value="${cat}" ${on ? 'checked' : ''} />
-        ✦ ${cat}
-      </label>`;
+    return `<label class="cat-toggle ${on?'checked':''}" onclick="toggleCat(this)">
+      <input type="checkbox" value="${cat}" ${on?'checked':''} /> ✦ ${cat}
+    </label>`;
   }).join('');
 }
-
-function toggleCat(label) {
-  setTimeout(() => {
-    label.classList.toggle('checked', label.querySelector('input').checked);
-  }, 0);
-}
-
-function getSelectedCats() {
-  return [...document.querySelectorAll('#cat-checkboxes input:checked')].map(i => i.value);
-}
+function toggleCat(label) { setTimeout(()=>label.classList.toggle('checked',label.querySelector('input').checked),0); }
+function getSelectedCats() { return [...document.querySelectorAll('#cat-checkboxes input:checked')].map(i=>i.value); }
 
 function renderAdminFilter() {
-  document.getElementById('admin-filter').innerHTML = ['all', ...CATEGORIES].map(cat => `
-    <button class="filter-chip ${adminFilter === cat ? 'active' : ''}" onclick="setAdminFilter('${cat}')">
-      ${cat === 'all' ? 'All' : cat}
+  document.getElementById('admin-filter').innerHTML = ['all',...CATEGORIES].map(cat => `
+    <button class="filter-chip ${adminFilter===cat?'active':''}" onclick="setAdminFilter('${cat}')">
+      ${cat==='all'?'All':cat}
     </button>`).join('');
 }
-
-function setAdminFilter(cat) { adminFilter = cat; renderAdminFilter(); renderAdminList(); }
+function setAdminFilter(cat) { adminFilter=cat; renderAdminFilter(); renderAdminList(); }
 
 function renderAdminList() {
-  const list = document.getElementById('admin-bookmark-list');
-  const filtered = adminFilter === 'all' ? bookmarks : bookmarks.filter(b => b.categories.includes(adminFilter));
-
-  if (!filtered.length) {
-    list.innerHTML = `<div style="color:var(--text-3);font-size:13px;padding:16px 0;">No bookmarks found.</div>`;
-    return;
-  }
-
-  list.innerHTML = filtered.map(b => {
-    const icon = iconUrl(b.url);
-    const letter = b.name[0];
-    const cats = b.categories.map(c => `<span class="cat-pip">${c}</span>`).join('');
+  const container = document.getElementById('admin-bookmark-list');
+  const filtered  = adminFilter==='all' ? bookmarks : bookmarks.filter(b=>b.categories.includes(adminFilter));
+  if (!filtered.length) { container.innerHTML=`<div style="color:var(--text-3);font-size:13px;padding:16px 0;">No bookmarks found.</div>`; return; }
+  container.innerHTML = filtered.map(b => {
+    const src  = resolvedIcon(b);
+    const cats = b.categories.map(c=>`<span class="cat-pip">${c}</span>`).join('');
     return `
-      <div class="bm-row">
-        <div class="bm-icon">
-          ${icon
-            ? `<img src="${icon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="fl" style="display:none">${letter}</span>`
-            : `<span class="fl">${letter}</span>`}
+      <div class="bm-row" draggable="true" data-id="${b.id}"
+           ondragstart="onDragStart(event,'${b.id}')" ondragover="onDragOver(event)"
+           ondragleave="onDragLeave(event)" ondrop="onDrop(event,'${b.id}')" ondragend="onDragEnd(event)">
+        <div class="drag-handle" title="Drag to reorder">
+          <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
+            <rect x="1" y="2" width="4" height="2" rx="1"/><rect x="7" y="2" width="4" height="2" rx="1"/>
+            <rect x="1" y="7" width="4" height="2" rx="1"/><rect x="7" y="7" width="4" height="2" rx="1"/>
+            <rect x="1" y="12" width="4" height="2" rx="1"/><rect x="7" y="12" width="4" height="2" rx="1"/>
+          </svg>
         </div>
+        <div class="bm-icon">${src ? imgHtml(src,18) : fallbackHtml()}</div>
         <div class="bm-info">
           <div class="bm-name">${esc(b.name)}</div>
           <div class="bm-domain">${esc(getDomain(b.url))}</div>
@@ -855,106 +579,158 @@ function renderAdminList() {
   }).join('');
 }
 
-/* ── Form ─────────────────────────────────────────────── */
-let iconTimer = null;
-function debounceIconPreview() {
-  clearTimeout(iconTimer);
-  iconTimer = setTimeout(updateIconPreview, 600);
+/* ── Drag to reorder ── */
+function onDragStart(e,id) { dragSrcId=id; e.currentTarget.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; }
+function onDragOver(e)     { e.preventDefault(); e.dataTransfer.dropEffect='move'; e.currentTarget.classList.add('drag-over'); }
+function onDragLeave(e)    { e.currentTarget.classList.remove('drag-over'); }
+function onDragEnd(e)      { e.currentTarget.classList.remove('dragging','drag-over'); }
+function onDrop(e,targetId) {
+  e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+  if (!dragSrcId||dragSrcId===targetId) return;
+  const si=bookmarks.findIndex(b=>b.id===dragSrcId), ti=bookmarks.findIndex(b=>b.id===targetId);
+  if (si===-1||ti===-1) return;
+  const [moved]=bookmarks.splice(si,1); bookmarks.splice(ti,0,moved);
+  renderAdminList(); renderGrid();
+  pushBookmarks('Reorder bookmarks');
+  dragSrcId=null;
 }
 
-function updateIconPreview() {
-  const url = document.getElementById('f-url').value.trim();
-  const box = document.getElementById('icon-preview-box');
-  const status = document.getElementById('icon-preview-status');
-  if (!url) {
-    box.innerHTML = `<span style="font-size:18px;color:var(--border-mid)">·</span>`;
-    status.textContent = 'Enter a URL above';
-    status.style.color = '';
-    return;
-  }
-  const src = iconUrl(url);
-  if (!src) return;
-  const img = new Image();
-  img.onload = () => {
-    box.innerHTML = `<img src="${src}" alt="" />`;
-    status.textContent = 'Icon found';
-    status.style.color = '#1e7d4a';
-  };
-  img.onerror = () => {
-    box.innerHTML = `<span class="fl" style="font-size:14px">${url[0]?.toUpperCase() || '?'}</span>`;
-    status.textContent = 'No icon — will use initial';
-    status.style.color = 'var(--text-3)';
-  };
-  img.src = src;
+/* ── Icon source ── */
+function setIconSource(src, btn) {
+  iconSource=src; customIconData=null;
+  document.querySelectorAll('.icon-source-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+  document.querySelectorAll('.icon-input-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(`icon-panel-${src}`).classList.add('active');
+  if (src==='auto') triggerAutoPreview(); else resetIconPreview();
 }
 
+let iconTimer=null, customIconTimer=null;
+function onUrlInput() { if(iconSource==='auto'){clearTimeout(iconTimer);iconTimer=setTimeout(triggerAutoPreview,600);} }
+
+function triggerAutoPreview() {
+  const url=document.getElementById('f-url').value.trim();
+  const box=document.getElementById('icon-preview-box');
+  const status=document.getElementById('icon-preview-status');
+  if (!url) { resetIconPreview(); return; }
+  const src=`https://www.google.com/s2/favicons?domain=${getDomain(url)}&sz=64`;
+  const img=new Image(); img.crossOrigin='anonymous';
+  img.onload=()=>{
+    if(isGlobe(img)){box.innerHTML=fallbackHtml();status.textContent='No icon — ✦ will be used';status.style.color='var(--text-3)';}
+    else{box.innerHTML=`<img src="${src}" width="26" height="26" style="object-fit:contain" alt=""/>`;status.textContent='Icon found';status.style.color='#1e7d4a';}
+  };
+  img.onerror=()=>{box.innerHTML=fallbackHtml();status.textContent='No icon — ✦ will be used';status.style.color='var(--text-3)';};
+  img.src=src;
+}
+
+function debounceCustomIconPreview() { clearTimeout(customIconTimer); customIconTimer=setTimeout(previewCustomUrl,500); }
+function previewCustomUrl() {
+  const val=document.getElementById('f-icon-url').value.trim();
+  const box=document.getElementById('icon-preview-box'); const status=document.getElementById('icon-preview-status');
+  if(!val){resetIconPreview();return;}
+  const img=new Image();
+  img.onload=()=>{box.innerHTML=`<img src="${val}" width="26" height="26" style="object-fit:contain" alt=""/>`;status.textContent='Icon loaded';status.style.color='#1e7d4a';customIconData=val;};
+  img.onerror=()=>{box.innerHTML=fallbackHtml();status.textContent="Couldn't load that URL";status.style.color='var(--error)';customIconData=null;};
+  img.src=val;
+}
+
+function handleFileUpload() {
+  const file=document.getElementById('f-icon-file').files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    customIconData=e.target.result;
+    document.getElementById('icon-preview-box').innerHTML=`<img src="${customIconData}" width="26" height="26" style="object-fit:contain" alt=""/>`;
+    document.getElementById('icon-preview-status').textContent='File ready';
+    document.getElementById('icon-preview-status').style.color='#1e7d4a';
+  };
+  reader.readAsDataURL(file);
+}
+
+function resetIconPreview() {
+  document.getElementById('icon-preview-box').innerHTML=`<span class="fallback">✦</span>`;
+  document.getElementById('icon-preview-status').textContent='Enter a URL above';
+  document.getElementById('icon-preview-status').style.color='';
+}
+
+/* ── Save / Edit / Delete ── */
 function saveBookmark() {
-  const name = document.getElementById('f-name').value.trim();
-  const url  = document.getElementById('f-url').value.trim();
-  const cats = getSelectedCats();
-  if (!name || !url) { toast('Name and URL are required.'); return; }
-  if (!cats.length)  { toast('Select at least one category.'); return; }
+  const name=document.getElementById('f-name').value.trim();
+  const url =document.getElementById('f-url').value.trim();
+  const cats=getSelectedCats();
+  if(!name||!url){toast('Name and URL are required.');return;}
+  if(!cats.length){toast('Select at least one category.');return;}
+  const finalIcon=(iconSource==='url'||iconSource==='upload')?customIconData||null:null;
 
-  if (editingId) {
-    const i = bookmarks.findIndex(b => b.id === editingId);
-    if (i !== -1) bookmarks[i] = { ...bookmarks[i], name, url, categories: cats };
+  if(editingId) {
+    const i=bookmarks.findIndex(b=>b.id===editingId);
+    if(i!==-1){bookmarks[i]={...bookmarks[i],name,url,categories:cats};if(iconSource==='auto')delete bookmarks[i].customIcon;else if(finalIcon)bookmarks[i].customIcon=finalIcon;}
     toast(`Updated "${name}"`);
+    pushBookmarks(`Update bookmark: ${name}`);
   } else {
-    bookmarks.push({ id: uid(), name, url, categories: cats });
+    const entry={id:uid(),name,url,categories:cats};
+    if(finalIcon) entry.customIcon=finalIcon;
+    bookmarks.push(entry);
     toast(`Added "${name}"`);
+    pushBookmarks(`Add bookmark: ${name}`);
   }
-  save(); resetForm(); renderAdminList(); renderGrid();
+  resetForm(); renderAdminList(); renderGrid();
 }
 
 function editBookmark(id) {
-  const b = bookmarks.find(x => x.id === id);
-  if (!b) return;
-  editingId = id;
-  document.getElementById('f-name').value = b.name;
-  document.getElementById('f-url').value = b.url;
-  document.getElementById('form-section-title').textContent = 'Edit Bookmark';
-  document.getElementById('cancel-btn').style.display = 'inline-flex';
+  const b=bookmarks.find(x=>x.id===id); if(!b) return;
+  editingId=id;
+  document.getElementById('f-name').value=b.name;
+  document.getElementById('f-url').value=b.url;
+  document.getElementById('form-section-title').textContent='Edit Bookmark';
+  document.getElementById('cancel-btn').style.display='inline-flex';
   buildCatBoxes(b.categories);
-  updateIconPreview();
+  if(b.customIcon){
+    const isUrl=b.customIcon.startsWith('http');
+    const btn=document.querySelector(`.icon-source-tab:nth-child(${isUrl?2:3})`);
+    setIconSource(isUrl?'url':'upload',btn);
+    if(isUrl) document.getElementById('f-icon-url').value=b.customIcon;
+    document.getElementById('icon-preview-box').innerHTML=`<img src="${b.customIcon}" width="26" height="26" style="object-fit:contain" alt=""/>`;
+    document.getElementById('icon-preview-status').textContent='Custom icon active';
+    document.getElementById('icon-preview-status').style.color='#1e7d4a';
+    customIconData=b.customIcon;
+  } else {
+    setIconSource('auto',document.querySelector('.icon-source-tab:first-child'));
+    triggerAutoPreview();
+  }
   document.getElementById('f-name').focus();
-  document.querySelector('.admin-body').scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelector('.admin-body').scrollTo({top:0,behavior:'smooth'});
 }
 
 function deleteBookmark(id) {
-  const b = bookmarks.find(x => x.id === id);
-  if (!b || !confirm(`Remove "${b.name}"?`)) return;
-  bookmarks = bookmarks.filter(x => x.id !== id);
-  save(); renderAdminList(); renderGrid();
+  const b=bookmarks.find(x=>x.id===id);
+  if(!b||!confirm(`Remove "${b.name}"?`)) return;
+  bookmarks=bookmarks.filter(x=>x.id!==id);
+  renderAdminList(); renderGrid();
   toast(`Removed "${b.name}"`);
+  pushBookmarks(`Remove bookmark: ${b.name}`);
 }
 
 function resetForm() {
-  editingId = null;
-  document.getElementById('f-name').value = '';
-  document.getElementById('f-url').value = '';
-  document.getElementById('form-section-title').textContent = 'Add Bookmark';
-  document.getElementById('cancel-btn').style.display = 'none';
-  document.getElementById('icon-preview-box').innerHTML = `<span style="font-size:18px;color:var(--border-mid)">·</span>`;
-  document.getElementById('icon-preview-status').textContent = 'Enter a URL above';
-  document.getElementById('icon-preview-status').style.color = '';
+  editingId=null;
+  document.getElementById('f-name').value='';
+  document.getElementById('f-url').value='';
+  document.getElementById('f-icon-url').value='';
+  document.getElementById('f-icon-file').value='';
+  document.getElementById('form-section-title').textContent='Add Bookmark';
+  document.getElementById('cancel-btn').style.display='none';
+  customIconData=null;
+  setIconSource('auto',document.querySelector('.icon-source-tab:first-child'));
+  resetIconPreview();
   buildCatBoxes([]);
 }
 
 function toast(msg) {
-  const t = document.createElement('div');
-  t.className = 'toast';
-  t.textContent = msg;
+  const t=document.createElement('div'); t.className='toast'; t.textContent=msg;
   document.getElementById('toast-container').appendChild(t);
-  setTimeout(() => t.remove(), 2600);
+  setTimeout(()=>t.remove(),2600);
 }
 
-function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-load();
-renderTabs();
-renderGrid();
+/* ── Boot ── */
+fetchBookmarks();
 </script>
 </body>
 </html>
