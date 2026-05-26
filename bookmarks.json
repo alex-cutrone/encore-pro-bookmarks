@@ -68,6 +68,16 @@
     ]
   },
   {
+    "id": "s13",
+    "name": "PropelAuth",
+    "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://www.propelauth.com/imgs/mark.svg"
+  },
+  {
     "id": "s11",
     "name": "cE Admin",
     "url": "https://app.crowdnengage.com/admin",
@@ -112,16 +122,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s13",
-    "name": "PropelAuth",
-    "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://www.propelauth.com/imgs/mark.svg"
   },
   {
     "id": "9morn90u",
