@@ -284,5 +284,15 @@
       "Client Success"
     ],
     "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
+  },
+  {
+    "id": "mdnzo55g",
+    "name": "Operations Tasks",
+    "url": "https://github.com/crowdengage/operations-tasks/issues/new/choose",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/idZAyF9rlg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1779162684348"
   }
 ]
