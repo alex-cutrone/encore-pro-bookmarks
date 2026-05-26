@@ -12,6 +12,18 @@
     "customIcon": "https://cdn.brandfetch.io/id5o3EIREg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1696475443284"
   },
   {
+    "id": "s07",
+    "name": "Calendar",
+    "url": "https://calendar.google.com",
+    "categories": [
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idMX2_OMSc.svg?c=1bxid64Mup7aczewSAYMX&t=1779346439033"
+  },
+  {
     "id": "s04",
     "name": "Google Drive",
     "url": "https://drive.google.com",
@@ -47,18 +59,6 @@
       "Operations",
       "Client Success"
     ]
-  },
-  {
-    "id": "s07",
-    "name": "Calendar",
-    "url": "https://calendar.google.com",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idMX2_OMSc.svg?c=1bxid64Mup7aczewSAYMX&t=1779346439033"
   },
   {
     "id": "s08",
