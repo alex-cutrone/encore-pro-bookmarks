@@ -514,7 +514,7 @@ function renderSectionsView() {
     </div>
     <div id="section-list">
       ${sections.map((s,i) => `
-        <div class="section-item" draggable="true" data-idx="${i}"
+        <div class="section-item" draggable="true" data-idx="${i}" id="sec-item-${i}"
              ondragstart="onSecDragStart(event,${i})" ondragover="onSecDragOver(event)"
              ondragleave="onSecDragLeave(event)" ondrop="onSecDrop(event,${i})" ondragend="onSecDragEnd(event)">
           <div class="drag-handle">
@@ -524,8 +524,11 @@ function renderSectionsView() {
               <rect x="1" y="12" width="4" height="2" rx="1"/><rect x="7" y="12" width="4" height="2" rx="1"/>
             </svg>
           </div>
-          <div class="section-item-name">${esc(s)}</div>
+          <div class="section-item-name" id="sec-label-${i}">${esc(s)}</div>
           <div class="section-item-count">${counts[s]||0} bookmark${(counts[s]||0)!==1?'s':''}</div>
+          <button class="icon-btn" title="Rename" onclick="startRename(${i},'${esc(s)}')">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5 2.5l2 2L5 13l-3 .5.5-3 9-8z"/></svg>
+          </button>
           ${s!=='General'?`<button class="icon-btn del" title="Delete" onclick="deleteSection('${esc(s)}')">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/></svg>
           </button>`:'<div style="width:28px"></div>'}
