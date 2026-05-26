@@ -256,5 +256,14 @@
     "categories": [
       "Growth"
     ]
+  },
+  {
+    "id": "pgvbt66a",
+    "name": "EP Django (US1)",
+    "url": "https://us1.admin.encorepro.com/admin/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
   }
 ]
