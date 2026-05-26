@@ -223,5 +223,16 @@
       "Product",
       "Growth"
     ]
+  },
+  {
+    "id": "9morn90u",
+    "name": "Hubspot",
+    "url": "https://app-eu1.hubspot.com/crm/144173778",
+    "categories": [
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069"
   }
 ]
