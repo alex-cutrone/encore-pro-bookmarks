@@ -143,6 +143,15 @@
     "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
   },
   {
+    "id": "s17",
+    "name": "cE Code Snippets",
+    "url": "https://app.crowdnengage.com/sql/client-seat-information-templates/",
+    "categories": [
+      "Client Success",
+      "Product"
+    ]
+  },
+  {
     "id": "s11",
     "name": "cE Admin",
     "url": "https://app.crowdnengage.com/admin",
@@ -159,15 +168,6 @@
     "categories": [
       "Product",
       "Client Success"
-    ]
-  },
-  {
-    "id": "s17",
-    "name": "cE Code Snippets",
-    "url": "https://app.crowdnengage.com/sql/client-seat-information-templates/",
-    "categories": [
-      "Client Success",
-      "Product"
     ]
   },
   {
