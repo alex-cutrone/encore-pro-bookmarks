@@ -265,5 +265,14 @@
       "Product",
       "Client Success"
     ]
+  },
+  {
+    "id": "8azdkrfa",
+    "name": "EP Django (EU1)",
+    "url": "https://eu1.admin.encorepro.com/admin/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
   }
 ]
