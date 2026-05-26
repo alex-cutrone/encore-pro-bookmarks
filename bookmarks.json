@@ -171,16 +171,6 @@
     ]
   },
   {
-    "id": "vfvtcoqt",
-    "name": "Twilio",
-    "url": "https://console.twilio.com/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
-  },
-  {
     "id": "8azdkrfa",
     "name": "EP Django (EU1)",
     "url": "https://eu1.admin.encorepro.com/admin/",
@@ -216,6 +206,16 @@
       "Client Success"
     ],
     "customIcon": "https://cdn.brandfetch.io/idTnNve4SY/w/180/h/153/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1719468661393"
+  },
+  {
+    "id": "vfvtcoqt",
+    "name": "Twilio",
+    "url": "https://console.twilio.com/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
   },
   {
     "id": "mdnzo55g",
