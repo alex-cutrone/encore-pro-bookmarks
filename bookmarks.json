@@ -75,6 +75,18 @@
     "section": "Platform Tools"
   },
   {
+    "id": "s15",
+    "name": "Slack",
+    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
+    "categories": [
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "section": "Workspace"
+  },
+  {
     "id": "s09",
     "name": "Asana",
     "url": "https://app.asana.com",
@@ -95,18 +107,6 @@
     ],
     "customIcon": "https://www.propelauth.com/imgs/mark.svg",
     "section": "Platform Tools"
-  },
-  {
-    "id": "s15",
-    "name": "Slack",
-    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "section": "Workspace"
   },
   {
     "id": "s23",
