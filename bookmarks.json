@@ -9,7 +9,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/id5o3EIREg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1696475443284"
+    "customIcon": "https://cdn.brandfetch.io/id5o3EIREg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1696475443284",
+    "section": "Google Workspace"
   },
   {
     "id": "s07",
@@ -21,7 +22,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idMX2_OMSc.svg?c=1bxid64Mup7aczewSAYMX&t=1779346439033"
+    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idMX2_OMSc.svg?c=1bxid64Mup7aczewSAYMX&t=1779346439033",
+    "section": "Google Workspace"
   },
   {
     "id": "s04",
@@ -33,7 +35,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348"
+    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348",
+    "section": "Google Workspace"
   },
   {
     "id": "9morn90u",
@@ -44,7 +47,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069"
+    "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069",
+    "section": "General"
   },
   {
     "id": "s08",
@@ -56,7 +60,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://app.encorepro.com/favicon.ico"
+    "customIcon": "https://app.encorepro.com/favicon.ico",
+    "section": "General"
   },
   {
     "id": "s12",
@@ -66,7 +71,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://eu.exchange.activitystream.com/static/favicon.ico"
+    "customIcon": "https://eu.exchange.activitystream.com/static/favicon.ico",
+    "section": "General"
   },
   {
     "id": "s09",
@@ -76,7 +82,8 @@
       "Product",
       "Operations",
       "Client Success"
-    ]
+    ],
+    "section": "Project Management"
   },
   {
     "id": "s13",
@@ -86,7 +93,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://www.propelauth.com/imgs/mark.svg"
+    "customIcon": "https://www.propelauth.com/imgs/mark.svg",
+    "section": "General"
   },
   {
     "id": "s23",
@@ -97,7 +105,8 @@
       "Client Success",
       "Product",
       "Growth"
-    ]
+    ],
+    "section": "Documentation"
   },
   {
     "id": "s11",
@@ -107,7 +116,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
+    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
+    "section": "crowdEngage"
   },
   {
     "id": "s18",
@@ -117,7 +127,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
+    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
+    "section": "crowdEngage"
   },
   {
     "id": "s19",
@@ -129,7 +140,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png"
+    "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png",
+    "section": "Documentation"
   },
   {
     "id": "xwg9mz04",
@@ -139,7 +151,8 @@
       "Growth",
       "Client Success"
     ],
-    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
+    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png",
+    "section": "Documentation"
   },
   {
     "id": "mhlsev6t",
@@ -150,7 +163,8 @@
       "Growth",
       "Client Success"
     ],
-    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
+    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png",
+    "section": "Documentation"
   },
   {
     "id": "s17",
@@ -159,7 +173,8 @@
     "categories": [
       "Product",
       "Client Success"
-    ]
+    ],
+    "section": "crowdEngage"
   },
   {
     "id": "s14",
@@ -168,7 +183,8 @@
     "categories": [
       "Product",
       "Client Success"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "8azdkrfa",
@@ -177,7 +193,8 @@
     "categories": [
       "Product",
       "Client Success"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "pgvbt66a",
@@ -186,7 +203,8 @@
     "categories": [
       "Product",
       "Client Success"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "s20",
@@ -195,7 +213,8 @@
     "categories": [
       "Product",
       "Client Success"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "s16",
@@ -205,7 +224,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/idTnNve4SY/w/180/h/153/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1719468661393"
+    "customIcon": "https://cdn.brandfetch.io/idTnNve4SY/w/180/h/153/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1719468661393",
+    "section": "General"
   },
   {
     "id": "vfvtcoqt",
@@ -215,7 +235,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
+    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517",
+    "section": "General"
   },
   {
     "id": "mdnzo55g",
@@ -225,7 +246,8 @@
       "Product",
       "Client Success"
     ],
-    "customIcon": "https://cdn.brandfetch.io/idZAyF9rlg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1779162684348"
+    "customIcon": "https://cdn.brandfetch.io/idZAyF9rlg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1779162684348",
+    "section": "Project Management"
   },
   {
     "id": "s02",
@@ -233,7 +255,8 @@
     "url": "https://github.com",
     "categories": [
       "Product"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "s15",
@@ -244,7 +267,8 @@
       "Client Success",
       "Product",
       "Growth"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "s03",
@@ -252,7 +276,8 @@
     "url": "https://figma.com",
     "categories": [
       "Product"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "s05",
@@ -262,7 +287,8 @@
       "Growth",
       "Operations",
       "Client Success"
-    ]
+    ],
+    "section": "General"
   },
   {
     "id": "s10",
@@ -274,7 +300,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://www.bamboohr.com/favicon.ico"
+    "customIcon": "https://www.bamboohr.com/favicon.ico",
+    "section": "HR & Operations"
   },
   {
     "id": "s21",
@@ -286,7 +313,8 @@
       "Operations",
       "Client Success"
     ],
-    "customIcon": "https://booker.is.ed.ac.uk/favicon.ico"
+    "customIcon": "https://booker.is.ed.ac.uk/favicon.ico",
+    "section": "General"
   },
   {
     "id": "s22",
@@ -294,6 +322,7 @@
     "url": "https://www.canva.com/",
     "categories": [
       "Growth"
-    ]
+    ],
+    "section": "General"
   }
 ]
