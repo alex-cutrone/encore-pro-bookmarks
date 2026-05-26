@@ -36,6 +36,18 @@
     "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348"
   },
   {
+    "id": "s08",
+    "name": "Encore Pro",
+    "url": "https://app.encorepro.com",
+    "categories": [
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "customIcon": "https://app.encorepro.com/favicon.ico"
+  },
+  {
     "id": "s02",
     "name": "GitHub",
     "url": "https://github.com",
@@ -59,18 +71,6 @@
       "Operations",
       "Client Success"
     ]
-  },
-  {
-    "id": "s08",
-    "name": "Encore Pro",
-    "url": "https://app.encorepro.com",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://app.encorepro.com/favicon.ico"
   },
   {
     "id": "s09",
