@@ -98,6 +98,15 @@
     "section": "Workspace"
   },
   {
+    "id": "s22",
+    "name": "Canva",
+    "url": "https://www.canva.com/",
+    "categories": [
+      "Growth"
+    ],
+    "section": "Workspace"
+  },
+  {
     "id": "s13",
     "name": "PropelAuth",
     "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
@@ -141,15 +150,6 @@
     ],
     "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
     "section": "Tenants"
-  },
-  {
-    "id": "s22",
-    "name": "Canva",
-    "url": "https://www.canva.com/",
-    "categories": [
-      "Growth"
-    ],
-    "section": "Workspace"
   },
   {
     "id": "s19",
