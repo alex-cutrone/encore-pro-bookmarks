@@ -54,11 +54,7 @@
     /* Main */
     main { flex:1; padding:36px 28px; max-width:1120px; width:100%; margin:0 auto; }
 
-    /* Tabs */
-    .tabs { display:flex; gap:2px; background:rgba(33,46,29,.07); padding:3px; border-radius:var(--r-lg); border:1px solid var(--border-mid); width:fit-content; margin-bottom:36px; flex-wrap:wrap; }
-    .tab { padding:8px 18px; border-radius:7px; font-size:13px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .15s; border:1px solid transparent; background:transparent; font-family:var(--sans); white-space:nowrap; }
-    .tab:hover { color:var(--green); background:rgba(33,46,29,.05); }
-    .tab.active { background:var(--green); color:var(--cream); border-color:var(--green); box-shadow:0 1px 4px rgba(33,46,29,.2); }
+
 
     /* Section headers */
     .section-group { margin-bottom:32px; }
@@ -170,7 +166,41 @@
     .toast { padding:10px 16px; background:var(--green); border:1px solid var(--green-2); border-radius:var(--r); font-size:13px; font-weight:500; color:var(--cream); animation:toastIn .2s ease; }
     @keyframes toastIn { from{transform:translateY(8px);opacity:0} to{transform:translateY(0);opacity:1} }
 
-    /* Shared alert */
+    /* Category dropdown */
+    .nav-dropdown { position:relative; }
+    .nav-dropdown-btn {
+      display:flex; align-items:center; gap:5px;
+      font-size:13px; font-weight:500; color:rgba(255,248,236,.75);
+      background:transparent; border:none; cursor:pointer;
+      font-family:var(--sans); padding:4px 2px;
+      transition:color .15s;
+    }
+    .nav-dropdown-btn:hover { color:var(--cream); }
+    .nav-dropdown-btn.active { color:var(--cream); }
+    .nav-dropdown-btn svg { opacity:.6; transition:opacity .15s; }
+    .nav-dropdown-btn:hover svg, .nav-dropdown-btn.active svg { opacity:1; }
+    .nav-dropdown-menu {
+      position:absolute; top:calc(100% + 10px); left:0;
+      background:var(--green-2); border:1px solid var(--green-3);
+      border-radius:var(--r-lg); padding:4px;
+      min-width:160px; z-index:300;
+      box-shadow:0 8px 24px rgba(0,0,0,.3);
+      display:none;
+    }
+    .nav-dropdown-menu.open { display:block; animation:dropIn .15s ease; }
+    @keyframes dropIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+    .nav-dropdown-item {
+      display:block; width:100%; text-align:left;
+      padding:8px 12px; border-radius:6px;
+      font-family:var(--sans); font-size:13px; font-weight:500;
+      color:rgba(255,248,236,.75); background:transparent; border:none;
+      cursor:pointer; transition:all .12s; text-decoration:none;
+    }
+    .nav-dropdown-item:hover { background:rgba(255,248,236,.08); color:var(--cream); }
+    .nav-dropdown-item.active { background:rgba(255,248,236,.12); color:var(--cream); }
+
+    /* Shared alert */"
+
     .shared-alert { display:flex; align-items:center; gap:10px; padding:10px 14px; background:rgba(205,155,73,.1); border:1px solid rgba(205,155,73,.35); border-radius:var(--r); margin-bottom:20px; }
     .shared-alert-icon { color:var(--gold); flex-shrink:0; }
     .shared-alert p { font-size:12px; color:var(--text-2); line-height:1.5; }
@@ -182,14 +212,22 @@
 <body>
 <div class="shell">
   <header>
-    <a href="/" class="logo">
-      <span style="color:#CD9B49;font-size:20px;line-height:1;">✦</span>
-      <span>
+    <div style="display:flex;align-items:center;gap:0;">
+      <a href="/" class="logo" style="gap:8px;">
+        <span style="color:#CD9B49;font-size:20px;line-height:1;">✦</span>
         <span class="logo-wordmark">Encore Pro</span>
-        <span class="logo-sep">/</span>
-        <span class="logo-sub">Internal Links</span>
-      </span>
-    </a>
+      </a>
+      <span class="logo-sep" style="margin:0 8px;color:rgba(255,248,236,.3);font-weight:300;font-size:16px;">/</span>
+      <span class="logo-sub" style="color:rgba(255,248,236,.5);font-size:13px;">Internal Links</span>
+      <span class="logo-sep" style="margin:0 8px;color:rgba(255,248,236,.3);font-weight:300;font-size:16px;">/</span>
+      <div class="nav-dropdown" id="cat-dropdown">
+        <button class="nav-dropdown-btn" id="cat-dropdown-btn" onclick="toggleCatDropdown()">
+          <span id="cat-dropdown-label">All</span>
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="cat-dropdown-menu"></div>
+      </div>
+    </div>
     <div class="header-right">
       <button class="btn btn-ghost-light" onclick="openAdmin()" title="Admin" style="padding:7px 9px;">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M11.54 3.05l-1.41 1.41M4.46 11.54l-1.41 1.41"/></svg>
@@ -198,7 +236,6 @@
   </header>
 
   <main>
-    <div class="tabs" id="tabs"></div>
     <div id="main-content"></div>
   </main>
 </div>
@@ -336,12 +373,33 @@ async function doSave(message) {
 
 /* ── Main render ── */
 function renderTabs() {
-  document.getElementById('tabs').innerHTML = ['all',...CATEGORIES].map(cat=>{
+  const menu = document.getElementById('cat-dropdown-menu');
+  const label = document.getElementById('cat-dropdown-label');
+  if (!menu) return;
+  menu.innerHTML = ['all',...CATEGORIES].map(cat => {
     const hash = catToHash(cat);
-    return `<a class="tab ${activeTab===cat?'active':''}" href="${hash?'#'+hash:'#'}"
-      onclick="event.preventDefault();setTab('${cat}')">${cat==='all'?'All':cat}</a>`;
+    const display = cat === 'all' ? 'All' : cat;
+    return `<a class="nav-dropdown-item ${activeTab===cat?'active':''}"
+      href="${hash?'#'+hash:'#'}"
+      onclick="event.preventDefault();setTab('${cat}');closeCatDropdown()">
+      ${display}
+    </a>`;
   }).join('');
+  if (label) label.textContent = activeTab === 'all' ? 'All' : activeTab;
+  const btn = document.getElementById('cat-dropdown-btn');
+  if (btn) btn.classList.toggle('active', activeTab !== 'all');
 }
+
+function toggleCatDropdown() {
+  document.getElementById('cat-dropdown-menu').classList.toggle('open');
+}
+function closeCatDropdown() {
+  document.getElementById('cat-dropdown-menu').classList.remove('open');
+}
+// Close on outside click
+document.addEventListener('click', e => {
+  if (!document.getElementById('cat-dropdown')?.contains(e.target)) closeCatDropdown();
+});
 function catToHash(cat) { return cat === 'all' ? '' : cat.toLowerCase().replace(/\s+/g, '-'); }
 function hashToCat(hash) {
   if (!hash || hash === '#') return 'all';
