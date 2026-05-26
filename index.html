@@ -548,6 +548,33 @@ function addSection() {
   toast(`Added section "${name}"`);
 }
 
+function startRename(i, current) {
+  const label = document.getElementById(`sec-label-${i}`);
+  const item  = document.getElementById(`sec-item-${i}`);
+  if (!label) return;
+  label.innerHTML = `<input type="text" id="rename-input-${i}"
+    value="${current.replace(/"/g,'&quot;')}"
+    style="width:100%;padding:3px 6px;border:1px solid var(--green);border-radius:4px;font-size:13px;font-family:var(--sans);background:var(--cream);color:var(--text-1);outline:none;"
+    onkeydown="if(event.key==='Enter')commitRename(${i},'${current.replace(/'/g,String.fromCharCode(92,39))}');if(event.key==='Escape')renderSectionsView();"
+    onblur="commitRename(${i},'${current.replace(/'/g,String.fromCharCode(92,39))}')"/>`;
+  const inp = document.getElementById(`rename-input-${i}`);
+  if (inp) { inp.focus(); inp.select(); }
+  item.setAttribute('draggable','false');
+}
+
+function commitRename(i, oldName) {
+  const inp = document.getElementById(`rename-input-${i}`);
+  if (!inp) return;
+  const newName = inp.value.trim();
+  if (!newName || newName === oldName) { renderSectionsView(); return; }
+  if (sections.includes(newName)) { toast('A section with that name already exists.'); renderSectionsView(); return; }
+  sections[i] = newName;
+  bookmarks.forEach(b => { if (b.section === oldName) b.section = newName; });
+  renderSectionsView(); renderMain();
+  doSave(`Rename section: "${oldName}" to "${newName}"`);
+  toast(`Renamed to "${newName}"`);
+}
+
 function deleteSection(name) {
   if (!confirm(`Delete section "${name}"? Bookmarks in it will move to General.`)) return;
   bookmarks.forEach(b=>{ if(b.section===name) b.section='General'; });
