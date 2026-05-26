@@ -170,6 +170,12 @@
     .toast { padding:10px 16px; background:var(--green); border:1px solid var(--green-2); border-radius:var(--r); font-size:13px; font-weight:500; color:var(--cream); animation:toastIn .2s ease; }
     @keyframes toastIn { from{transform:translateY(8px);opacity:0} to{transform:translateY(0);opacity:1} }
 
+    /* Shared alert */
+    .shared-alert { display:flex; align-items:center; gap:10px; padding:10px 14px; background:rgba(205,155,73,.1); border:1px solid rgba(205,155,73,.35); border-radius:var(--r); margin-bottom:20px; }
+    .shared-alert-icon { color:var(--gold); flex-shrink:0; }
+    .shared-alert p { font-size:12px; color:var(--text-2); line-height:1.5; }
+    .shared-alert strong { color:var(--text-1); font-weight:600; }
+
     @media(max-width:600px) { .admin-panel{width:100vw} main{padding:20px 16px} header{padding:0 16px} .tabs{flex-wrap:wrap} }
   </style>
 </head>
@@ -441,6 +447,12 @@ function submitPassword() {
 function renderAdminPanel() {
   document.getElementById('admin-title').textContent = 'Manage';
   document.getElementById('admin-body').innerHTML = `
+    <div class="shared-alert">
+      <svg class="shared-alert-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="8" cy="8" r="7"/><path d="M8 5v3.5M8 11h.01"/>
+      </svg>
+      <p><strong>Heads up:</strong> changes made here update bookmarks for everyone.</p>
+    </div>
     <div class="admin-tabs">
       <button class="admin-tab ${adminView==='bookmarks'?'active':''}" onclick="switchAdminView('bookmarks')">Bookmarks</button>
       <button class="admin-tab ${adminView==='sections'?'active':''}" onclick="switchAdminView('sections')">Sections</button>
