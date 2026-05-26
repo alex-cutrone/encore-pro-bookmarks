@@ -199,6 +199,15 @@
     ]
   },
   {
+    "id": "s20",
+    "name": "Service Health",
+    "url": "https://eu.exchange.activitystream.com/service/health/destinations/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
+  },
+  {
     "id": "s16",
     "name": "Sparkpost",
     "url": "https://app.eu.sparkpost.com/dashboard",
@@ -265,15 +274,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s20",
-    "name": "Service Health",
-    "url": "https://eu.exchange.activitystream.com/service/health/destinations/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ]
   },
   {
     "id": "s21",
