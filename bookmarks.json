@@ -101,6 +101,17 @@
     "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png"
   },
   {
+    "id": "s23",
+    "name": "Wiki",
+    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
+    "categories": [
+      "Operations",
+      "Client Success",
+      "Product",
+      "Growth"
+    ]
+  },
+  {
     "id": "s11",
     "name": "cE Admin",
     "url": "https://app.crowdnengage.com/admin",
@@ -116,17 +127,6 @@
     "categories": [
       "Operations",
       "Product"
-    ]
-  },
-  {
-    "id": "s23",
-    "name": "Wiki",
-    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
-    "categories": [
-      "Operations",
-      "Client Success",
-      "Product",
-      "Growth"
     ]
   },
   {
