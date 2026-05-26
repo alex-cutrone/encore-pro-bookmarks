@@ -112,6 +112,16 @@
     "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png"
   },
   {
+    "id": "s18",
+    "name": "crowdEngage",
+    "url": "https://crowdengage.activitystream.com/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
+  },
+  {
     "id": "xwg9mz04",
     "name": "Yesplan Learning",
     "url": "https://learning.yesplan.be/",
@@ -159,16 +169,6 @@
       "Client Success",
       "Product"
     ]
-  },
-  {
-    "id": "s18",
-    "name": "crowdEngage",
-    "url": "https://crowdengage.activitystream.com/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
   },
   {
     "id": "vfvtcoqt",
