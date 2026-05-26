@@ -48,6 +48,16 @@
     "customIcon": "https://app.encorepro.com/favicon.ico"
   },
   {
+    "id": "s09",
+    "name": "Asana",
+    "url": "https://app.asana.com",
+    "categories": [
+      "Product",
+      "Operations",
+      "Client Success"
+    ]
+  },
+  {
     "id": "s02",
     "name": "GitHub",
     "url": "https://github.com",
@@ -68,16 +78,6 @@
     "name": "Loom",
     "url": "https://loom.com",
     "categories": [
-      "Operations",
-      "Client Success"
-    ]
-  },
-  {
-    "id": "s09",
-    "name": "Asana",
-    "url": "https://app.asana.com",
-    "categories": [
-      "Product",
       "Operations",
       "Client Success"
     ]
