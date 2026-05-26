@@ -115,6 +115,17 @@
     ]
   },
   {
+    "id": "s15",
+    "name": "Slack",
+    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
+    "categories": [
+      "Operations",
+      "Client Success",
+      "Product",
+      "Growth"
+    ]
+  },
+  {
     "id": "s03",
     "name": "Figma",
     "url": "https://figma.com",
@@ -142,17 +153,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s15",
-    "name": "Slack",
-    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
-    "categories": [
-      "Operations",
-      "Client Success",
-      "Product",
-      "Growth"
-    ]
   },
   {
     "id": "s16",
