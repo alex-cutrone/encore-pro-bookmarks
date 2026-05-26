@@ -266,10 +266,10 @@ const API_URL       = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REP
 const CONFIG_API    = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${CONFIG_FILE}`;
 const PASS_KEY      = 'ep_admin_unlocked';
 const CATEGORIES    = ['Product', 'Growth', 'Operations', 'Client Success'];
-const DEFAULT_SECTIONS = ['Google Workspace', 'crowdEngage', 'Documentation', 'HR & Operations', 'Project Management', 'General'];
+
 
 let bookmarks    = [];
-let sections     = [...DEFAULT_SECTIONS];
+let sections     = []; // populated from bookmarks.json on load
 let fileSha      = null;
 let editingId    = null;
 let activeTab    = 'all';
@@ -332,9 +332,10 @@ async function fetchBookmarks() {
     if (!res.ok) throw new Error();
     const data = await res.json();
     bookmarks = data;
-    // Extract any sections found in data that aren't in defaults
-    const found = [...new Set(bookmarks.map(b=>b.section).filter(Boolean))];
-    found.forEach(s=>{ if(!sections.includes(s)) sections.push(s); });
+    // Derive section order purely from bookmarks.json — no hardcoded defaults
+    sections = [...new Set(bookmarks.map(b=>b.section).filter(Boolean))];
+    // Ensure General exists if any bookmark has no section
+    if (bookmarks.some(b=>!b.section) && !sections.includes('General')) sections.push('General');
   } catch {
     bookmarks = [];
   }
