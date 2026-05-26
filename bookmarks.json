@@ -8,6 +8,15 @@
     ]
   },
   {
+    "id": "s04",
+    "name": "Google Drive",
+    "url": "https://drive.google.com",
+    "categories": [
+      "Operations",
+      "Client Success"
+    ]
+  },
+  {
     "id": "s01",
     "name": "HubSpot",
     "url": "https://app.hubspot.com",
@@ -22,15 +31,6 @@
     "url": "https://figma.com",
     "categories": [
       "Product"
-    ]
-  },
-  {
-    "id": "s04",
-    "name": "Google Drive",
-    "url": "https://drive.google.com",
-    "categories": [
-      "Operations",
-      "Client Success"
     ]
   },
   {
