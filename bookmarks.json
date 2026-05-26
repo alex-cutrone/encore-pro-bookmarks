@@ -93,7 +93,10 @@
     "name": "Bamboo",
     "url": "https://activitystream.bamboohr.com/login.php",
     "categories": [
-      "Operations"
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
     ]
   },
   {
