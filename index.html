@@ -255,6 +255,10 @@ function resolvedIcon(b) {
 }
 function fallbackHtml() { return `<span class="fallback">✦</span>`; }
 function isGlobe(img) {
+  // Google returns its generic globe at exactly 16x16 regardless of &sz=64.
+  // Any real favicon served at sz=64 will be at least 32x32.
+  // Belt-and-suspenders: also check pixel color as before.
+  if (img.naturalWidth <= 16 && img.naturalHeight <= 16) return true;
   try {
     const c = document.createElement('canvas');
     c.width = c.height = img.naturalWidth || 16;
