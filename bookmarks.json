@@ -1,0 +1,90 @@
+[
+  {
+    "id": "seed001",
+    "name": "HubSpot",
+    "url": "app.hubspot.com",
+    "categories": [
+      "Client Success",
+      "Growth"
+    ]
+  },
+  {
+    "id": "seed002",
+    "name": "Google Analytics",
+    "url": "analytics.google.com",
+    "categories": [
+      "Growth"
+    ]
+  },
+  {
+    "id": "seed003",
+    "name": "Notion",
+    "url": "notion.so",
+    "categories": [
+      "Operations",
+      "Product"
+    ]
+  },
+  {
+    "id": "seed004",
+    "name": "Slack",
+    "url": "slack.com",
+    "categories": [
+      "Operations",
+      "Client Success",
+      "Product",
+      "Growth"
+    ]
+  },
+  {
+    "id": "seed005",
+    "name": "GitHub",
+    "url": "github.com",
+    "categories": [
+      "Product"
+    ]
+  },
+  {
+    "id": "seed006",
+    "name": "Figma",
+    "url": "figma.com",
+    "categories": [
+      "Product"
+    ]
+  },
+  {
+    "id": "seed007",
+    "name": "Google Drive",
+    "url": "drive.google.com",
+    "categories": [
+      "Operations",
+      "Client Success"
+    ]
+  },
+  {
+    "id": "seed008",
+    "name": "Linear",
+    "url": "linear.app",
+    "categories": [
+      "Product"
+    ]
+  },
+  {
+    "id": "seed009",
+    "name": "Loom",
+    "url": "loom.com",
+    "categories": [
+      "Operations",
+      "Client Success"
+    ]
+  },
+  {
+    "id": "seed010",
+    "name": "Confluence",
+    "url": "confluence.atlassian.com",
+    "categories": [
+      "Operations",
+      "Product"
+    ]
+  }
+]
