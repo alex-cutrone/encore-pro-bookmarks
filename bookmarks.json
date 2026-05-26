@@ -89,6 +89,18 @@
     "customIcon": "https://www.propelauth.com/imgs/mark.svg"
   },
   {
+    "id": "s19",
+    "name": "Knowledge Base",
+    "url": "https://support.activitystream.com/",
+    "categories": [
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png"
+  },
+  {
     "id": "s11",
     "name": "cE Admin",
     "url": "https://app.crowdnengage.com/admin",
@@ -181,18 +193,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s19",
-    "name": "Knowledge Base",
-    "url": "https://support.activitystream.com/",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png"
   },
   {
     "id": "s20",
