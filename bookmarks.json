@@ -111,6 +111,17 @@
     "customIcon": "https://www.bloovi.nl/frontend/files/profiles/avatars/source/5419_yesplan.jpg"
   },
   {
+    "id": "mhlsev6t",
+    "name": "Yesplan Manual",
+    "url": "https://manual.yesplan.be/",
+    "categories": [
+      "Product",
+      "Growth",
+      "Client Success"
+    ],
+    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
+  },
+  {
     "id": "s23",
     "name": "Wiki",
     "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
@@ -139,17 +150,6 @@
       "Operations",
       "Product"
     ]
-  },
-  {
-    "id": "mhlsev6t",
-    "name": "Yesplan Manual",
-    "url": "https://manual.yesplan.be/",
-    "categories": [
-      "Product",
-      "Growth",
-      "Client Success"
-    ],
-    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
   },
   {
     "id": "s17",
