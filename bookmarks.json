@@ -245,5 +245,16 @@
     "categories": [
       "Growth"
     ]
+  },
+  {
+    "id": "mhlsev6t",
+    "name": "Yesplan Manual",
+    "url": "https://manual.yesplan.be/",
+    "categories": [
+      "Product",
+      "Growth",
+      "Client Success"
+    ],
+    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
   }
 ]
