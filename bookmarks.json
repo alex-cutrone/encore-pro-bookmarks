@@ -100,6 +100,16 @@
     ]
   },
   {
+    "id": "s11",
+    "name": "cE Admin",
+    "url": "https://app.crowdnengage.com/admin",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
+  },
+  {
     "id": "s18",
     "name": "crowdEngage",
     "url": "https://crowdengage.activitystream.com/",
@@ -150,16 +160,6 @@
       "Client Success",
       "Product"
     ]
-  },
-  {
-    "id": "s11",
-    "name": "cE Admin",
-    "url": "https://app.crowdnengage.com/admin",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
   },
   {
     "id": "s14",
