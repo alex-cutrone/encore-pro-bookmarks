@@ -48,6 +48,16 @@
     "customIcon": "https://app.encorepro.com/favicon.ico"
   },
   {
+    "id": "s12",
+    "name": "Echange",
+    "url": "https://eu.exchange.activitystream.com/admin",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://eu.exchange.activitystream.com/static/favicon.ico"
+  },
+  {
     "id": "s09",
     "name": "Asana",
     "url": "https://app.asana.com",
@@ -102,16 +112,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s12",
-    "name": "Echange",
-    "url": "https://eu.exchange.activitystream.com/admin",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://eu.exchange.activitystream.com/static/favicon.ico"
   },
   {
     "id": "s13",
