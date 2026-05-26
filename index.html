@@ -5,33 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encore Pro · Internal Links</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* ── Reset & tokens ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #0e0f11;
-      --surface:     #16181c;
-      --surface-2:   #1e2026;
-      --border:      rgba(255,255,255,.08);
-      --border-mid:  rgba(255,255,255,.13);
-      --accent:      #f0e6c8;      /* warm parchment — matches Encore Pro gold */
-      --accent-dim:  rgba(240,230,200,.12);
-      --accent-glow: rgba(240,230,200,.06);
-      --text-1:      #f2f0eb;
-      --text-2:      #8c8a84;
-      --text-3:      #5a5855;
-      --red:         #e05a4b;
-      --green:       #4bba7e;
-      --mono:        'DM Mono', monospace;
-      --sans:        'DM Sans', sans-serif;
-      --r:           6px;
-      --r-lg:        10px;
+      /* Encore Pro brand palette — exact spec */
+      --green:       #212E1D;   /* Encore Pro Green — leads */
+      --green-2:     #374931;   /* secondary green */
+      --green-3:     #536B4B;   /* mid green for borders on green bg */
+      --gold:        #CD9B49;   /* Encore Pro Gold — accents */
+      --gold-light:  #DCB26D;
+      --cream:       #FFF8EC;   /* Encore Pro White — supports */
+      --cream-2:     #ECD5B0;   /* warm secondary surface */
+      --cream-3:     #F5F0E4;   /* card background on cream page */
+      --error:       #582727;   /* burgundy — error states only */
+
+      /* Semantic tokens */
+      --bg:          var(--cream);
+      --surface:     #ffffff;
+      --surface-2:   var(--cream-3);
+      --border:      rgba(33,46,29,.12);
+      --border-mid:  rgba(33,46,29,.22);
+      --border-strong: rgba(33,46,29,.35);
+      --text-1:      var(--green);
+      --text-2:      #4a5c44;
+      --text-3:      #7a8c74;
+
+      --serif:  'Nanum Myeongjo', Georgia, serif;
+      --sans:   'Albert Sans', system-ui, sans-serif;
+      --r:      6px;
+      --r-lg:   10px;
     }
 
     html, body {
-      height: 100%;
+      min-height: 100%;
       background: var(--bg);
       color: var(--text-1);
       font-family: var(--sans);
@@ -39,22 +47,17 @@
       line-height: 1.5;
     }
 
-    /* ── Layout ─────────────────────────────────────────────── */
-    .shell {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    .shell { display: flex; flex-direction: column; min-height: 100vh; }
 
-    /* ── Header ─────────────────────────────────────────────── */
+    /* ── Header ─────────────────────────────────────────── */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 28px;
-      height: 56px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
+      height: 58px;
+      background: var(--green);
+      border-bottom: 1px solid var(--green-2);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -64,37 +67,44 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-family: var(--mono);
-      font-size: 13px;
-      letter-spacing: .04em;
-      color: var(--accent);
       text-decoration: none;
     }
 
-    .logo-mark {
-      width: 22px;
-      height: 22px;
-      background: var(--accent);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* Encore Pro E emblem — 4-pointed star / diamond lattice approximation */
+    .logo-emblem {
+      width: 26px;
+      height: 26px;
       flex-shrink: 0;
     }
 
-    .logo-mark svg { width: 14px; height: 14px; }
+    .logo-wordmark {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: .01em;
+    }
 
-    .logo-label { color: var(--text-1); }
-    .logo-sep { color: var(--text-3); margin: 0 2px; }
-    .logo-sub { color: var(--text-2); }
+    .logo-sep {
+      color: var(--green-3);
+      margin: 0 4px;
+      font-weight: 300;
+    }
 
-    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .logo-sub {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,248,236,.55);
+    }
+
+    .header-right { display: flex; align-items: center; gap: 8px; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 12px;
+      padding: 7px 14px;
       border-radius: var(--r);
       font-family: var(--sans);
       font-size: 13px;
@@ -105,72 +115,93 @@
       line-height: 1;
     }
 
-    .btn-ghost {
+    .btn-ghost-light {
+      background: transparent;
+      color: rgba(255,248,236,.7);
+      border-color: rgba(255,248,236,.2);
+    }
+    .btn-ghost-light:hover {
+      background: rgba(255,248,236,.1);
+      color: var(--cream);
+      border-color: rgba(255,248,236,.35);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--cream);
+      border-color: var(--green);
+      font-weight: 600;
+    }
+    .btn-green:hover { background: var(--green-2); border-color: var(--green-2); }
+
+    .btn-outline {
       background: transparent;
       color: var(--text-2);
-      border-color: var(--border);
+      border-color: var(--border-mid);
     }
-    .btn-ghost:hover { background: var(--surface); color: var(--text-1); border-color: var(--border-mid); }
+    .btn-outline:hover { background: var(--surface-2); color: var(--text-1); border-color: var(--border-strong); }
 
-    .btn-accent {
-      background: var(--accent);
-      color: #0e0f11;
-      border-color: var(--accent);
-    }
-    .btn-accent:hover { opacity: .88; }
-
-    .btn-danger {
+    .btn-danger-outline {
       background: transparent;
-      color: var(--red);
-      border-color: rgba(224,90,75,.3);
+      color: var(--error);
+      border-color: rgba(88,39,39,.3);
     }
-    .btn-danger:hover { background: rgba(224,90,75,.1); }
+    .btn-danger-outline:hover { background: rgba(88,39,39,.06); }
 
-    /* ── Main content ───────────────────────────────────────── */
+    /* ── Main ───────────────────────────────────────────── */
     main {
       flex: 1;
-      padding: 32px 28px;
-      max-width: 1100px;
+      padding: 36px 28px;
+      max-width: 1120px;
       width: 100%;
       margin: 0 auto;
     }
 
-    /* ── Category tabs ──────────────────────────────────────── */
+    /* ── Category tabs ──────────────────────────────────── */
     .tabs {
       display: flex;
       gap: 2px;
-      background: var(--surface);
+      background: rgba(33,46,29,.07);
       padding: 3px;
       border-radius: var(--r-lg);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-mid);
       width: fit-content;
       margin-bottom: 32px;
     }
 
     .tab {
-      padding: 7px 16px;
+      padding: 8px 18px;
       border-radius: 7px;
       font-size: 13px;
       font-weight: 500;
       color: var(--text-2);
       cursor: pointer;
       transition: all .15s;
-      border: none;
+      border: 1px solid transparent;
       background: transparent;
       font-family: var(--sans);
       white-space: nowrap;
     }
-    .tab:hover { color: var(--text-1); }
+    .tab:hover { color: var(--green); background: rgba(33,46,29,.05); }
     .tab.active {
-      background: var(--surface-2);
-      color: var(--accent);
-      border: 1px solid var(--border-mid);
+      background: var(--green);
+      color: var(--cream);
+      border-color: var(--green);
+      box-shadow: 0 1px 4px rgba(33,46,29,.2);
     }
 
-    /* ── Bookmark grid ──────────────────────────────────────── */
+    /* ── Bookmark grid ──────────────────────────────────── */
     .bookmark-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 12px;
     }
 
@@ -180,23 +211,24 @@
       gap: 12px;
       padding: 14px 16px;
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-mid);
       border-radius: var(--r-lg);
       text-decoration: none;
       color: var(--text-1);
       transition: all .15s;
       min-width: 0;
+      box-shadow: 0 1px 3px rgba(33,46,29,.06);
     }
     .bookmark-card:hover {
-      border-color: var(--border-mid);
-      background: var(--surface-2);
+      border-color: var(--green);
+      box-shadow: 0 3px 12px rgba(33,46,29,.12);
       transform: translateY(-1px);
     }
 
     .bookmark-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
       background: var(--surface-2);
       border: 1px solid var(--border);
       flex-shrink: 0;
@@ -205,54 +237,57 @@
       justify-content: center;
       overflow: hidden;
     }
-
-    .bookmark-icon img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-    }
-
-    .bookmark-icon .fallback-letter {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
+    .bookmark-icon img { width: 24px; height: 24px; object-fit: contain; }
+    .bookmark-icon .fl {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
       text-transform: uppercase;
     }
 
     .bookmark-info { min-width: 0; flex: 1; }
     .bookmark-name {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 13px;
+      color: var(--text-1);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .bookmark-url {
-      font-family: var(--mono);
       font-size: 11px;
+      font-family: monospace;
       color: var(--text-3);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 1px;
+      margin-top: 2px;
     }
+
+    .bookmark-arrow {
+      flex-shrink: 0;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity .15s;
+    }
+    .bookmark-card:hover .bookmark-arrow { opacity: 1; }
 
     .empty-state {
       text-align: center;
-      padding: 60px 20px;
+      padding: 72px 20px;
       color: var(--text-3);
       font-size: 13px;
       grid-column: 1/-1;
     }
-    .empty-state strong { display: block; color: var(--text-2); margin-bottom: 6px; font-size: 15px; }
+    .empty-state strong { display: block; color: var(--text-2); margin-bottom: 6px; font-size: 15px; font-family: var(--serif); }
 
-    /* ── Admin panel ────────────────────────────────────────── */
+    /* ── Admin panel ────────────────────────────────────── */
     .admin-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,.6);
-      backdrop-filter: blur(4px);
+      background: rgba(33,46,29,.45);
+      backdrop-filter: blur(3px);
       z-index: 200;
       display: none;
       align-items: flex-start;
@@ -264,7 +299,7 @@
       width: 520px;
       max-width: 100vw;
       height: 100vh;
-      background: var(--surface);
+      background: var(--cream);
       border-left: 1px solid var(--border-mid);
       display: flex;
       flex-direction: column;
@@ -273,7 +308,7 @@
     }
 
     @keyframes slideIn {
-      from { transform: translateX(30px); opacity: 0; }
+      from { transform: translateX(24px); opacity: 0; }
       to   { transform: translateX(0);    opacity: 1; }
     }
 
@@ -281,147 +316,177 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-mid);
+      background: var(--green);
       flex-shrink: 0;
     }
 
     .admin-title {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .08em;
-      color: var(--text-2);
-      text-transform: uppercase;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: .04em;
     }
 
     .admin-body {
       flex: 1;
       overflow-y: auto;
-      padding: 20px 24px;
+      padding: 22px 24px;
+      background: var(--cream);
     }
 
-    /* ── Form ───────────────────────────────────────────────── */
-    .form-section {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
+    /* ── Form ───────────────────────────────────────────── */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border-mid);
       border-radius: var(--r-lg);
       padding: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 1px 4px rgba(33,46,29,.06);
     }
 
-    .form-section-title {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 14px;
+    .form-card-title {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .form-row { margin-bottom: 12px; }
+    .form-row { margin-bottom: 13px; }
 
     label {
       display: block;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-2);
       margin-bottom: 5px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
     }
 
-    input[type="text"],
-    input[type="url"],
-    select {
+    input[type="text"] {
       width: 100%;
-      padding: 8px 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      padding: 9px 12px;
+      background: var(--cream);
+      border: 1px solid var(--border-mid);
       border-radius: var(--r);
       color: var(--text-1);
       font-family: var(--sans);
       font-size: 13px;
       outline: none;
-      transition: border-color .15s;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input[type="text"]:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(33,46,29,.08);
     }
 
-    input[type="text"]:focus,
-    input[type="url"]:focus,
-    select:focus { border-color: var(--accent); }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 6px; }
 
-    select option { background: #1e2026; }
-
-    .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .checkbox-label {
+    .cat-toggle {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       cursor: pointer;
-      padding: 5px 10px;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      padding: 5px 11px;
+      background: var(--cream);
+      border: 1px solid var(--border-mid);
       border-radius: 20px;
       font-size: 12px;
+      font-weight: 500;
       color: var(--text-2);
       transition: all .15s;
       user-select: none;
     }
-
-    .checkbox-label:hover { border-color: var(--border-mid); color: var(--text-1); }
-    .checkbox-label.checked { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
-
-    .checkbox-label input { display: none; }
+    .cat-toggle:hover { border-color: var(--green); color: var(--green); }
+    .cat-toggle.checked {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--cream);
+    }
+    .cat-toggle input { display: none; }
 
     .icon-preview {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       margin-top: 8px;
     }
-
     .icon-preview-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--cream-3);
+      border: 1px solid var(--border-mid);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
-
-    .icon-preview-box img { width: 24px; height: 24px; object-fit: contain; }
+    .icon-preview-box img { width: 26px; height: 26px; object-fit: contain; }
     .icon-preview-status { font-size: 12px; color: var(--text-3); }
 
-    .form-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: 16px;
+    .form-actions { display: flex; gap: 8px; margin-top: 18px; }
+
+    /* ── Admin bookmark list ────────────────────────────── */
+    .section-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 12px;
     }
 
-    /* ── Bookmarks list in admin ────────────────────────────── */
-    .bookmark-list-item {
+    .admin-filter {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .filter-chip {
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--sans);
+      border: 1px solid var(--border-mid);
+      background: transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: all .15s;
+      letter-spacing: .02em;
+    }
+    .filter-chip.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--cream);
+    }
+
+    .bm-row {
       display: flex;
       align-items: center;
       gap: 10px;
       padding: 10px 12px;
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r);
       margin-bottom: 6px;
       transition: border-color .15s;
     }
-    .bookmark-list-item:hover { border-color: var(--border-mid); }
+    .bm-row:hover { border-color: var(--border-mid); }
 
-    .bm-icon-sm {
-      width: 26px;
-      height: 26px;
-      border-radius: 5px;
-      background: var(--surface);
+    .bm-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--cream-3);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -429,33 +494,49 @@
       overflow: hidden;
       flex-shrink: 0;
     }
-    .bm-icon-sm img { width: 18px; height: 18px; object-fit: contain; }
-    .bm-icon-sm .fl { font-family: var(--mono); font-size: 11px; color: var(--accent); text-transform: uppercase; }
-
-    .bm-info { flex: 1; min-width: 0; }
-    .bm-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .bm-meta { font-size: 11px; font-family: var(--mono); color: var(--text-3); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-    .bm-cats {
-      display: flex;
-      gap: 4px;
-      flex-shrink: 0;
+    .bm-icon img { width: 18px; height: 18px; object-fit: contain; }
+    .bm-icon .fl {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
     }
 
-    .cat-pill {
+    .bm-info { flex: 1; min-width: 0; }
+    .bm-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bm-domain {
+      font-size: 11px;
+      color: var(--text-3);
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .bm-cats { display: flex; gap: 3px; flex-shrink: 0; }
+    .cat-pip {
       font-size: 10px;
-      font-family: var(--mono);
+      font-weight: 600;
       padding: 2px 7px;
       border-radius: 20px;
+      background: rgba(33,46,29,.07);
+      color: var(--text-2);
       border: 1px solid var(--border);
-      color: var(--text-3);
+      letter-spacing: .01em;
     }
 
     .bm-actions { display: flex; gap: 4px; flex-shrink: 0; }
-
     .icon-btn {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 5px;
       background: transparent;
       border: 1px solid transparent;
@@ -466,32 +547,20 @@
       color: var(--text-3);
       transition: all .15s;
     }
-    .icon-btn:hover { background: var(--surface); border-color: var(--border); color: var(--text-1); }
-    .icon-btn.del:hover { color: var(--red); border-color: rgba(224,90,75,.3); }
+    .icon-btn:hover { background: var(--surface-2); border-color: var(--border); color: var(--text-1); }
+    .icon-btn.del:hover { color: var(--error); border-color: rgba(88,39,39,.25); background: rgba(88,39,39,.05); }
 
-    .admin-filter {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
+    .divider { border: none; border-top: 1px solid var(--border-mid); margin: 22px 0; }
+
+    /* ── Gold star motif (brand texture accent) ─────────── */
+    .star-accent {
+      color: var(--gold);
+      font-size: 10px;
+      margin-right: 4px;
+      vertical-align: middle;
     }
 
-    .filter-chip {
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-family: var(--mono);
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-3);
-      cursor: pointer;
-      transition: all .15s;
-    }
-    .filter-chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
-
-    .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
-
-    /* ── Toasts ─────────────────────────────────────────────── */
+    /* ── Toast ──────────────────────────────────────────── */
     #toast-container {
       position: fixed;
       bottom: 20px;
@@ -501,62 +570,43 @@
       flex-direction: column;
       gap: 6px;
     }
-
     .toast {
       padding: 10px 16px;
-      background: var(--surface-2);
-      border: 1px solid var(--border-mid);
+      background: var(--green);
+      border: 1px solid var(--green-2);
       border-radius: var(--r);
       font-size: 13px;
-      color: var(--text-1);
+      font-weight: 500;
+      color: var(--cream);
       animation: toastIn .2s ease;
-      font-family: var(--sans);
     }
-
     @keyframes toastIn {
       from { transform: translateY(8px); opacity: 0; }
       to   { transform: translateY(0);   opacity: 1; }
-    }
-
-    /* ── Misc ───────────────────────────────────────────────── */
-    .section-heading {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 14px;
     }
 
     @media (max-width: 600px) {
       .admin-panel { width: 100vw; }
       main { padding: 20px 16px; }
       header { padding: 0 16px; }
+      .tabs { flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
 <div class="shell">
 
-  <!-- ── Header ────────────────────────────────────────── -->
   <header>
     <a href="/" class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 14 14" fill="none">
-          <rect x="1" y="1" width="5" height="5" rx="1" fill="#0e0f11"/>
-          <rect x="8" y="1" width="5" height="5" rx="1" fill="#0e0f11"/>
-          <rect x="1" y="8" width="5" height="5" rx="1" fill="#0e0f11"/>
-          <rect x="8" y="8" width="5" height="5" rx="1" fill="#0e0f11"/>
-        </svg>
-      </div>
+      <span style="color:#CD9B49;font-size:20px;line-height:1;">✦</span>
       <span>
-        <span class="logo-label">Encore Pro</span>
-        <span class="logo-sep"> / </span>
+        <span class="logo-wordmark">Encore Pro</span>
+        <span class="logo-sep">/</span>
         <span class="logo-sub">Internal Links</span>
       </span>
     </a>
-    <div class="header-actions">
-      <button class="btn btn-ghost" onclick="openAdmin()">
+    <div class="header-right">
+      <button class="btn btn-ghost-light" onclick="openAdmin()">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
           <circle cx="8" cy="8" r="2.5"/>
           <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M11.54 3.05l-1.41 1.41M4.46 11.54l-1.41 1.41"/>
@@ -566,7 +616,6 @@
     </div>
   </header>
 
-  <!-- ── Main ──────────────────────────────────────────── -->
   <main>
     <div class="tabs" id="tabs"></div>
     <div class="bookmark-grid" id="bookmark-grid"></div>
@@ -574,19 +623,19 @@
 
 </div>
 
-<!-- ── Admin overlay ──────────────────────────────────── -->
+<!-- Admin overlay -->
 <div class="admin-overlay" id="admin-overlay" onclick="handleOverlayClick(event)">
   <div class="admin-panel">
+
     <div class="admin-header">
-      <span class="admin-title">// Manage Bookmarks</span>
-      <button class="btn btn-ghost" onclick="closeAdmin()">Close</button>
+      <span class="admin-title">Manage Bookmarks</span>
+      <button class="btn btn-ghost-light" onclick="closeAdmin()" style="padding:5px 10px;font-size:12px;">✕ Close</button>
     </div>
 
     <div class="admin-body">
 
-      <!-- Add / Edit form -->
-      <div class="form-section">
-        <div class="form-section-title" id="form-section-title">Add Bookmark</div>
+      <div class="form-card">
+        <div class="form-card-title" id="form-section-title">Add Bookmark</div>
 
         <div class="form-row">
           <label>Name</label>
@@ -607,22 +656,24 @@
           <label>Icon preview</label>
           <div class="icon-preview">
             <div class="icon-preview-box" id="icon-preview-box">
-              <span style="font-size:18px;">·</span>
+              <span style="font-size:18px;color:var(--border-mid)">·</span>
             </div>
             <span class="icon-preview-status" id="icon-preview-status">Enter a URL above</span>
           </div>
         </div>
 
         <div class="form-actions">
-          <button class="btn btn-accent" onclick="saveBookmark()">Save</button>
-          <button class="btn btn-ghost" onclick="resetForm()" id="cancel-btn" style="display:none;">Cancel</button>
+          <button class="btn btn-green" onclick="saveBookmark()">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l4 4 6-7"/></svg>
+            Save
+          </button>
+          <button class="btn btn-outline" onclick="resetForm()" id="cancel-btn" style="display:none;">Cancel</button>
         </div>
       </div>
 
       <hr class="divider" />
 
-      <!-- Bookmarks list -->
-      <div class="section-heading">All Bookmarks</div>
+      <div class="section-label">All Bookmarks</div>
 
       <div class="admin-filter" id="admin-filter"></div>
 
@@ -635,144 +686,122 @@
 <div id="toast-container"></div>
 
 <script>
-// ── State ────────────────────────────────────────────────────
 const CATEGORIES = ['Product', 'Growth', 'Operations', 'Client Success'];
-const STORAGE_KEY = 'ep_bookmarks_v1';
+const STORAGE_KEY = 'ep_bookmarks_v2';
 
 let bookmarks = [];
 let editingId = null;
 let activeTab = 'all';
 let adminFilter = 'all';
 
-// ── Persistence ─────────────────────────────────────────────
 function load() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    bookmarks = raw ? JSON.parse(raw) : getSeedData();
-  } catch {
-    bookmarks = getSeedData();
-  }
+    bookmarks = raw ? JSON.parse(raw) : seeds();
+  } catch { bookmarks = seeds(); }
 }
 
-function save() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks));
-}
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks)); }
 
-function getSeedData() {
+function seeds() {
   return [
-    { id: uid(), name: 'HubSpot', url: 'app.hubspot.com', categories: ['Client Success', 'Growth'] },
-    { id: uid(), name: 'Google Analytics', url: 'analytics.google.com', categories: ['Growth'] },
-    { id: uid(), name: 'Notion', url: 'notion.so', categories: ['Operations', 'Product'] },
-    { id: uid(), name: 'Slack', url: 'slack.com', categories: ['Operations', 'Client Success', 'Product', 'Growth'] },
-    { id: uid(), name: 'GitHub', url: 'github.com', categories: ['Product'] },
-    { id: uid(), name: 'Figma', url: 'figma.com', categories: ['Product'] },
-    { id: uid(), name: 'Google Drive', url: 'drive.google.com', categories: ['Operations', 'Client Success'] },
-    { id: uid(), name: 'Linear', url: 'linear.app', categories: ['Product'] },
+    { id: uid(), name: 'HubSpot',         url: 'app.hubspot.com',        categories: ['Client Success', 'Growth'] },
+    { id: uid(), name: 'Google Analytics', url: 'analytics.google.com',  categories: ['Growth'] },
+    { id: uid(), name: 'Notion',           url: 'notion.so',              categories: ['Operations', 'Product'] },
+    { id: uid(), name: 'Slack',            url: 'slack.com',              categories: ['Operations', 'Client Success', 'Product', 'Growth'] },
+    { id: uid(), name: 'GitHub',           url: 'github.com',             categories: ['Product'] },
+    { id: uid(), name: 'Figma',            url: 'figma.com',              categories: ['Product'] },
+    { id: uid(), name: 'Google Drive',     url: 'drive.google.com',       categories: ['Operations', 'Client Success'] },
+    { id: uid(), name: 'Linear',           url: 'linear.app',             categories: ['Product'] },
+    { id: uid(), name: 'Loom',             url: 'loom.com',               categories: ['Operations', 'Client Success'] },
+    { id: uid(), name: 'Confluence',       url: 'confluence.atlassian.com', categories: ['Operations', 'Product'] },
   ];
 }
 
-function uid() {
-  return Math.random().toString(36).slice(2, 10);
-}
+function uid() { return Math.random().toString(36).slice(2, 10); }
 
-// ── Icon helpers ─────────────────────────────────────────────
 function getDomain(url) {
-  let u = url.trim();
-  u = u.replace(/^https?:\/\//i, '');
-  u = u.split('/')[0];
-  return u;
+  let u = url.trim().replace(/^https?:\/\//i, '');
+  return u.split('/')[0];
 }
 
 function iconUrl(url) {
-  const domain = getDomain(url);
-  if (!domain) return null;
-  return `https://img.logo.dev/${domain}?token=pk_TsYdSk3NQv67_en7RUl5tA&format=png&size=64`;
+  const d = getDomain(url);
+  return d ? `https://www.google.com/s2/favicons?domain=${d}&sz=64` : null;
 }
 
-// ── Render main ──────────────────────────────────────────────
+/* ── Render ───────────────────────────────────────────── */
 function renderTabs() {
   const tabs = document.getElementById('tabs');
-  const all = ['all', ...CATEGORIES];
-  tabs.innerHTML = all.map(cat => `
-    <button class="tab ${activeTab === cat ? 'active' : ''}"
-            onclick="setTab('${cat}')">
+  tabs.innerHTML = ['all', ...CATEGORIES].map(cat => `
+    <button class="tab ${activeTab === cat ? 'active' : ''}" onclick="setTab('${cat}')">
       ${cat === 'all' ? 'All' : cat}
     </button>
   `).join('');
 }
 
-function setTab(cat) {
-  activeTab = cat;
-  renderTabs();
-  renderGrid();
-}
+function setTab(cat) { activeTab = cat; renderTabs(); renderGrid(); }
 
 function renderGrid() {
   const grid = document.getElementById('bookmark-grid');
-  let filtered = activeTab === 'all'
-    ? bookmarks
-    : bookmarks.filter(b => b.categories.includes(activeTab));
+  const list = activeTab === 'all' ? bookmarks : bookmarks.filter(b => b.categories.includes(activeTab));
 
-  if (!filtered.length) {
-    grid.innerHTML = `<div class="empty-state"><strong>No bookmarks here yet.</strong>Open Admin to add some.</div>`;
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty-state"><strong>Nothing here yet.</strong>Open Admin to add bookmarks.</div>`;
     return;
   }
 
-  grid.innerHTML = filtered.map(b => {
+  grid.innerHTML = list.map(b => {
     const icon = iconUrl(b.url);
     const letter = b.name[0];
-    const fullUrl = b.url.startsWith('http') ? b.url : 'https://' + b.url;
+    const href = b.url.startsWith('http') ? b.url : 'https://' + b.url;
     return `
-      <a class="bookmark-card" href="${fullUrl}" target="_blank" rel="noopener">
+      <a class="bookmark-card" href="${href}" target="_blank" rel="noopener">
         <div class="bookmark-icon">
           ${icon
-            ? `<img src="${icon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="fallback-letter" style="display:none">${letter}</span>`
-            : `<span class="fallback-letter">${letter}</span>`
-          }
+            ? `<img src="${icon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="fl" style="display:none">${letter}</span>`
+            : `<span class="fl">${letter}</span>`}
         </div>
         <div class="bookmark-info">
           <div class="bookmark-name">${esc(b.name)}</div>
           <div class="bookmark-url">${esc(getDomain(b.url))}</div>
         </div>
-      </a>
-    `;
+        <svg class="bookmark-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </a>`;
   }).join('');
 }
 
-// ── Admin ────────────────────────────────────────────────────
+/* ── Admin ────────────────────────────────────────────── */
 function openAdmin() {
   document.getElementById('admin-overlay').classList.add('open');
-  buildCategoryCheckboxes();
+  buildCatBoxes();
   renderAdminFilter();
   renderAdminList();
 }
-
 function closeAdmin() {
   document.getElementById('admin-overlay').classList.remove('open');
   resetForm();
 }
-
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('admin-overlay')) closeAdmin();
 }
 
-function buildCategoryCheckboxes(selectedCats = []) {
-  const box = document.getElementById('cat-checkboxes');
-  box.innerHTML = CATEGORIES.map(cat => {
-    const checked = selectedCats.includes(cat);
+function buildCatBoxes(sel = []) {
+  document.getElementById('cat-checkboxes').innerHTML = CATEGORIES.map(cat => {
+    const on = sel.includes(cat);
     return `
-      <label class="checkbox-label ${checked ? 'checked' : ''}" onclick="toggleCat(this)">
-        <input type="checkbox" value="${cat}" ${checked ? 'checked' : ''} />
-        ${cat}
-      </label>
-    `;
+      <label class="cat-toggle ${on ? 'checked' : ''}" onclick="toggleCat(this)">
+        <input type="checkbox" value="${cat}" ${on ? 'checked' : ''} />
+        ✦ ${cat}
+      </label>`;
   }).join('');
 }
 
 function toggleCat(label) {
   setTimeout(() => {
-    const cb = label.querySelector('input');
-    label.classList.toggle('checked', cb.checked);
+    label.classList.toggle('checked', label.querySelector('input').checked);
   }, 0);
 }
 
@@ -781,27 +810,17 @@ function getSelectedCats() {
 }
 
 function renderAdminFilter() {
-  const f = document.getElementById('admin-filter');
-  const all = ['all', ...CATEGORIES];
-  f.innerHTML = all.map(cat => `
-    <button class="filter-chip ${adminFilter === cat ? 'active' : ''}"
-            onclick="setAdminFilter('${cat}')">
+  document.getElementById('admin-filter').innerHTML = ['all', ...CATEGORIES].map(cat => `
+    <button class="filter-chip ${adminFilter === cat ? 'active' : ''}" onclick="setAdminFilter('${cat}')">
       ${cat === 'all' ? 'All' : cat}
-    </button>
-  `).join('');
+    </button>`).join('');
 }
 
-function setAdminFilter(cat) {
-  adminFilter = cat;
-  renderAdminFilter();
-  renderAdminList();
-}
+function setAdminFilter(cat) { adminFilter = cat; renderAdminFilter(); renderAdminList(); }
 
 function renderAdminList() {
   const list = document.getElementById('admin-bookmark-list');
-  let filtered = adminFilter === 'all'
-    ? bookmarks
-    : bookmarks.filter(b => b.categories.includes(adminFilter));
+  const filtered = adminFilter === 'all' ? bookmarks : bookmarks.filter(b => b.categories.includes(adminFilter));
 
   if (!filtered.length) {
     list.innerHTML = `<div style="color:var(--text-3);font-size:13px;padding:16px 0;">No bookmarks found.</div>`;
@@ -811,67 +830,59 @@ function renderAdminList() {
   list.innerHTML = filtered.map(b => {
     const icon = iconUrl(b.url);
     const letter = b.name[0];
-    const catPills = b.categories.map(c => `<span class="cat-pill">${c}</span>`).join('');
+    const cats = b.categories.map(c => `<span class="cat-pip">${c}</span>`).join('');
     return `
-      <div class="bookmark-list-item">
-        <div class="bm-icon-sm">
+      <div class="bm-row">
+        <div class="bm-icon">
           ${icon
             ? `<img src="${icon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="fl" style="display:none">${letter}</span>`
-            : `<span class="fl">${letter}</span>`
-          }
+            : `<span class="fl">${letter}</span>`}
         </div>
         <div class="bm-info">
           <div class="bm-name">${esc(b.name)}</div>
-          <div class="bm-meta">${esc(getDomain(b.url))}</div>
+          <div class="bm-domain">${esc(getDomain(b.url))}</div>
         </div>
-        <div class="bm-cats">${catPills}</div>
+        <div class="bm-cats">${cats}</div>
         <div class="bm-actions">
           <button class="icon-btn" title="Edit" onclick="editBookmark('${b.id}')">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11.5 2.5l2 2L5 13l-3 .5.5-3 9-8z"/>
-            </svg>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5 2.5l2 2L5 13l-3 .5.5-3 9-8z"/></svg>
           </button>
           <button class="icon-btn del" title="Delete" onclick="deleteBookmark('${b.id}')">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/>
-            </svg>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/></svg>
           </button>
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
-// ── Form ─────────────────────────────────────────────────────
-let iconDebounce = null;
+/* ── Form ─────────────────────────────────────────────── */
+let iconTimer = null;
 function debounceIconPreview() {
-  clearTimeout(iconDebounce);
-  iconDebounce = setTimeout(updateIconPreview, 600);
+  clearTimeout(iconTimer);
+  iconTimer = setTimeout(updateIconPreview, 600);
 }
 
 function updateIconPreview() {
   const url = document.getElementById('f-url').value.trim();
   const box = document.getElementById('icon-preview-box');
   const status = document.getElementById('icon-preview-status');
-
   if (!url) {
-    box.innerHTML = `<span style="font-size:18px;color:var(--text-3)">·</span>`;
+    box.innerHTML = `<span style="font-size:18px;color:var(--border-mid)">·</span>`;
     status.textContent = 'Enter a URL above';
+    status.style.color = '';
     return;
   }
-
   const src = iconUrl(url);
   if (!src) return;
-
   const img = new Image();
   img.onload = () => {
     box.innerHTML = `<img src="${src}" alt="" />`;
-    status.textContent = `Icon loaded from logo.dev`;
-    status.style.color = 'var(--green)';
+    status.textContent = 'Icon found';
+    status.style.color = '#1e7d4a';
   };
   img.onerror = () => {
-    box.innerHTML = `<span class="fallback-letter" style="font-family:var(--mono);font-size:14px;color:var(--accent);">${url[0]?.toUpperCase() || '?'}</span>`;
-    status.textContent = 'No icon found — will use initial';
+    box.innerHTML = `<span class="fl" style="font-size:14px">${url[0]?.toUpperCase() || '?'}</span>`;
+    status.textContent = 'No icon — will use initial';
     status.style.color = 'var(--text-3)';
   };
   img.src = src;
@@ -881,35 +892,29 @@ function saveBookmark() {
   const name = document.getElementById('f-name').value.trim();
   const url  = document.getElementById('f-url').value.trim();
   const cats = getSelectedCats();
-
   if (!name || !url) { toast('Name and URL are required.'); return; }
-  if (!cats.length)   { toast('Select at least one category.'); return; }
+  if (!cats.length)  { toast('Select at least one category.'); return; }
 
   if (editingId) {
-    const idx = bookmarks.findIndex(b => b.id === editingId);
-    if (idx !== -1) bookmarks[idx] = { ...bookmarks[idx], name, url, categories: cats };
+    const i = bookmarks.findIndex(b => b.id === editingId);
+    if (i !== -1) bookmarks[i] = { ...bookmarks[i], name, url, categories: cats };
     toast(`Updated "${name}"`);
   } else {
     bookmarks.push({ id: uid(), name, url, categories: cats });
     toast(`Added "${name}"`);
   }
-
-  save();
-  resetForm();
-  renderAdminList();
-  renderGrid();
+  save(); resetForm(); renderAdminList(); renderGrid();
 }
 
 function editBookmark(id) {
   const b = bookmarks.find(x => x.id === id);
   if (!b) return;
-
   editingId = id;
   document.getElementById('f-name').value = b.name;
   document.getElementById('f-url').value = b.url;
   document.getElementById('form-section-title').textContent = 'Edit Bookmark';
   document.getElementById('cancel-btn').style.display = 'inline-flex';
-  buildCategoryCheckboxes(b.categories);
+  buildCatBoxes(b.categories);
   updateIconPreview();
   document.getElementById('f-name').focus();
   document.querySelector('.admin-body').scrollTo({ top: 0, behavior: 'smooth' });
@@ -917,12 +922,9 @@ function editBookmark(id) {
 
 function deleteBookmark(id) {
   const b = bookmarks.find(x => x.id === id);
-  if (!b) return;
-  if (!confirm(`Remove "${b.name}"?`)) return;
+  if (!b || !confirm(`Remove "${b.name}"?`)) return;
   bookmarks = bookmarks.filter(x => x.id !== id);
-  save();
-  renderAdminList();
-  renderGrid();
+  save(); renderAdminList(); renderGrid();
   toast(`Removed "${b.name}"`);
 }
 
@@ -932,13 +934,12 @@ function resetForm() {
   document.getElementById('f-url').value = '';
   document.getElementById('form-section-title').textContent = 'Add Bookmark';
   document.getElementById('cancel-btn').style.display = 'none';
-  document.getElementById('icon-preview-box').innerHTML = `<span style="font-size:18px;color:var(--text-3)">·</span>`;
+  document.getElementById('icon-preview-box').innerHTML = `<span style="font-size:18px;color:var(--border-mid)">·</span>`;
   document.getElementById('icon-preview-status').textContent = 'Enter a URL above';
   document.getElementById('icon-preview-status').style.color = '';
-  buildCategoryCheckboxes([]);
+  buildCatBoxes([]);
 }
 
-// ── Toast ────────────────────────────────────────────────────
 function toast(msg) {
   const t = document.createElement('div');
   t.className = 'toast';
@@ -947,16 +948,10 @@ function toast(msg) {
   setTimeout(() => t.remove(), 2600);
 }
 
-// ── Utils ────────────────────────────────────────────────────
 function esc(s) {
-  return String(s)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ── Init ─────────────────────────────────────────────────────
 load();
 renderTabs();
 renderGrid();
