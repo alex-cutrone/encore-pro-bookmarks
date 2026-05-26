@@ -97,6 +97,18 @@
     "section": "Platform Tools"
   },
   {
+    "id": "s15",
+    "name": "Slack",
+    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
+    "categories": [
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "section": "Workspace"
+  },
+  {
     "id": "s23",
     "name": "Wiki",
     "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
@@ -255,18 +267,6 @@
     "url": "https://github.com",
     "categories": [
       "Product"
-    ],
-    "section": "Workspace"
-  },
-  {
-    "id": "s15",
-    "name": "Slack",
-    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
     ],
     "section": "Workspace"
   },
