@@ -143,6 +143,15 @@
     "section": "Tenants"
   },
   {
+    "id": "s22",
+    "name": "Canva",
+    "url": "https://www.canva.com/",
+    "categories": [
+      "Growth"
+    ],
+    "section": "Workspace"
+  },
+  {
     "id": "s19",
     "name": "Knowledge Base",
     "url": "https://support.activitystream.com/",
@@ -314,15 +323,6 @@
       "Client Success"
     ],
     "customIcon": "https://booker.is.ed.ac.uk/favicon.ico",
-    "section": "Workspace"
-  },
-  {
-    "id": "s22",
-    "name": "Canva",
-    "url": "https://www.canva.com/",
-    "categories": [
-      "Growth"
-    ],
     "section": "Workspace"
   }
 ]
