@@ -181,6 +181,15 @@
     "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
   },
   {
+    "id": "8azdkrfa",
+    "name": "EP Django (EU1)",
+    "url": "https://eu1.admin.encorepro.com/admin/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
+  },
+  {
     "id": "pgvbt66a",
     "name": "EP Django (US1)",
     "url": "https://us1.admin.encorepro.com/admin/",
@@ -284,15 +293,6 @@
     "url": "https://www.canva.com/",
     "categories": [
       "Growth"
-    ]
-  },
-  {
-    "id": "8azdkrfa",
-    "name": "EP Django (EU1)",
-    "url": "https://eu1.admin.encorepro.com/admin/",
-    "categories": [
-      "Product",
-      "Client Success"
     ]
   }
 ]
