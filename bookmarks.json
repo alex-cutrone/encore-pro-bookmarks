@@ -171,6 +171,16 @@
     "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4"
   },
   {
+    "id": "vfvtcoqt",
+    "name": "Twilio",
+    "url": "https://console.twilio.com/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
+  },
+  {
     "id": "s16",
     "name": "Sparkpost",
     "url": "https://app.eu.sparkpost.com/dashboard",
@@ -284,15 +294,5 @@
       "Product",
       "Client Success"
     ]
-  },
-  {
-    "id": "vfvtcoqt",
-    "name": "Twilio",
-    "url": "https://console.twilio.com/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
   }
 ]
