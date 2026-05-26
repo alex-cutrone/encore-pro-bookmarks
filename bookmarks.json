@@ -98,6 +98,15 @@
     ]
   },
   {
+    "id": "s14",
+    "name": "Provisioning",
+    "url": "https://provisioning.activitystream.com/admin/provisioning/tenant/",
+    "categories": [
+      "Operations",
+      "Product"
+    ]
+  },
+  {
     "id": "s02",
     "name": "GitHub",
     "url": "https://github.com",
@@ -133,15 +142,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s14",
-    "name": "Provisioning",
-    "url": "https://provisioning.activitystream.com/admin/provisioning/tenant/",
-    "categories": [
-      "Operations",
-      "Product"
-    ]
   },
   {
     "id": "s15",
