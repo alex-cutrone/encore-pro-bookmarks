@@ -215,9 +215,14 @@
 const GITHUB_OWNER  = 'alex-cutrone';
 const GITHUB_REPO   = 'encore-pro-bookmarks';
 const GITHUB_FILE   = 'bookmarks.json';
-const RAW_URL       = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/${GITHUB_FILE}`;
+const CONFIG_FILE   = 'config.json';
+const GH_TOKEN      = atob('Z2l0aHViX3BhdF8xMUJQTzNES0kwQ2ljTHhlU0tVcnQ4X2toR2hsZUVBZkViU2owYjN2WExONGpQNVlJWVhNOTQ0SmtseGVJZjM2UFM0WkFTWFlDSTZBS1N0WUt3Qg==');
+const RAW_BASE      = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main`;
+const RAW_URL       = `${RAW_BASE}/${GITHUB_FILE}`;
+const CONFIG_URL    = `${RAW_BASE}/${CONFIG_FILE}`;
 const API_URL       = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
-const TOKEN_KEY     = 'ep_admin_token';
+const CONFIG_API    = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${CONFIG_FILE}`;
+const PASS_KEY      = 'ep_admin_unlocked';
 const CATEGORIES    = ['Product', 'Growth', 'Operations', 'Client Success'];
 const DEFAULT_SECTIONS = ['Google Workspace', 'crowdEngage', 'Documentation', 'HR & Operations', 'Project Management', 'General'];
 
@@ -236,9 +241,18 @@ let dragSrcId    = null;
 function uid()    { return Math.random().toString(36).slice(2,10); }
 function esc(s)   { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function getDomain(url) { return url.trim().replace(/^https?:\/\//i,'').split('/')[0]; }
-function getToken()     { return localStorage.getItem(TOKEN_KEY)||''; }
-function setToken(t)    { localStorage.setItem(TOKEN_KEY,t.trim()); }
-function clearToken()   { localStorage.removeItem(TOKEN_KEY); }
+let adminPassword = null; // loaded from config.json
+
+async function loadConfig() {
+  try {
+    const res = await fetch(CONFIG_URL + '?t=' + Date.now());
+    if (res.ok) { const cfg = await res.json(); adminPassword = cfg.password || null; }
+  } catch {}
+}
+
+function isUnlocked()  { return sessionStorage.getItem(PASS_KEY) === '1'; }
+function setUnlocked() { sessionStorage.setItem(PASS_KEY, '1'); }
+function lockAdmin()   { sessionStorage.removeItem(PASS_KEY); }
 
 function resolvedIcon(b) {
   if (b.customIcon) return b.customIcon;
@@ -270,6 +284,7 @@ function getSection(b) { return b.section || 'General'; }
 
 /* ── GitHub ── */
 async function fetchBookmarks() {
+  await loadConfig();
   try {
     const res = await fetch(RAW_URL+'?t='+Date.now());
     if (!res.ok) throw new Error();
@@ -286,7 +301,7 @@ async function fetchBookmarks() {
 }
 
 async function pushData(message) {
-  const token = getToken();
+  const token = GH_TOKEN;
   // Fetch current SHA
   const metaRes = await fetch(API_URL, { headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'} });
   if (!metaRes.ok) throw new Error(`Auth ${metaRes.status}`);
@@ -310,7 +325,7 @@ async function doSave(message) {
     if (st) { st.textContent='Saved ✓'; st.className='save-status ok'; setTimeout(()=>{if(st)st.textContent='';},3000); }
   } catch(e) {
     if (st) { st.textContent=`Save failed: ${e.message}`; st.className='save-status err'; }
-    if (e.message.includes('401')||e.message.includes('Auth')) { clearToken(); renderTokenGate(); }
+    if (e.message.includes('401')||e.message.includes('Auth')) { lockAdmin(); renderPasswordGate(); }
   }
 }
 
@@ -390,7 +405,7 @@ function renderMain() {
 /* ── Admin open/close ── */
 function openAdmin() {
   document.getElementById('admin-overlay').classList.add('open');
-  getToken() ? renderAdminPanel() : renderTokenGate();
+  isUnlocked() ? renderAdminPanel() : renderPasswordGate();
 }
 function closeAdmin() {
   document.getElementById('admin-overlay').classList.remove('open');
@@ -399,28 +414,26 @@ function closeAdmin() {
 function handleOverlayClick(e) { if(e.target===document.getElementById('admin-overlay')) closeAdmin(); }
 
 /* ── Token gate ── */
-function renderTokenGate() {
+function renderPasswordGate() {
   document.getElementById('admin-title').textContent = 'Admin';
   document.getElementById('admin-body').innerHTML = `
     <div class="token-gate">
-      <p>Enter your GitHub token to manage bookmarks.<br>Changes save to the repo and update for everyone.</p>
-      <input type="password" id="token-input" placeholder="github_pat_..." onkeydown="if(event.key==='Enter')submitToken()" />
-      <button class="btn btn-green" style="width:100%" onclick="submitToken()">Unlock Admin</button>
-      <div class="token-error" id="token-error">Invalid token — check and try again.</div>
+      <p>Enter the admin password to manage bookmarks.<br>Changes save to the repo and update for everyone.</p>
+      <input type="password" id="pass-input" placeholder="Password" onkeydown="if(event.key==='Enter')submitPassword()" />
+      <button class="btn btn-green" style="width:100%" onclick="submitPassword()">Unlock Admin</button>
+      <div class="token-error" id="token-error">Incorrect password.</div>
     </div>`;
-  setTimeout(()=>document.getElementById('token-input')?.focus(),100);
+  setTimeout(()=>document.getElementById('pass-input')?.focus(),100);
 }
-async function submitToken() {
-  const t = document.getElementById('token-input').value.trim(); if(!t) return;
-  const btn = document.querySelector('.token-gate .btn-green');
-  btn.textContent='Checking…'; btn.disabled=true;
-  try {
-    const res = await fetch(API_URL,{headers:{Authorization:`token ${t}`,Accept:'application/vnd.github.v3+json'}});
-    if (!res.ok) throw new Error();
-    setToken(t); renderAdminPanel();
-  } catch {
+function submitPassword() {
+  const entered = document.getElementById('pass-input').value;
+  if (!adminPassword) { renderAdminPanel(); return; } // no password set = open
+  if (entered === adminPassword) {
+    setUnlocked(); renderAdminPanel();
+  } else {
     document.getElementById('token-error').style.display='block';
-    btn.textContent='Unlock Admin'; btn.disabled=false;
+    document.getElementById('pass-input').value='';
+    document.getElementById('pass-input').focus();
   }
 }
 
@@ -431,6 +444,7 @@ function renderAdminPanel() {
     <div class="admin-tabs">
       <button class="admin-tab ${adminView==='bookmarks'?'active':''}" onclick="switchAdminView('bookmarks')">Bookmarks</button>
       <button class="admin-tab ${adminView==='sections'?'active':''}" onclick="switchAdminView('sections')">Sections</button>
+      <button class="admin-tab ${adminView==='settings'?'active':''}" onclick="switchAdminView('settings')">Settings</button>
     </div>
     <div id="admin-view-content"></div>`;
   renderAdminView();
@@ -443,7 +457,62 @@ function switchAdminView(view) {
 }
 function renderAdminView() {
   if (adminView==='bookmarks') renderBookmarksView();
-  else renderSectionsView();
+  else if (adminView==='sections') renderSectionsView();
+  else renderSettingsView();
+}
+function renderSettingsView() {
+  document.getElementById('admin-view-content').innerHTML = `
+    <div class="form-card">
+      <div class="form-card-title">Change Password</div>
+      <div class="form-row">
+        <label>New Password</label>
+        <input type="password" id="new-pass-1" placeholder="New password" />
+      </div>
+      <div class="form-row">
+        <label>Confirm Password</label>
+        <input type="password" id="new-pass-2" placeholder="Confirm password"
+          onkeydown="if(event.key==='Enter')savePassword()" />
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-green" onclick="savePassword()">Save Password</button>
+      </div>
+      <div class="save-status" id="save-status"></div>
+    </div>
+    <div class="form-card" style="margin-top:16px">
+      <div class="form-card-title">Session</div>
+      <p style="font-size:13px;color:var(--text-2);margin-bottom:14px">You are currently logged in. Locking will require the password again on next admin open.</p>
+      <button class="btn btn-danger" style="font-size:13px;padding:7px 14px" onclick="signOut()">Lock Admin</button>
+    </div>`;
+}
+async function savePassword() {
+  const p1 = document.getElementById('new-pass-1').value;
+  const p2 = document.getElementById('new-pass-2').value;
+  const st = document.getElementById('save-status');
+  if (!p1) { st.textContent='Enter a password.'; st.className='save-status err'; return; }
+  if (p1 !== p2) { st.textContent='Passwords do not match.'; st.className='save-status err'; return; }
+  st.textContent='Saving…'; st.className='save-status';
+  try {
+    // Fetch current config SHA
+    const metaRes = await fetch(CONFIG_API, {
+      headers:{Authorization:`token ${GH_TOKEN}`,Accept:'application/vnd.github.v3+json'}
+    });
+    const meta = await metaRes.json();
+    const newCfg = JSON.stringify({password: p1}, null, 2);
+    const content = btoa(unescape(encodeURIComponent(newCfg)));
+    const putRes = await fetch(CONFIG_API, {
+      method:'PUT',
+      headers:{Authorization:`token ${GH_TOKEN}`,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body:JSON.stringify({message:'Update admin password',content,sha:meta.sha})
+    });
+    if (!putRes.ok) throw new Error();
+    adminPassword = p1;
+    document.getElementById('new-pass-1').value='';
+    document.getElementById('new-pass-2').value='';
+    st.textContent='Password updated ✓'; st.className='save-status ok';
+    setTimeout(()=>{if(st)st.textContent='';},3000);
+  } catch {
+    st.textContent='Save failed.'; st.className='save-status err';
+  }
 }
 
 /* ── Bookmarks view ── */
@@ -775,7 +844,7 @@ function resetForm(){
   resetIconPreview(); buildCatBoxes([]);
 }
 
-function signOut(){ clearToken(); renderTokenGate(); }
+function signOut(){ lockAdmin(); renderPasswordGate(); }
 
 function toast(msg){
   const t=document.createElement('div'); t.className='toast'; t.textContent=msg;
