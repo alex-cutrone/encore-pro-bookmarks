@@ -1,34 +1,127 @@
 [
   {
-    "id": "seed001",
+    "id": "s01",
     "name": "HubSpot",
-    "url": "app.hubspot.com",
+    "url": "https://app.hubspot.com",
     "categories": [
       "Client Success",
       "Growth"
     ]
   },
   {
-    "id": "seed002",
-    "name": "Google Analytics",
-    "url": "analytics.google.com",
+    "id": "s02",
+    "name": "GitHub",
+    "url": "https://github.com",
     "categories": [
-      "Growth"
+      "Product"
     ]
   },
   {
-    "id": "seed003",
-    "name": "Notion",
-    "url": "notion.so",
+    "id": "s03",
+    "name": "Figma",
+    "url": "https://figma.com",
+    "categories": [
+      "Product"
+    ]
+  },
+  {
+    "id": "s04",
+    "name": "Google Drive",
+    "url": "https://drive.google.com",
+    "categories": [
+      "Operations",
+      "Client Success"
+    ]
+  },
+  {
+    "id": "s05",
+    "name": "Loom",
+    "url": "https://loom.com",
+    "categories": [
+      "Operations",
+      "Client Success"
+    ]
+  },
+  {
+    "id": "s06",
+    "name": "Gmail",
+    "url": "https://gmail.com",
+    "categories": [
+      "Operations"
+    ]
+  },
+  {
+    "id": "s07",
+    "name": "Calendar",
+    "url": "https://calendar.google.com",
+    "categories": [
+      "Operations"
+    ]
+  },
+  {
+    "id": "s08",
+    "name": "Encore Pro",
+    "url": "https://app.encorepro.com",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
+  },
+  {
+    "id": "s09",
+    "name": "Asana",
+    "url": "https://app.asana.com",
     "categories": [
       "Operations",
       "Product"
     ]
   },
   {
-    "id": "seed004",
+    "id": "s10",
+    "name": "Bamboo",
+    "url": "https://activitystream.bamboohr.com/login.php",
+    "categories": [
+      "Operations"
+    ]
+  },
+  {
+    "id": "s11",
+    "name": "cE Admin",
+    "url": "https://app.crowdnengage.com/admin",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
+  },
+  {
+    "id": "s12",
+    "name": "Echange",
+    "url": "https://eu.exchange.activitystream.com/admin",
+    "categories": [
+      "Operations"
+    ]
+  },
+  {
+    "id": "s13",
+    "name": "PropelAuth",
+    "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
+    "categories": [
+      "Product"
+    ]
+  },
+  {
+    "id": "s14",
+    "name": "Provisioning",
+    "url": "https://provisioning.activitystream.com/admin/provisioning/tenant/",
+    "categories": [
+      "Operations",
+      "Product"
+    ]
+  },
+  {
+    "id": "s15",
     "name": "Slack",
-    "url": "slack.com",
+    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
     "categories": [
       "Operations",
       "Client Success",
@@ -37,54 +130,76 @@
     ]
   },
   {
-    "id": "seed005",
-    "name": "GitHub",
-    "url": "github.com",
+    "id": "s16",
+    "name": "Sparkpost",
+    "url": "https://app.eu.sparkpost.com/dashboard",
     "categories": [
+      "Growth",
       "Product"
     ]
   },
   {
-    "id": "seed006",
-    "name": "Figma",
-    "url": "figma.com",
+    "id": "s17",
+    "name": "cE Code Snippets",
+    "url": "https://app.crowdnengage.com/sql/client-seat-information-templates/",
     "categories": [
+      "Client Success",
       "Product"
     ]
   },
   {
-    "id": "seed007",
-    "name": "Google Drive",
-    "url": "drive.google.com",
+    "id": "s18",
+    "name": "crowdEngage",
+    "url": "https://crowdengage.activitystream.com/",
     "categories": [
-      "Operations",
+      "Product",
       "Client Success"
     ]
   },
   {
-    "id": "seed008",
-    "name": "Linear",
-    "url": "linear.app",
+    "id": "s19",
+    "name": "Knowledge Base",
+    "url": "https://support.activitystream.com/",
     "categories": [
+      "Client Success",
+      "Operations"
+    ]
+  },
+  {
+    "id": "s20",
+    "name": "Service Health",
+    "url": "https://eu.exchange.activitystream.com/service/health/destinations/",
+    "categories": [
+      "Operations",
       "Product"
     ]
   },
   {
-    "id": "seed009",
-    "name": "Loom",
-    "url": "loom.com",
+    "id": "s21",
+    "name": "Booker (EFI)",
+    "url": "https://booker.is.ed.ac.uk/",
     "categories": [
-      "Operations",
       "Client Success"
     ]
   },
   {
-    "id": "seed010",
-    "name": "Confluence",
-    "url": "confluence.atlassian.com",
+    "id": "s22",
+    "name": "Canva",
+    "url": "https://www.canva.com/",
+    "categories": [
+      "Growth",
+      "Operations"
+    ]
+  },
+  {
+    "id": "s23",
+    "name": "Wiki",
+    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
     "categories": [
       "Operations",
-      "Product"
+      "Client Success",
+      "Product",
+      "Growth"
     ]
   }
 ]
