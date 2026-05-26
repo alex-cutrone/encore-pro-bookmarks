@@ -17,141 +17,160 @@
       --cream:         #FFF8EC;
       --cream-3:       #F5F0E4;
       --error:         #582727;
-      --bg:            var(--cream);
       --surface:       #ffffff;
-      --surface-2:     var(--cream-3);
       --border:        rgba(33,46,29,.12);
       --border-mid:    rgba(33,46,29,.22);
       --border-strong: rgba(33,46,29,.35);
-      --text-1:        var(--green);
+      --text-1:        #212E1D;
       --text-2:        #4a5c44;
       --text-3:        #7a8c74;
       --serif: 'Nanum Myeongjo', Georgia, serif;
       --sans:  'Albert Sans', system-ui, sans-serif;
       --r: 6px; --r-lg: 10px;
     }
-    html, body { min-height: 100%; background: var(--bg); color: var(--text-1); font-family: var(--sans); font-size: 14px; line-height: 1.5; }
-    .shell { display: flex; flex-direction: column; min-height: 100vh; }
+    html, body { min-height:100%; background:var(--cream); color:var(--text-1); font-family:var(--sans); font-size:14px; line-height:1.5; }
+    .shell { display:flex; flex-direction:column; min-height:100vh; }
 
     /* Header */
-    header { display: flex; align-items: center; justify-content: space-between; padding: 0 28px; height: 58px; background: var(--green); border-bottom: 1px solid var(--green-2); position: sticky; top: 0; z-index: 100; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-wordmark { font-size: 15px; font-weight: 600; color: var(--cream); letter-spacing: .01em; }
-    .logo-sep { color: var(--green-3); margin: 0 4px; font-weight: 300; }
-    .logo-sub { font-size: 13px; font-weight: 400; color: rgba(255,248,236,.55); }
-    .header-right { display: flex; align-items: center; gap: 8px; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:0 28px; height:58px; background:var(--green); border-bottom:1px solid var(--green-2); position:sticky; top:0; z-index:100; }
+    .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo-wordmark { font-size:15px; font-weight:600; color:var(--cream); letter-spacing:.01em; }
+    .logo-sep { color:var(--green-3); margin:0 4px; font-weight:300; }
+    .logo-sub { font-size:13px; font-weight:400; color:rgba(255,248,236,.55); }
+    .header-right { display:flex; align-items:center; gap:8px; }
 
     /* Buttons */
-    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--r); font-family: var(--sans); font-size: 13px; font-weight: 500; cursor: pointer; transition: all .15s; border: 1px solid transparent; line-height: 1; }
-    .btn-ghost-light { background: transparent; color: rgba(255,248,236,.7); border-color: rgba(255,248,236,.2); }
-    .btn-ghost-light:hover { background: rgba(255,248,236,.1); color: var(--cream); border-color: rgba(255,248,236,.35); }
-    .btn-green { background: var(--green); color: var(--cream); border-color: var(--green); font-weight: 600; }
-    .btn-green:hover { background: var(--green-2); }
-    .btn-outline { background: transparent; color: var(--text-2); border-color: var(--border-mid); }
-    .btn-outline:hover { background: var(--surface-2); color: var(--text-1); border-color: var(--border-strong); }
-    .btn-danger { background: transparent; color: var(--error); border-color: rgba(88,39,39,.3); }
-    .btn-danger:hover { background: rgba(88,39,39,.06); }
+    .btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:var(--r); font-family:var(--sans); font-size:13px; font-weight:500; cursor:pointer; transition:all .15s; border:1px solid transparent; line-height:1; }
+    .btn-ghost-light { background:transparent; color:rgba(255,248,236,.7); border-color:rgba(255,248,236,.2); }
+    .btn-ghost-light:hover { background:rgba(255,248,236,.1); color:var(--cream); border-color:rgba(255,248,236,.35); }
+    .btn-green { background:var(--green); color:var(--cream); border-color:var(--green); font-weight:600; }
+    .btn-green:hover { background:var(--green-2); }
+    .btn-outline { background:transparent; color:var(--text-2); border-color:var(--border-mid); }
+    .btn-outline:hover { background:var(--cream-3,#F5F0E4); color:var(--text-1); border-color:var(--border-strong); }
+    .btn-danger { background:transparent; color:var(--error); border-color:rgba(88,39,39,.3); font-size:11px; padding:4px 10px; }
+    .btn-danger:hover { background:rgba(88,39,39,.06); }
+    .btn-sm { padding:5px 10px; font-size:12px; }
 
     /* Main */
-    main { flex: 1; padding: 36px 28px; max-width: 1120px; width: 100%; margin: 0 auto; }
+    main { flex:1; padding:36px 28px; max-width:1120px; width:100%; margin:0 auto; }
 
     /* Tabs */
-    .tabs { display: flex; gap: 2px; background: rgba(33,46,29,.07); padding: 3px; border-radius: var(--r-lg); border: 1px solid var(--border-mid); width: fit-content; margin-bottom: 32px; flex-wrap: wrap; }
-    .tab { padding: 8px 18px; border-radius: 7px; font-size: 13px; font-weight: 500; color: var(--text-2); cursor: pointer; transition: all .15s; border: 1px solid transparent; background: transparent; font-family: var(--sans); white-space: nowrap; }
-    .tab:hover { color: var(--green); background: rgba(33,46,29,.05); }
-    .tab.active { background: var(--green); color: var(--cream); border-color: var(--green); box-shadow: 0 1px 4px rgba(33,46,29,.2); }
+    .tabs { display:flex; gap:2px; background:rgba(33,46,29,.07); padding:3px; border-radius:var(--r-lg); border:1px solid var(--border-mid); width:fit-content; margin-bottom:36px; flex-wrap:wrap; }
+    .tab { padding:8px 18px; border-radius:7px; font-size:13px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .15s; border:1px solid transparent; background:transparent; font-family:var(--sans); white-space:nowrap; }
+    .tab:hover { color:var(--green); background:rgba(33,46,29,.05); }
+    .tab.active { background:var(--green); color:var(--cream); border-color:var(--green); box-shadow:0 1px 4px rgba(33,46,29,.2); }
+
+    /* Section headers */
+    .section-group { margin-bottom:32px; }
+    .section-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+    .section-header-line { flex:1; height:1px; background:var(--border-mid); }
+    .section-header-label { font-family:var(--serif); font-size:13px; font-weight:700; color:var(--text-3); letter-spacing:.04em; white-space:nowrap; }
 
     /* Grid */
-    .bookmark-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
-    .bookmark-card { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--r-lg); text-decoration: none; color: var(--text-1); transition: all .15s; min-width: 0; box-shadow: 0 1px 3px rgba(33,46,29,.06); }
-    .bookmark-card:hover { border-color: var(--green); box-shadow: 0 3px 12px rgba(33,46,29,.12); transform: translateY(-1px); }
-    .bookmark-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .bookmark-icon img { width: 24px; height: 24px; object-fit: contain; }
-    .bookmark-icon .fallback { font-size: 18px; color: var(--green); line-height: 1; }
-    .bookmark-info { min-width: 0; flex: 1; }
-    .bookmark-name { font-weight: 600; font-size: 13px; color: var(--text-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .bookmark-url  { font-size: 11px; font-family: monospace; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
-    .bookmark-arrow { flex-shrink: 0; color: var(--gold); opacity: 0; transition: opacity .15s; }
-    .bookmark-card:hover .bookmark-arrow { opacity: 1; }
-    .empty-state { text-align: center; padding: 72px 20px; color: var(--text-3); font-size: 13px; grid-column: 1/-1; }
-    .empty-state strong { display: block; color: var(--text-2); margin-bottom: 6px; font-size: 15px; font-family: var(--serif); }
+    .bookmark-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px; }
+    .bookmark-card { display:flex; align-items:center; gap:12px; padding:14px 16px; background:var(--surface); border:1px solid var(--border-mid); border-radius:var(--r-lg); text-decoration:none; color:var(--text-1); transition:all .15s; min-width:0; box-shadow:0 1px 3px rgba(33,46,29,.06); }
+    .bookmark-card:hover { border-color:var(--green); box-shadow:0 3px 12px rgba(33,46,29,.12); transform:translateY(-1px); }
+    .bookmark-icon { width:36px; height:36px; border-radius:8px; background:#F5F0E4; border:1px solid var(--border); flex-shrink:0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .bookmark-icon img { width:24px; height:24px; object-fit:contain; }
+    .bookmark-icon .fallback { font-size:18px; color:var(--green); line-height:1; }
+    .bookmark-info { min-width:0; flex:1; }
+    .bookmark-name { font-weight:600; font-size:13px; color:var(--text-1); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .bookmark-url  { font-size:11px; font-family:monospace; color:var(--text-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:2px; }
+    .bookmark-arrow { flex-shrink:0; color:var(--gold); opacity:0; transition:opacity .15s; }
+    .bookmark-card:hover .bookmark-arrow { opacity:1; }
+    .empty-state { text-align:center; padding:72px 20px; color:var(--text-3); font-size:13px; }
+    .empty-state strong { display:block; color:var(--text-2); margin-bottom:6px; font-size:15px; font-family:var(--serif); }
 
     /* Admin overlay */
-    .admin-overlay { position: fixed; inset: 0; background: rgba(33,46,29,.45); backdrop-filter: blur(3px); z-index: 200; display: none; align-items: flex-start; justify-content: flex-end; }
-    .admin-overlay.open { display: flex; }
-    .admin-panel { width: 540px; max-width: 100vw; height: 100vh; background: var(--cream); border-left: 1px solid var(--border-mid); display: flex; flex-direction: column; overflow: hidden; animation: slideIn .2s ease; }
-    @keyframes slideIn { from { transform: translateX(24px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    .admin-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--border-mid); background: var(--green); flex-shrink: 0; }
-    .admin-title { font-size: 13px; font-weight: 600; color: var(--cream); letter-spacing: .04em; }
-    .admin-body { flex: 1; overflow-y: auto; padding: 22px 24px; background: var(--cream); }
+    .admin-overlay { position:fixed; inset:0; background:rgba(33,46,29,.45); backdrop-filter:blur(3px); z-index:200; display:none; align-items:flex-start; justify-content:flex-end; }
+    .admin-overlay.open { display:flex; }
+    .admin-panel { width:560px; max-width:100vw; height:100vh; background:var(--cream); border-left:1px solid var(--border-mid); display:flex; flex-direction:column; overflow:hidden; animation:slideIn .2s ease; }
+    @keyframes slideIn { from{transform:translateX(24px);opacity:0} to{transform:translateX(0);opacity:1} }
+    .admin-header { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid var(--border-mid); background:var(--green); flex-shrink:0; }
+    .admin-title { font-size:13px; font-weight:600; color:var(--cream); letter-spacing:.04em; }
+    .admin-body { flex:1; overflow-y:auto; padding:22px 24px; background:var(--cream); }
+
+    /* Admin tabs */
+    .admin-tabs { display:flex; gap:2px; background:rgba(33,46,29,.07); padding:3px; border-radius:var(--r-lg); border:1px solid var(--border-mid); margin-bottom:22px; }
+    .admin-tab { flex:1; padding:7px; border-radius:7px; font-size:12px; font-weight:600; color:var(--text-2); cursor:pointer; transition:all .15s; border:1px solid transparent; background:transparent; font-family:var(--sans); text-align:center; }
+    .admin-tab:hover { color:var(--green); }
+    .admin-tab.active { background:var(--green); color:var(--cream); border-color:var(--green); }
 
     /* Token gate */
-    .token-gate { text-align: center; padding: 32px 20px; }
-    .token-gate p { font-size: 13px; color: var(--text-2); margin-bottom: 16px; line-height: 1.6; }
-    .token-gate input { width: 100%; padding: 9px 12px; background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--r); color: var(--text-1); font-family: monospace; font-size: 12px; outline: none; margin-bottom: 10px; }
-    .token-gate input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(33,46,29,.08); }
-    .token-error { font-size: 12px; color: var(--error); margin-top: 6px; display: none; }
+    .token-gate { text-align:center; padding:32px 20px; }
+    .token-gate p { font-size:13px; color:var(--text-2); margin-bottom:16px; line-height:1.6; }
+    .token-gate input { width:100%; padding:9px 12px; background:var(--surface); border:1px solid var(--border-mid); border-radius:var(--r); color:var(--text-1); font-family:monospace; font-size:12px; outline:none; margin-bottom:10px; }
+    .token-gate input:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(33,46,29,.08); }
+    .token-error { font-size:12px; color:var(--error); margin-top:6px; display:none; }
 
     /* Form */
-    .form-card { background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--r-lg); padding: 20px; margin-bottom: 22px; box-shadow: 0 1px 4px rgba(33,46,29,.06); }
-    .form-card-title { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--green); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-    .form-row { margin-bottom: 13px; }
-    label { display: block; font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 5px; letter-spacing: .02em; text-transform: uppercase; }
-    input[type="text"], input[type="url"] { width: 100%; padding: 9px 12px; background: var(--cream); border: 1px solid var(--border-mid); border-radius: var(--r); color: var(--text-1); font-family: var(--sans); font-size: 13px; outline: none; transition: border-color .15s, box-shadow .15s; }
-    input[type="text"]:focus, input[type="url"]:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(33,46,29,.08); }
-    input[type="file"] { font-family: var(--sans); font-size: 12px; color: var(--text-2); cursor: pointer; }
-    .icon-source-tabs { display: flex; margin-bottom: 10px; border: 1px solid var(--border-mid); border-radius: var(--r); overflow: hidden; width: fit-content; }
-    .icon-source-tab { padding: 5px 12px; font-size: 12px; font-weight: 500; font-family: var(--sans); background: transparent; border: none; cursor: pointer; color: var(--text-2); transition: all .12s; border-right: 1px solid var(--border-mid); }
-    .icon-source-tab:last-child { border-right: none; }
-    .icon-source-tab.active { background: var(--green); color: var(--cream); }
-    .icon-input-panel { display: none; }
-    .icon-input-panel.active { display: block; }
-    .icon-preview-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
-    .icon-preview-box { width: 40px; height: 40px; border-radius: 8px; background: var(--cream-3); border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
-    .icon-preview-box img { width: 26px; height: 26px; object-fit: contain; }
-    .icon-preview-box .fallback { font-size: 20px; color: var(--green); line-height: 1; }
-    .icon-preview-status { font-size: 12px; color: var(--text-3); }
-    .checkbox-group { display: flex; flex-wrap: wrap; gap: 6px; }
-    .cat-toggle { display: flex; align-items: center; gap: 5px; cursor: pointer; padding: 5px 11px; background: var(--cream); border: 1px solid var(--border-mid); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text-2); transition: all .15s; user-select: none; }
-    .cat-toggle:hover { border-color: var(--green); color: var(--green); }
-    .cat-toggle.checked { background: var(--green); border-color: var(--green); color: var(--cream); }
-    .cat-toggle input { display: none; }
-    .form-actions { display: flex; gap: 8px; margin-top: 18px; }
+    .form-card { background:var(--surface); border:1px solid var(--border-mid); border-radius:var(--r-lg); padding:20px; margin-bottom:22px; box-shadow:0 1px 4px rgba(33,46,29,.06); }
+    .form-card-title { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--green); margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    .form-row { margin-bottom:13px; }
+    label { display:block; font-size:12px; font-weight:600; color:var(--text-2); margin-bottom:5px; letter-spacing:.02em; text-transform:uppercase; }
+    input[type="text"], input[type="url"], select { width:100%; padding:9px 12px; background:var(--cream); border:1px solid var(--border-mid); border-radius:var(--r); color:var(--text-1); font-family:var(--sans); font-size:13px; outline:none; transition:border-color .15s,box-shadow .15s; }
+    input[type="text"]:focus, input[type="url"]:focus, select:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(33,46,29,.08); }
+    select option { background:#fff; }
+    input[type="file"] { font-family:var(--sans); font-size:12px; color:var(--text-2); cursor:pointer; }
+    .icon-source-tabs { display:flex; margin-bottom:10px; border:1px solid var(--border-mid); border-radius:var(--r); overflow:hidden; width:fit-content; }
+    .icon-source-tab { padding:5px 12px; font-size:12px; font-weight:500; font-family:var(--sans); background:transparent; border:none; cursor:pointer; color:var(--text-2); transition:all .12s; border-right:1px solid var(--border-mid); }
+    .icon-source-tab:last-child { border-right:none; }
+    .icon-source-tab.active { background:var(--green); color:var(--cream); }
+    .icon-input-panel { display:none; }
+    .icon-input-panel.active { display:block; }
+    .icon-preview-row { display:flex; align-items:center; gap:12px; margin-top:10px; }
+    .icon-preview-box { width:40px; height:40px; border-radius:8px; background:#F5F0E4; border:1px solid var(--border-mid); display:flex; align-items:center; justify-content:center; overflow:hidden; flex-shrink:0; }
+    .icon-preview-box img { width:26px; height:26px; object-fit:contain; }
+    .icon-preview-box .fallback { font-size:20px; color:var(--green); line-height:1; }
+    .icon-preview-status { font-size:12px; color:var(--text-3); }
+    .checkbox-group { display:flex; flex-wrap:wrap; gap:6px; }
+    .cat-toggle { display:flex; align-items:center; gap:5px; cursor:pointer; padding:5px 11px; background:var(--cream); border:1px solid var(--border-mid); border-radius:20px; font-size:12px; font-weight:500; color:var(--text-2); transition:all .15s; user-select:none; }
+    .cat-toggle:hover { border-color:var(--green); color:var(--green); }
+    .cat-toggle.checked { background:var(--green); border-color:var(--green); color:var(--cream); }
+    .cat-toggle input { display:none; }
+    .form-actions { display:flex; gap:8px; margin-top:18px; }
+    .save-status { font-size:12px; color:var(--text-3); margin-top:8px; min-height:18px; }
+    .save-status.ok  { color:#1e7d4a; }
+    .save-status.err { color:var(--error); }
 
-    /* Admin list */
-    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
-    .admin-filter { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 14px; }
-    .filter-chip { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 600; font-family: var(--sans); border: 1px solid var(--border-mid); background: transparent; color: var(--text-3); cursor: pointer; transition: all .15s; }
-    .filter-chip.active { background: var(--green); border-color: var(--green); color: var(--cream); }
-    .bm-row { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 6px; transition: border-color .15s; }
-    .bm-row:hover { border-color: var(--border-mid); }
-    .bm-row.drag-over { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(205,155,73,.2); }
-    .bm-row.dragging  { opacity: .4; }
-    .drag-handle { cursor: grab; color: var(--text-3); flex-shrink: 0; display: flex; align-items: center; padding: 2px 2px 2px 0; }
-    .drag-handle:active { cursor: grabbing; }
-    .bm-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--cream-3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
-    .bm-icon img { width: 18px; height: 18px; object-fit: contain; }
-    .bm-icon .fallback { font-size: 14px; color: var(--green); line-height: 1; }
-    .bm-info { flex: 1; min-width: 0; }
-    .bm-name   { font-size: 13px; font-weight: 600; color: var(--text-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .bm-domain { font-size: 11px; color: var(--text-3); font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .bm-cats { display: flex; gap: 3px; flex-shrink: 0; flex-wrap: wrap; max-width: 120px; }
-    .cat-pip { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: rgba(33,46,29,.07); color: var(--text-2); border: 1px solid var(--border); }
-    .bm-actions { display: flex; gap: 4px; flex-shrink: 0; }
-    .icon-btn { width: 30px; height: 30px; border-radius: 5px; background: transparent; border: 1px solid transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-3); transition: all .15s; }
-    .icon-btn:hover { background: var(--surface-2); border-color: var(--border); color: var(--text-1); }
-    .icon-btn.del:hover { color: var(--error); border-color: rgba(88,39,39,.25); background: rgba(88,39,39,.05); }
-    .divider { border: none; border-top: 1px solid var(--border-mid); margin: 22px 0; }
-    .save-status { font-size: 12px; color: var(--text-3); margin-top: 8px; min-height: 18px; }
-    .save-status.ok  { color: #1e7d4a; }
-    .save-status.err { color: var(--error); }
+    /* Admin bookmark list */
+    .list-filter { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:14px; }
+    .filter-chip { padding:4px 11px; border-radius:20px; font-size:11px; font-weight:600; font-family:var(--sans); border:1px solid var(--border-mid); background:transparent; color:var(--text-3); cursor:pointer; transition:all .15s; }
+    .filter-chip.active { background:var(--green); border-color:var(--green); color:var(--cream); }
+    .bm-row { display:flex; align-items:center; gap:8px; padding:8px 10px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); margin-bottom:5px; transition:border-color .15s; }
+    .bm-row:hover { border-color:var(--border-mid); }
+    .bm-row.drag-over { border-color:var(--gold); box-shadow:0 0 0 2px rgba(205,155,73,.2); }
+    .bm-row.dragging  { opacity:.4; }
+    .drag-handle { cursor:grab; color:var(--text-3); flex-shrink:0; display:flex; align-items:center; }
+    .drag-handle:active { cursor:grabbing; }
+    .bm-icon { width:26px; height:26px; border-radius:5px; background:#F5F0E4; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; overflow:hidden; flex-shrink:0; }
+    .bm-icon img { width:16px; height:16px; object-fit:contain; }
+    .bm-icon .fallback { font-size:12px; color:var(--green); line-height:1; }
+    .bm-info { flex:1; min-width:0; }
+    .bm-name   { font-size:13px; font-weight:600; color:var(--text-1); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .bm-meta   { font-size:10px; color:var(--text-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .bm-section-pip { font-size:10px; font-weight:600; padding:2px 7px; border-radius:20px; background:rgba(205,155,73,.12); color:#8a6520; border:1px solid rgba(205,155,73,.3); flex-shrink:0; white-space:nowrap; }
+    .bm-actions { display:flex; gap:3px; flex-shrink:0; }
+    .icon-btn { width:28px; height:28px; border-radius:5px; background:transparent; border:1px solid transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--text-3); transition:all .15s; }
+    .icon-btn:hover { background:#F5F0E4; border-color:var(--border); color:var(--text-1); }
+    .icon-btn.del:hover { color:var(--error); border-color:rgba(88,39,39,.25); background:rgba(88,39,39,.05); }
+
+    /* Section manager */
+    .section-item { display:flex; align-items:center; gap:8px; padding:9px 12px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); margin-bottom:6px; }
+    .section-item-name { flex:1; font-size:13px; font-weight:500; color:var(--text-1); }
+    .section-item-count { font-size:11px; color:var(--text-3); }
+    .section-edit-row { display:flex; gap:6px; margin-bottom:14px; }
+    .section-edit-row input { flex:1; }
+
+    .divider { border:none; border-top:1px solid var(--border-mid); margin:20px 0; }
+    .panel-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; }
 
     /* Toast */
-    #toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 999; display: flex; flex-direction: column; gap: 6px; }
-    .toast { padding: 10px 16px; background: var(--green); border: 1px solid var(--green-2); border-radius: var(--r); font-size: 13px; font-weight: 500; color: var(--cream); animation: toastIn .2s ease; }
-    @keyframes toastIn { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    #toast-container { position:fixed; bottom:20px; right:20px; z-index:999; display:flex; flex-direction:column; gap:6px; }
+    .toast { padding:10px 16px; background:var(--green); border:1px solid var(--green-2); border-radius:var(--r); font-size:13px; font-weight:500; color:var(--cream); animation:toastIn .2s ease; }
+    @keyframes toastIn { from{transform:translateY(8px);opacity:0} to{transform:translateY(0);opacity:1} }
 
-    @media (max-width: 600px) { .admin-panel { width: 100vw; } main { padding: 20px 16px; } header { padding: 0 16px; } }
+    @media(max-width:600px) { .admin-panel{width:100vw} main{padding:20px 16px} header{padding:0 16px} .tabs{flex-wrap:wrap} }
   </style>
 </head>
 <body>
@@ -175,7 +194,7 @@
 
   <main>
     <div class="tabs" id="tabs"></div>
-    <div class="bookmark-grid" id="bookmark-grid"></div>
+    <div id="main-content"></div>
   </main>
 </div>
 
@@ -184,69 +203,42 @@
   <div class="admin-panel">
     <div class="admin-header">
       <span class="admin-title" id="admin-title">Admin</span>
-      <button class="btn btn-ghost-light" onclick="closeAdmin()" style="padding:5px 10px;font-size:12px;">✕ Close</button>
+      <button class="btn btn-ghost-light btn-sm" onclick="closeAdmin()">✕ Close</button>
     </div>
     <div class="admin-body" id="admin-body"></div>
   </div>
 </div>
-
 <div id="toast-container"></div>
 
 <script>
 /* ── Config ── */
-const GITHUB_OWNER = 'alex-cutrone';
-const GITHUB_REPO  = 'encore-pro-bookmarks';
-const GITHUB_FILE  = 'bookmarks.json';
-const RAW_URL      = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/${GITHUB_FILE}`;
-const API_URL      = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
-const TOKEN_KEY    = 'ep_admin_token';
-const CATEGORIES   = ['Product', 'Growth', 'Operations', 'Client Success'];
+const GITHUB_OWNER  = 'alex-cutrone';
+const GITHUB_REPO   = 'encore-pro-bookmarks';
+const GITHUB_FILE   = 'bookmarks.json';
+const RAW_URL       = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/${GITHUB_FILE}`;
+const API_URL       = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+const TOKEN_KEY     = 'ep_admin_token';
+const CATEGORIES    = ['Product', 'Growth', 'Operations', 'Client Success'];
+const DEFAULT_SECTIONS = ['Google Workspace', 'crowdEngage', 'Documentation', 'HR & Operations', 'Project Management', 'General'];
 
-let bookmarks   = [];
-let fileSha     = null;
-let editingId   = null;
-let activeTab   = 'all';
-let adminFilter = 'all';
-let iconSource  = 'auto';
+let bookmarks    = [];
+let sections     = [...DEFAULT_SECTIONS];
+let fileSha      = null;
+let editingId    = null;
+let activeTab    = 'all';
+let adminFilter  = 'all';
+let adminView    = 'bookmarks'; // 'bookmarks' | 'sections'
+let iconSource   = 'auto';
 let customIconData = null;
-let dragSrcId   = null;
-
-/* ── Seed data (your full bookmark list) ── */
-function seeds() {
-  return [
-    { id:'s01', name:'HubSpot',          url:'https://app.hubspot.com',                                                           categories:['Client Success','Growth'] },
-    { id:'s02', name:'GitHub',           url:'https://github.com',                                                                categories:['Product'] },
-    { id:'s03', name:'Figma',            url:'https://figma.com',                                                                 categories:['Product'] },
-    { id:'s04', name:'Google Drive',     url:'https://drive.google.com',                                                          categories:['Operations','Client Success'] },
-    { id:'s05', name:'Loom',             url:'https://loom.com',                                                                  categories:['Operations','Client Success'] },
-    { id:'s06', name:'Gmail',            url:'https://gmail.com',                                                                 categories:['Operations'] },
-    { id:'s07', name:'Calendar',         url:'https://calendar.google.com',                                                       categories:['Operations'] },
-    { id:'s08', name:'Encore Pro',       url:'https://app.encorepro.com',                                                         categories:['Product','Client Success'] },
-    { id:'s09', name:'Asana',            url:'https://app.asana.com',                                                             categories:['Operations','Product'] },
-    { id:'s10', name:'Bamboo',           url:'https://activitystream.bamboohr.com/login.php',                                     categories:['Operations'] },
-    { id:'s11', name:'cE Admin',         url:'https://app.crowdnengage.com/admin',                                                categories:['Product','Client Success'] },
-    { id:'s12', name:'Echange',          url:'https://eu.exchange.activitystream.com/admin',                                      categories:['Operations'] },
-    { id:'s13', name:'PropelAuth',       url:'https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49',              categories:['Product'] },
-    { id:'s14', name:'Provisioning',     url:'https://provisioning.activitystream.com/admin/provisioning/tenant/',                categories:['Operations','Product'] },
-    { id:'s15', name:'Slack',            url:'https://app.slack.com/client/T081GA5DW/C081GA5FA',                                  categories:['Operations','Client Success','Product','Growth'] },
-    { id:'s16', name:'Sparkpost',        url:'https://app.eu.sparkpost.com/dashboard',                                           categories:['Growth','Product'] },
-    { id:'s17', name:'cE Code Snippets', url:'https://app.crowdnengage.com/sql/client-seat-information-templates/',               categories:['Client Success','Product'] },
-    { id:'s18', name:'crowdEngage',      url:'https://crowdengage.activitystream.com/',                                           categories:['Product','Client Success'] },
-    { id:'s19', name:'Knowledge Base',   url:'https://support.activitystream.com/',                                               categories:['Client Success','Operations'] },
-    { id:'s20', name:'Service Health',   url:'https://eu.exchange.activitystream.com/service/health/destinations/',               categories:['Operations','Product'] },
-    { id:'s21', name:'Booker (EFI)',     url:'https://booker.is.ed.ac.uk/',                                                       categories:['Client Success'] },
-    { id:'s22', name:'Canva',            url:'https://www.canva.com/',                                                            categories:['Growth','Operations'] },
-    { id:'s23', name:'Wiki',             url:'https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH', categories:['Operations','Client Success','Product','Growth'] },
-  ];
-}
+let dragSrcId    = null;
 
 /* ── Helpers ── */
-function uid()       { return Math.random().toString(36).slice(2,10); }
-function esc(s)      { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function uid()    { return Math.random().toString(36).slice(2,10); }
+function esc(s)   { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function getDomain(url) { return url.trim().replace(/^https?:\/\//i,'').split('/')[0]; }
-function getToken()  { return localStorage.getItem(TOKEN_KEY) || ''; }
-function setToken(t) { localStorage.setItem(TOKEN_KEY, t.trim()); }
-function clearToken(){ localStorage.removeItem(TOKEN_KEY); }
+function getToken()     { return localStorage.getItem(TOKEN_KEY)||''; }
+function setToken(t)    { localStorage.setItem(TOKEN_KEY,t.trim()); }
+function clearToken()   { localStorage.removeItem(TOKEN_KEY); }
 
 function resolvedIcon(b) {
   if (b.customIcon) return b.customIcon;
@@ -255,82 +247,112 @@ function resolvedIcon(b) {
 }
 function fallbackHtml() { return `<span class="fallback">✦</span>`; }
 function isGlobe(img) {
-  // Google returns its generic globe at exactly 16x16 regardless of &sz=64.
-  // Any real favicon served at sz=64 will be at least 32x32.
-  // Belt-and-suspenders: also check pixel color as before.
   if (img.naturalWidth <= 16 && img.naturalHeight <= 16) return true;
   try {
     const c = document.createElement('canvas');
-    c.width = c.height = img.naturalWidth || 16;
+    c.width = c.height = img.naturalWidth||16;
     const ctx = c.getContext('2d');
-    ctx.drawImage(img, 0, 0);
-    const [r,g,b,a] = ctx.getImageData(Math.floor(c.width/2), Math.floor(c.height/2), 1, 1).data;
-    if (a < 30) return true;
-    return b > r && b > g && b > 100 && r > 80 && r < 200 && g > 90 && g < 210;
+    ctx.drawImage(img,0,0);
+    const [r,g,b,a] = ctx.getImageData(Math.floor(c.width/2),Math.floor(c.height/2),1,1).data;
+    if (a<30) return true;
+    return b>r && b>g && b>100 && r>80 && r<200 && g>90 && g<210;
   } catch { return false; }
 }
 function checkGlobe(img) {
   if (isGlobe(img)) img.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'✦'}));
 }
-function imgHtml(src, size) {
+function imgHtml(src,size) {
   return `<img src="${src}" width="${size}" height="${size}" style="object-fit:contain" alt=""
     onload="checkGlobe(this)"
     onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'✦'}))" />`;
 }
+function getSection(b) { return b.section || 'General'; }
 
-/* ── Load bookmarks (public raw URL, no token needed) ── */
+/* ── GitHub ── */
 async function fetchBookmarks() {
   try {
-    const res = await fetch(RAW_URL + '?t=' + Date.now());
+    const res = await fetch(RAW_URL+'?t='+Date.now());
     if (!res.ok) throw new Error();
-    bookmarks = await res.json();
+    const data = await res.json();
+    bookmarks = data;
+    // Extract any sections found in data that aren't in defaults
+    const found = [...new Set(bookmarks.map(b=>b.section).filter(Boolean))];
+    found.forEach(s=>{ if(!sections.includes(s)) sections.push(s); });
   } catch {
-    bookmarks = seeds();
+    bookmarks = [];
   }
   renderTabs();
-  renderGrid();
+  renderMain();
 }
 
-/* ── GitHub write (token required) ── */
-async function pushBookmarks(token, message) {
-  // Need current SHA for PUT
-  const metaRes = await fetch(API_URL, {
-    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
-  });
-  if (!metaRes.ok) throw new Error(`Auth failed: ${metaRes.status}`);
+async function pushData(message) {
+  const token = getToken();
+  // Fetch current SHA
+  const metaRes = await fetch(API_URL, { headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'} });
+  if (!metaRes.ok) throw new Error(`Auth ${metaRes.status}`);
   const meta = await metaRes.json();
   fileSha = meta.sha;
-
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(bookmarks, null, 2))));
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(bookmarks,null,2))));
   const putRes  = await fetch(API_URL, {
-    method: 'PUT',
-    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, content, sha: fileSha })
+    method:'PUT',
+    headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},
+    body:JSON.stringify({message,content,sha:fileSha})
   });
-  if (!putRes.ok) {
-    const err = await putRes.json();
-    throw new Error(err.message || putRes.status);
-  }
-  const result = await putRes.json();
-  fileSha = result.content.sha;
+  if (!putRes.ok) { const e=await putRes.json(); throw new Error(e.message||putRes.status); }
+  fileSha = (await putRes.json()).content.sha;
 }
 
-/* ── Render grid ── */
+async function doSave(message) {
+  const st = document.getElementById('save-status');
+  if (st) { st.textContent='Saving…'; st.className='save-status'; }
+  try {
+    await pushData(message);
+    if (st) { st.textContent='Saved ✓'; st.className='save-status ok'; setTimeout(()=>{if(st)st.textContent='';},3000); }
+  } catch(e) {
+    if (st) { st.textContent=`Save failed: ${e.message}`; st.className='save-status err'; }
+    if (e.message.includes('401')||e.message.includes('Auth')) { clearToken(); renderTokenGate(); }
+  }
+}
+
+/* ── Main render ── */
 function renderTabs() {
-  document.getElementById('tabs').innerHTML = ['all',...CATEGORIES].map(cat => `
+  document.getElementById('tabs').innerHTML = ['all',...CATEGORIES].map(cat=>`
     <button class="tab ${activeTab===cat?'active':''}" onclick="setTab('${cat}')">
       ${cat==='all'?'All':cat}
     </button>`).join('');
 }
-function setTab(cat) { activeTab=cat; renderTabs(); renderGrid(); }
-function renderGrid() {
-  const grid = document.getElementById('bookmark-grid');
-  const list  = activeTab==='all' ? bookmarks : bookmarks.filter(b=>b.categories.includes(activeTab));
-  if (!list.length) { grid.innerHTML=`<div class="empty-state"><strong>Nothing here yet.</strong></div>`; return; }
-  grid.innerHTML = list.map(b => {
-    const src  = resolvedIcon(b);
-    const href = b.url.startsWith('http') ? b.url : 'https://'+b.url;
-    return `<a class="bookmark-card" href="${esc(href)}" target="_blank" rel="noopener">
+function setTab(cat) { activeTab=cat; renderTabs(); renderMain(); }
+
+function renderMain() {
+  const el = document.getElementById('main-content');
+  const list = activeTab==='all' ? bookmarks : bookmarks.filter(b=>b.categories.includes(activeTab));
+
+  if (!list.length) {
+    el.innerHTML = `<div class="empty-state"><strong>Nothing here.</strong>Open Admin to add bookmarks.</div>`;
+    return;
+  }
+
+  // Group by section, preserving section order
+  const grouped = {};
+  sections.forEach(s => grouped[s] = []);
+  grouped['General'] = grouped['General'] || [];
+  list.forEach(b => {
+    const s = getSection(b);
+    if (!grouped[s]) grouped[s] = [];
+    grouped[s].push(b);
+  });
+
+  // Render only sections that have bookmarks
+  const orderedSections = sections.filter(s => grouped[s] && grouped[s].length > 0);
+  // Also catch any section not in our list
+  Object.keys(grouped).forEach(s => { if (!orderedSections.includes(s) && grouped[s].length) orderedSections.push(s); });
+
+  el.innerHTML = orderedSections.map(sectionName => {
+    const items = grouped[sectionName];
+    const cards = items.map(b => {
+      const src  = resolvedIcon(b);
+      const href = b.url.startsWith('http') ? b.url : 'https://'+b.url;
+      return `<a class="bookmark-card" href="${esc(href)}" target="_blank" rel="noopener">
         <div class="bookmark-icon">${src?imgHtml(src,24):fallbackHtml()}</div>
         <div class="bookmark-info">
           <div class="bookmark-name">${esc(b.name)}</div>
@@ -338,64 +360,90 @@ function renderGrid() {
         </div>
         <svg class="bookmark-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>`;
+    }).join('');
+
+    return `<div class="section-group">
+      <div class="section-header">
+        <div class="section-header-line"></div>
+        <div class="section-header-label">${esc(sectionName)}</div>
+        <div class="section-header-line"></div>
+      </div>
+      <div class="bookmark-grid">${cards}</div>
+    </div>`;
   }).join('');
 }
 
 /* ── Admin open/close ── */
 function openAdmin() {
   document.getElementById('admin-overlay').classList.add('open');
-  if (getToken()) {
-    renderAdminPanel();
-  } else {
-    renderTokenGate();
-  }
+  getToken() ? renderAdminPanel() : renderTokenGate();
 }
 function closeAdmin() {
   document.getElementById('admin-overlay').classList.remove('open');
-  resetForm();
-  adminFilter = 'all';
+  resetForm(); adminFilter='all'; adminView='bookmarks';
 }
-function handleOverlayClick(e) { if (e.target===document.getElementById('admin-overlay')) closeAdmin(); }
+function handleOverlayClick(e) { if(e.target===document.getElementById('admin-overlay')) closeAdmin(); }
 
 /* ── Token gate ── */
 function renderTokenGate() {
   document.getElementById('admin-title').textContent = 'Admin';
   document.getElementById('admin-body').innerHTML = `
     <div class="token-gate">
-      <p>Enter your GitHub token to manage bookmarks.<br>Changes save directly to the repo and update for everyone.</p>
+      <p>Enter your GitHub token to manage bookmarks.<br>Changes save to the repo and update for everyone.</p>
       <input type="password" id="token-input" placeholder="github_pat_..." onkeydown="if(event.key==='Enter')submitToken()" />
       <button class="btn btn-green" style="width:100%" onclick="submitToken()">Unlock Admin</button>
       <div class="token-error" id="token-error">Invalid token — check and try again.</div>
     </div>`;
-  setTimeout(()=>document.getElementById('token-input')?.focus(), 100);
+  setTimeout(()=>document.getElementById('token-input')?.focus(),100);
 }
-
 async function submitToken() {
-  const t = document.getElementById('token-input').value.trim();
-  if (!t) return;
+  const t = document.getElementById('token-input').value.trim(); if(!t) return;
   const btn = document.querySelector('.token-gate .btn-green');
-  btn.textContent = 'Checking…'; btn.disabled = true;
+  btn.textContent='Checking…'; btn.disabled=true;
   try {
-    const res = await fetch(API_URL, {
-      headers: { Authorization: `token ${t}`, Accept: 'application/vnd.github.v3+json' }
-    });
+    const res = await fetch(API_URL,{headers:{Authorization:`token ${t}`,Accept:'application/vnd.github.v3+json'}});
     if (!res.ok) throw new Error();
-    setToken(t);
-    renderAdminPanel();
+    setToken(t); renderAdminPanel();
   } catch {
-    document.getElementById('token-error').style.display = 'block';
-    btn.textContent = 'Unlock Admin'; btn.disabled = false;
+    document.getElementById('token-error').style.display='block';
+    btn.textContent='Unlock Admin'; btn.disabled=false;
   }
 }
 
-/* ── Admin panel (authenticated) ── */
+/* ── Admin panel ── */
 function renderAdminPanel() {
-  document.getElementById('admin-title').textContent = 'Manage Bookmarks';
+  document.getElementById('admin-title').textContent = 'Manage';
   document.getElementById('admin-body').innerHTML = `
+    <div class="admin-tabs">
+      <button class="admin-tab ${adminView==='bookmarks'?'active':''}" onclick="switchAdminView('bookmarks')">Bookmarks</button>
+      <button class="admin-tab ${adminView==='sections'?'active':''}" onclick="switchAdminView('sections')">Sections</button>
+    </div>
+    <div id="admin-view-content"></div>`;
+  renderAdminView();
+}
+function switchAdminView(view) {
+  adminView=view;
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.toggle('active',t.textContent.trim().toLowerCase()===view));
+  resetForm();
+  renderAdminView();
+}
+function renderAdminView() {
+  if (adminView==='bookmarks') renderBookmarksView();
+  else renderSectionsView();
+}
+
+/* ── Bookmarks view ── */
+function renderBookmarksView() {
+  const c = document.getElementById('admin-view-content');
+  c.innerHTML = `
     <div class="form-card">
       <div class="form-card-title" id="form-section-title">Add Bookmark</div>
       <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="HubSpot" /></div>
       <div class="form-row"><label>URL</label><input type="text" id="f-url" placeholder="app.hubspot.com" oninput="onUrlInput()" /></div>
+      <div class="form-row">
+        <label>Section</label>
+        <select id="f-section">${sections.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('')}</select>
+      </div>
       <div class="form-row">
         <label>Icon</label>
         <div class="icon-source-tabs">
@@ -417,37 +465,108 @@ function renderAdminPanel() {
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l4 4 6-7"/></svg>
           Save
         </button>
-        <button class="btn btn-outline" onclick="resetForm()" id="cancel-btn" style="display:none;">Cancel</button>
+        <button class="btn btn-outline" onclick="resetForm()" id="cancel-btn" style="display:none">Cancel</button>
       </div>
       <div class="save-status" id="save-status"></div>
     </div>
-    <hr class="divider" />
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-      <div class="section-label" style="margin:0">All Bookmarks <span style="font-weight:400;color:var(--text-3);font-size:10px;margin-left:4px;">drag to reorder</span></div>
-      <button class="btn btn-danger" style="font-size:11px;padding:4px 10px;" onclick="signOut()">Sign out</button>
+    <hr class="divider"/>
+    <div class="panel-label">
+      All Bookmarks <span style="font-weight:400;font-size:10px;margin-left:4px;">drag to reorder</span>
+      <button class="btn btn-danger" onclick="signOut()">Sign out</button>
     </div>
-    <div class="admin-filter" id="admin-filter"></div>
+    <div class="list-filter" id="admin-filter"></div>
     <div id="admin-bookmark-list"></div>`;
   buildCatBoxes();
   renderAdminFilter();
   renderAdminList();
 }
 
-function signOut() { clearToken(); renderTokenGate(); }
+/* ── Sections view ── */
+function renderSectionsView() {
+  const c = document.getElementById('admin-view-content');
+  const counts = {};
+  bookmarks.forEach(b=>{ const s=getSection(b); counts[s]=(counts[s]||0)+1; });
+  c.innerHTML = `
+    <div class="form-card">
+      <div class="form-card-title">Add Section</div>
+      <div class="section-edit-row">
+        <input type="text" id="new-section-name" placeholder="Section name" onkeydown="if(event.key==='Enter')addSection()" />
+        <button class="btn btn-green" onclick="addSection()">Add</button>
+      </div>
+    </div>
+    <div class="panel-label" style="margin-bottom:12px">
+      Sections <span style="font-weight:400;font-size:10px;margin-left:4px;">drag to reorder</span>
+      <button class="btn btn-danger" onclick="signOut()">Sign out</button>
+    </div>
+    <div id="section-list">
+      ${sections.map((s,i) => `
+        <div class="section-item" draggable="true" data-idx="${i}"
+             ondragstart="onSecDragStart(event,${i})" ondragover="onSecDragOver(event)"
+             ondragleave="onSecDragLeave(event)" ondrop="onSecDrop(event,${i})" ondragend="onSecDragEnd(event)">
+          <div class="drag-handle">
+            <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
+              <rect x="1" y="2" width="4" height="2" rx="1"/><rect x="7" y="2" width="4" height="2" rx="1"/>
+              <rect x="1" y="7" width="4" height="2" rx="1"/><rect x="7" y="7" width="4" height="2" rx="1"/>
+              <rect x="1" y="12" width="4" height="2" rx="1"/><rect x="7" y="12" width="4" height="2" rx="1"/>
+            </svg>
+          </div>
+          <div class="section-item-name">${esc(s)}</div>
+          <div class="section-item-count">${counts[s]||0} bookmark${(counts[s]||0)!==1?'s':''}</div>
+          ${s!=='General'?`<button class="icon-btn del" title="Delete" onclick="deleteSection('${esc(s)}')">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/></svg>
+          </button>`:'<div style="width:28px"></div>'}
+        </div>`).join('')}
+    </div>`;
+}
 
-/* ── Category boxes ── */
+function addSection() {
+  const inp = document.getElementById('new-section-name');
+  const name = inp.value.trim();
+  if (!name) return;
+  if (sections.includes(name)) { toast('Section already exists.'); return; }
+  sections.push(name);
+  inp.value='';
+  renderSectionsView();
+  renderMain();
+  toast(`Added section "${name}"`);
+}
+
+function deleteSection(name) {
+  if (!confirm(`Delete section "${name}"? Bookmarks in it will move to General.`)) return;
+  bookmarks.forEach(b=>{ if(b.section===name) b.section='General'; });
+  sections = sections.filter(s=>s!==name);
+  renderSectionsView(); renderMain();
+  doSave(`Delete section: ${name}`);
+  toast(`Deleted "${name}"`);
+}
+
+/* Section drag */
+let secDragIdx = null;
+function onSecDragStart(e,i) { secDragIdx=i; e.currentTarget.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; }
+function onSecDragOver(e)    { e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+function onSecDragLeave(e)   { e.currentTarget.classList.remove('drag-over'); }
+function onSecDragEnd(e)     { e.currentTarget.classList.remove('dragging','drag-over'); }
+function onSecDrop(e,ti) {
+  e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+  if (secDragIdx===null||secDragIdx===ti) return;
+  const [moved]=sections.splice(secDragIdx,1); sections.splice(ti,0,moved);
+  secDragIdx=null; renderSectionsView(); renderMain();
+  toast('Section order updated');
+}
+
+/* ── Bookmark form ── */
 function buildCatBoxes(sel=[]) {
-  document.getElementById('cat-checkboxes').innerHTML = CATEGORIES.map(cat => {
-    const on = sel.includes(cat);
+  document.getElementById('cat-checkboxes').innerHTML = CATEGORIES.map(cat=>{
+    const on=sel.includes(cat);
     return `<label class="cat-toggle ${on?'checked':''}" onclick="toggleCat(this)">
-      <input type="checkbox" value="${cat}" ${on?'checked':''} /> ✦ ${cat}
+      <input type="checkbox" value="${cat}" ${on?'checked':''}/> ✦ ${cat}
     </label>`;
   }).join('');
 }
 function toggleCat(l) { setTimeout(()=>l.classList.toggle('checked',l.querySelector('input').checked),0); }
 function getSelectedCats() { return [...document.querySelectorAll('#cat-checkboxes input:checked')].map(i=>i.value); }
 
-/* ── Admin filter ── */
+/* ── Admin filter + list ── */
 function renderAdminFilter() {
   document.getElementById('admin-filter').innerHTML = ['all',...CATEGORIES].map(cat=>`
     <button class="filter-chip ${adminFilter===cat?'active':''}" onclick="setAdminFilter('${cat}')">
@@ -456,43 +575,31 @@ function renderAdminFilter() {
 }
 function setAdminFilter(cat) { adminFilter=cat; renderAdminFilter(); renderAdminList(); }
 
-/* ── Admin list ── */
 function renderAdminList() {
   const container = document.getElementById('admin-bookmark-list');
   const filtered  = adminFilter==='all' ? bookmarks : bookmarks.filter(b=>b.categories.includes(adminFilter));
   if (!filtered.length) { container.innerHTML=`<div style="color:var(--text-3);font-size:13px;padding:16px 0;">No bookmarks found.</div>`; return; }
-  container.innerHTML = filtered.map(b => {
-    const src  = resolvedIcon(b);
-    const cats = b.categories.map(c=>`<span class="cat-pip">${c}</span>`).join('');
+  container.innerHTML = filtered.map(b=>{
+    const src = resolvedIcon(b);
     return `<div class="bm-row" draggable="true" data-id="${b.id}"
          ondragstart="onDragStart(event,'${b.id}')" ondragover="onDragOver(event)"
          ondragleave="onDragLeave(event)" ondrop="onDrop(event,'${b.id}')" ondragend="onDragEnd(event)">
-        <div class="drag-handle">
-          <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
-            <rect x="1" y="2" width="4" height="2" rx="1"/><rect x="7" y="2" width="4" height="2" rx="1"/>
-            <rect x="1" y="7" width="4" height="2" rx="1"/><rect x="7" y="7" width="4" height="2" rx="1"/>
-            <rect x="1" y="12" width="4" height="2" rx="1"/><rect x="7" y="12" width="4" height="2" rx="1"/>
-          </svg>
-        </div>
-        <div class="bm-icon">${src?imgHtml(src,18):fallbackHtml()}</div>
+        <div class="drag-handle"><svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor"><rect x="1" y="2" width="4" height="2" rx="1"/><rect x="7" y="2" width="4" height="2" rx="1"/><rect x="1" y="7" width="4" height="2" rx="1"/><rect x="7" y="7" width="4" height="2" rx="1"/><rect x="1" y="12" width="4" height="2" rx="1"/><rect x="7" y="12" width="4" height="2" rx="1"/></svg></div>
+        <div class="bm-icon">${src?imgHtml(src,16):fallbackHtml()}</div>
         <div class="bm-info">
           <div class="bm-name">${esc(b.name)}</div>
-          <div class="bm-domain">${esc(getDomain(b.url))}</div>
+          <div class="bm-meta">${esc(getDomain(b.url))}</div>
         </div>
-        <div class="bm-cats">${cats}</div>
+        <span class="bm-section-pip">${esc(getSection(b))}</span>
         <div class="bm-actions">
-          <button class="icon-btn" title="Edit" onclick="editBookmark('${b.id}')">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5 2.5l2 2L5 13l-3 .5.5-3 9-8z"/></svg>
-          </button>
-          <button class="icon-btn del" title="Delete" onclick="deleteBookmark('${b.id}')">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/></svg>
-          </button>
+          <button class="icon-btn" title="Edit" onclick="editBookmark('${b.id}')"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5 2.5l2 2L5 13l-3 .5.5-3 9-8z"/></svg></button>
+          <button class="icon-btn del" title="Delete" onclick="deleteBookmark('${b.id}')"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/></svg></button>
         </div>
       </div>`;
   }).join('');
 }
 
-/* ── Drag to reorder ── */
+/* Bookmark drag */
 function onDragStart(e,id) { dragSrcId=id; e.currentTarget.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; }
 function onDragOver(e)     { e.preventDefault(); e.dataTransfer.dropEffect='move'; e.currentTarget.classList.add('drag-over'); }
 function onDragLeave(e)    { e.currentTarget.classList.remove('drag-over'); }
@@ -501,27 +608,26 @@ function onDrop(e,targetId) {
   e.preventDefault(); e.currentTarget.classList.remove('drag-over');
   if (!dragSrcId||dragSrcId===targetId) return;
   const si=bookmarks.findIndex(b=>b.id===dragSrcId), ti=bookmarks.findIndex(b=>b.id===targetId);
-  if (si===-1||ti===-1) return;
+  if(si===-1||ti===-1) return;
   const [moved]=bookmarks.splice(si,1); bookmarks.splice(ti,0,moved);
-  renderAdminList(); renderGrid();
+  renderAdminList(); renderMain();
   doSave('Reorder bookmarks');
   dragSrcId=null;
 }
 
 /* ── Icon source ── */
-function setIconSource(src, btn) {
+function setIconSource(src,btn) {
   iconSource=src; customIconData=null;
   document.querySelectorAll('.icon-source-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
   document.querySelectorAll('.icon-input-panel').forEach(p=>p.classList.remove('active'));
   document.getElementById(`icon-panel-${src}`).classList.add('active');
-  if (src==='auto') triggerAutoPreview(); else resetIconPreview();
+  if(src==='auto') triggerAutoPreview(); else resetIconPreview();
 }
-let iconTimer=null, customIconTimer=null;
+let iconTimer=null,customIconTimer=null;
 function onUrlInput() { if(iconSource==='auto'){clearTimeout(iconTimer);iconTimer=setTimeout(triggerAutoPreview,600);} }
 function triggerAutoPreview() {
   const url=document.getElementById('f-url')?.value.trim();
-  const box=document.getElementById('icon-preview-box');
-  const status=document.getElementById('icon-preview-status');
+  const box=document.getElementById('icon-preview-box'); const status=document.getElementById('icon-preview-status');
   if(!url||!box){resetIconPreview();return;}
   const src=`https://www.google.com/s2/favicons?domain=${getDomain(url)}&sz=64`;
   const img=new Image(); img.crossOrigin='anonymous';
@@ -532,17 +638,17 @@ function triggerAutoPreview() {
   img.onerror=()=>{box.innerHTML=fallbackHtml();status.textContent='No icon — ✦ will be used';status.style.color='var(--text-3)';};
   img.src=src;
 }
-function debounceCustomIconPreview() { clearTimeout(customIconTimer); customIconTimer=setTimeout(previewCustomUrl,500); }
-function previewCustomUrl() {
+function debounceCustomIconPreview(){clearTimeout(customIconTimer);customIconTimer=setTimeout(previewCustomUrl,500);}
+function previewCustomUrl(){
   const val=document.getElementById('f-icon-url')?.value.trim();
-  const box=document.getElementById('icon-preview-box'); const status=document.getElementById('icon-preview-status');
+  const box=document.getElementById('icon-preview-box'); const st=document.getElementById('icon-preview-status');
   if(!val){resetIconPreview();return;}
   const img=new Image();
-  img.onload=()=>{box.innerHTML=`<img src="${val}" width="26" height="26" style="object-fit:contain" alt=""/>`;status.textContent='Icon loaded';status.style.color='#1e7d4a';customIconData=val;};
-  img.onerror=()=>{box.innerHTML=fallbackHtml();status.textContent="Couldn't load that URL";status.style.color='var(--error)';customIconData=null;};
+  img.onload=()=>{box.innerHTML=`<img src="${val}" width="26" height="26" style="object-fit:contain" alt=""/>`;st.textContent='Icon loaded';st.style.color='#1e7d4a';customIconData=val;};
+  img.onerror=()=>{box.innerHTML=fallbackHtml();st.textContent="Couldn't load that URL";st.style.color='var(--error)';customIconData=null;};
   img.src=val;
 }
-function handleFileUpload() {
+function handleFileUpload(){
   const file=document.getElementById('f-icon-file')?.files[0]; if(!file) return;
   const reader=new FileReader();
   reader.onload=e=>{
@@ -553,53 +659,40 @@ function handleFileUpload() {
   };
   reader.readAsDataURL(file);
 }
-function resetIconPreview() {
-  const box=document.getElementById('icon-preview-box'); const status=document.getElementById('icon-preview-status');
+function resetIconPreview(){
+  const box=document.getElementById('icon-preview-box'); const st=document.getElementById('icon-preview-status');
   if(box) box.innerHTML=`<span class="fallback">✦</span>`;
-  if(status){status.textContent='Enter a URL above';status.style.color='';}
+  if(st){st.textContent='Enter a URL above';st.style.color='';}
 }
 
-/* ── Save / Edit / Delete ── */
-async function doSave(message) {
-  const status = document.getElementById('save-status');
-  if (status) { status.textContent='Saving…'; status.className='save-status'; }
-  try {
-    await pushBookmarks(getToken(), message);
-    if (status) { status.textContent='Saved ✓'; status.className='save-status ok'; setTimeout(()=>{if(status)status.textContent='';},3000); }
-  } catch(e) {
-    if (status) { status.textContent=`Save failed: ${e.message}`; status.className='save-status err'; }
-    // If auth error, prompt re-auth
-    if (e.message.includes('401')||e.message.includes('Auth')) { clearToken(); renderTokenGate(); }
-  }
-}
-
-function saveBookmark() {
+/* ── Save/Edit/Delete ── */
+function saveBookmark(){
   const name=document.getElementById('f-name').value.trim();
   const url =document.getElementById('f-url').value.trim();
-  const cats=getSelectedCats();
+  const sec  =document.getElementById('f-section').value;
+  const cats =getSelectedCats();
   if(!name||!url){toast('Name and URL are required.');return;}
   if(!cats.length){toast('Select at least one category.');return;}
   const finalIcon=(iconSource==='url'||iconSource==='upload')?customIconData||null:null;
-  if(editingId) {
+  if(editingId){
     const i=bookmarks.findIndex(b=>b.id===editingId);
-    if(i!==-1){bookmarks[i]={...bookmarks[i],name,url,categories:cats};if(iconSource==='auto')delete bookmarks[i].customIcon;else if(finalIcon)bookmarks[i].customIcon=finalIcon;}
-    toast(`Updated "${name}"`);
-    doSave(`Update bookmark: ${name}`);
+    if(i!==-1){bookmarks[i]={...bookmarks[i],name,url,section:sec,categories:cats};if(iconSource==='auto')delete bookmarks[i].customIcon;else if(finalIcon)bookmarks[i].customIcon=finalIcon;}
+    toast(`Updated "${name}"`); doSave(`Update: ${name}`);
   } else {
-    const entry={id:uid(),name,url,categories:cats};
+    const entry={id:uid(),name,url,section:sec,categories:cats};
     if(finalIcon) entry.customIcon=finalIcon;
     bookmarks.push(entry);
-    toast(`Added "${name}"`);
-    doSave(`Add bookmark: ${name}`);
+    toast(`Added "${name}"`); doSave(`Add: ${name}`);
   }
-  resetForm(); renderAdminList(); renderGrid();
+  resetForm(); renderAdminList(); renderMain();
 }
 
-function editBookmark(id) {
+function editBookmark(id){
   const b=bookmarks.find(x=>x.id===id); if(!b) return;
   editingId=id;
   document.getElementById('f-name').value=b.name;
   document.getElementById('f-url').value=b.url;
+  document.getElementById('f-section').value=getSection(b);
   document.getElementById('form-section-title').textContent='Edit Bookmark';
   document.getElementById('cancel-btn').style.display='inline-flex';
   buildCatBoxes(b.categories);
@@ -620,21 +713,17 @@ function editBookmark(id) {
   document.querySelector('.admin-body').scrollTo({top:0,behavior:'smooth'});
 }
 
-function deleteBookmark(id) {
+function deleteBookmark(id){
   const b=bookmarks.find(x=>x.id===id);
   if(!b||!confirm(`Remove "${b.name}"?`)) return;
   bookmarks=bookmarks.filter(x=>x.id!==id);
-  renderAdminList(); renderGrid();
-  toast(`Removed "${b.name}"`);
-  doSave(`Remove bookmark: ${b.name}`);
+  renderAdminList(); renderMain();
+  toast(`Removed "${b.name}"`); doSave(`Remove: ${b.name}`);
 }
 
-function resetForm() {
+function resetForm(){
   editingId=null;
-  const fn=document.getElementById('f-name'); if(fn) fn.value='';
-  const fu=document.getElementById('f-url');  if(fu) fu.value='';
-  const fiu=document.getElementById('f-icon-url'); if(fiu) fiu.value='';
-  const fif=document.getElementById('f-icon-file'); if(fif) fif.value='';
+  ['f-name','f-url','f-icon-url','f-icon-file'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   const fst=document.getElementById('form-section-title'); if(fst) fst.textContent='Add Bookmark';
   const cb=document.getElementById('cancel-btn'); if(cb) cb.style.display='none';
   customIconData=null;
@@ -642,13 +731,14 @@ function resetForm() {
   resetIconPreview(); buildCatBoxes([]);
 }
 
-function toast(msg) {
+function signOut(){ clearToken(); renderTokenGate(); }
+
+function toast(msg){
   const t=document.createElement('div'); t.className='toast'; t.textContent=msg;
   document.getElementById('toast-container').appendChild(t);
   setTimeout(()=>t.remove(),2600);
 }
 
-/* ── Boot ── */
 fetchBookmarks();
 </script>
 </body>
