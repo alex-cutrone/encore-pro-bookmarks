@@ -1,19 +1,19 @@
 [
   {
+    "id": "s02",
+    "name": "GitHub",
+    "url": "https://github.com",
+    "categories": [
+      "Product"
+    ]
+  },
+  {
     "id": "s01",
     "name": "HubSpot",
     "url": "https://app.hubspot.com",
     "categories": [
       "Client Success",
       "Growth"
-    ]
-  },
-  {
-    "id": "s02",
-    "name": "GitHub",
-    "url": "https://github.com",
-    "categories": [
-      "Product"
     ]
   },
   {
