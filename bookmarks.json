@@ -23,8 +23,9 @@
     "name": "HubSpot",
     "url": "https://app.hubspot.com",
     "categories": [
-      "Client Success",
-      "Growth"
+      "Growth",
+      "Operations",
+      "Client Success"
     ]
   },
   {
