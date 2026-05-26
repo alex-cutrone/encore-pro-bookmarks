@@ -274,5 +274,15 @@
       "Product",
       "Client Success"
     ]
+  },
+  {
+    "id": "vfvtcoqt",
+    "name": "Twilio",
+    "url": "https://console.twilio.com/",
+    "categories": [
+      "Product",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517"
   }
 ]
