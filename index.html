@@ -712,7 +712,7 @@ function commitRename(i, oldName) {
 }
 
 function deleteSection(name) {
-  if (!confirm(`Delete section "${name}"? Bookmarks in it will move to General.`)) return;
+  
   bookmarks.forEach(b=>{ if(b.section===name) b.section='General'; });
   sections = sections.filter(s=>s!==name);
   renderSectionsView(); renderMain();
@@ -895,7 +895,7 @@ function editBookmark(id){
 
 function deleteBookmark(id){
   const b=bookmarks.find(x=>x.id===id);
-  if(!b||!confirm(`Remove "${b.name}"?`)) return;
+  if(!b) return;
   bookmarks=bookmarks.filter(x=>x.id!==id);
   renderAdminList(); renderMain();
   toast(`Removed "${b.name}"`); doSave(`Remove: ${b.name}`);
