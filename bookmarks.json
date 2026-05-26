@@ -36,6 +36,17 @@
     "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348"
   },
   {
+    "id": "9morn90u",
+    "name": "Hubspot",
+    "url": "https://app-eu1.hubspot.com/crm/144173778",
+    "categories": [
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069"
+  },
+  {
     "id": "s08",
     "name": "Encore Pro",
     "url": "https://app.encorepro.com",
@@ -122,17 +133,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "9morn90u",
-    "name": "Hubspot",
-    "url": "https://app-eu1.hubspot.com/crm/144173778",
-    "categories": [
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069"
   },
   {
     "id": "s14",
