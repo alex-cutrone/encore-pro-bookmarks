@@ -263,12 +263,12 @@
     "name": "Slack",
     "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
     "categories": [
-      "Operations",
-      "Client Success",
       "Product",
-      "Growth"
+      "Growth",
+      "Operations",
+      "Client Success"
     ],
-    "section": "General"
+    "section": "Workspace"
   },
   {
     "id": "s03",
