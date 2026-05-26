@@ -58,6 +58,15 @@
     ]
   },
   {
+    "id": "s11",
+    "name": "cE Admin",
+    "url": "https://app.crowdnengage.com/admin",
+    "categories": [
+      "Product",
+      "Client Success"
+    ]
+  },
+  {
     "id": "s02",
     "name": "GitHub",
     "url": "https://github.com",
@@ -93,15 +102,6 @@
       "Client Success"
     ],
     "customIcon": "https://www.bamboohr.com/favicon.ico"
-  },
-  {
-    "id": "s11",
-    "name": "cE Admin",
-    "url": "https://app.crowdnengage.com/admin",
-    "categories": [
-      "Product",
-      "Client Success"
-    ]
   },
   {
     "id": "s12",
