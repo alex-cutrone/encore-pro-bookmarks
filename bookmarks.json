@@ -89,6 +89,17 @@
     "customIcon": "https://www.propelauth.com/imgs/mark.svg"
   },
   {
+    "id": "s23",
+    "name": "Wiki",
+    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
+    "categories": [
+      "Operations",
+      "Client Success",
+      "Product",
+      "Growth"
+    ]
+  },
+  {
     "id": "s19",
     "name": "Knowledge Base",
     "url": "https://support.activitystream.com/",
@@ -120,17 +131,6 @@
       "Client Success"
     ],
     "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png"
-  },
-  {
-    "id": "s23",
-    "name": "Wiki",
-    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
-    "categories": [
-      "Operations",
-      "Client Success",
-      "Product",
-      "Growth"
-    ]
   },
   {
     "id": "s11",
