@@ -235,5 +235,15 @@
     "categories": [
       "Growth"
     ]
+  },
+  {
+    "id": "xwg9mz04",
+    "name": "Yesplan Learning",
+    "url": "https://learning.yesplan.be/",
+    "categories": [
+      "Growth",
+      "Client Success"
+    ],
+    "customIcon": "https://www.bloovi.nl/frontend/files/profiles/avatars/source/5419_yesplan.jpg"
   }
 ]
