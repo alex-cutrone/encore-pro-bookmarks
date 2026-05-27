@@ -538,15 +538,15 @@ function renderAdminPanel() {
       <p><strong>Heads up:</strong> changes made here update bookmarks for everyone.</p>
     </div>
     <div class="admin-tabs">
-      <button class="admin-tab ${adminView==='bookmarks'?'active':''}" onclick="switchAdminView('bookmarks')">Bookmarks</button>
-      <button class="admin-tab ${adminView==='sections'?'active':''}" onclick="switchAdminView('sections')">Sections</button>
+      <button class="admin-tab ${adminView==='bookmarks'?'active':''}" data-view="bookmarks" onclick="switchAdminView('bookmarks')">Bookmarks</button>
+      <button class="admin-tab ${adminView==='sections'?'active':''}" data-view="sections" onclick="switchAdminView('sections')">Sections</button>
     </div>
     <div id="admin-view-content"></div>`;
   renderAdminView();
 }
 function switchAdminView(view) {
   adminView=view;
-  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.toggle('active',t.textContent.trim().toLowerCase()===view));
+  document.querySelectorAll('.admin-tab[data-view]').forEach(t=>t.classList.toggle('active', t.dataset.view===view));
   resetForm();
   renderAdminView();
 }
