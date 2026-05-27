@@ -324,5 +324,15 @@
     ],
     "customIcon": "https://booker.is.ed.ac.uk/favicon.ico",
     "section": "General"
+  },
+  {
+    "id": "afbt3z06",
+    "name": "Projectboard",
+    "url": "https://encorepro.productboard.com/boards",
+    "section": "General",
+    "categories": [
+      "Product"
+    ],
+    "customIcon": "https://www.productboard.com/favicon.ico"
   }
 ]
