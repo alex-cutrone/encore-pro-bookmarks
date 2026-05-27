@@ -347,5 +347,15 @@
       "Client Success"
     ],
     "customIcon": "https://fireflies.ai/favicon.ico"
+  },
+  {
+    "id": "bujsy0dp",
+    "name": "Posthog",
+    "url": "https://eu.posthog.com/project/2979/home",
+    "section": "Tools",
+    "categories": [
+      "Product"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/id2veLU_gI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759801156929"
   }
 ]
