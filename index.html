@@ -332,13 +332,24 @@ function getSection(b) { return b.section || 'General'; }
 async function fetchBookmarks() {
   await loadConfig();
   try {
-    const res = await fetch(RAW_URL+'?t='+Date.now());
-    if (!res.ok) throw new Error();
-    const data = await res.json();
+    // Use the API endpoint (always fresh) if token is available,
+    // otherwise fall back to raw URL
+    let data;
+    if (GH_TOKEN) {
+      const res = await fetch(API_URL, {
+        headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) throw new Error();
+      const meta = await res.json();
+      fileSha = meta.sha;
+      data = JSON.parse(atob(meta.content.replace(/\n/g, '')));
+    } else {
+      const res = await fetch(RAW_URL + '?t=' + Date.now());
+      if (!res.ok) throw new Error();
+      data = await res.json();
+    }
     bookmarks = data;
-    // Derive section order purely from bookmarks.json — no hardcoded defaults
     sections = [...new Set(bookmarks.map(b=>b.section).filter(Boolean))];
-    // Ensure General exists if any bookmark has no section
     if (bookmarks.some(b=>!b.section) && !sections.includes('General')) sections.push('General');
   } catch {
     bookmarks = [];
@@ -349,8 +360,8 @@ async function fetchBookmarks() {
 
 async function pushData(message) {
   const token = GH_TOKEN;
-  // Fetch current SHA
-  const metaRes = await fetch(API_URL, { headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'} });
+  // Always fetch fresh SHA before writing to avoid conflicts
+  const metaRes = await fetch(API_URL + '?t=' + Date.now(), { headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'} });
   if (!metaRes.ok) throw new Error(`Auth ${metaRes.status}`);
   const meta = await metaRes.json();
   fileSha = meta.sha;
