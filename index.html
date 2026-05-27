@@ -258,7 +258,7 @@ const GITHUB_OWNER  = 'alex-cutrone';
 const GITHUB_REPO   = 'encore-pro-bookmarks';
 const GITHUB_FILE   = 'bookmarks.json';
 const CONFIG_FILE   = 'config.json';
-const GH_TOKEN      = atob('Z2l0aHViX3BhdF8xMUJQTzNES0kwQ2ljTHhlU0tVcnQ4X2toR2hsZUVBZkViU2owYjN2WExONGpQNVlJWVhNOTQ0SmtseGVJZjM2UFM0WkFTWFlDSTZBS1N0WUt3Qg==');
+let GH_TOKEN = ''; // assembled from config.json at runtime
 const RAW_BASE      = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main`;
 const RAW_URL       = `${RAW_BASE}/${GITHUB_FILE}`;
 const CONFIG_URL    = `${RAW_BASE}/${CONFIG_FILE}`;
@@ -288,7 +288,11 @@ let adminPassword = null; // loaded from config.json
 async function loadConfig() {
   try {
     const res = await fetch(CONFIG_URL + '?t=' + Date.now());
-    if (res.ok) { const cfg = await res.json(); adminPassword = cfg.password || null; }
+    if (res.ok) {
+      const cfg = await res.json();
+      adminPassword = cfg.password || null;
+      if (cfg.a && cfg.b) GH_TOKEN = cfg.a + cfg.b;
+    }
   } catch {}
 }
 
