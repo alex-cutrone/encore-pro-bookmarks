@@ -334,5 +334,18 @@
       "Product"
     ],
     "customIcon": "https://www.productboard.com/favicon.ico"
+  },
+  {
+    "id": "wljbpvgu",
+    "name": "Fireflies.ai",
+    "url": "https://app.fireflies.ai/",
+    "section": "General",
+    "categories": [
+      "Product",
+      "Growth",
+      "Operations",
+      "Client Success"
+    ],
+    "customIcon": "https://fireflies.ai/favicon.ico"
   }
 ]
