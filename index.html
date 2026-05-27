@@ -377,13 +377,24 @@ async function pushData(message) {
 
 async function doSave(message) {
   const st = document.getElementById('save-status');
+  // If token hasn't loaded yet, wait up to 3s for it
+  if (!GH_TOKEN) {
+    if (st) { st.textContent='Loading…'; st.className='save-status'; }
+    for (let i = 0; i < 15; i++) {
+      await new Promise(r => setTimeout(r, 200));
+      if (GH_TOKEN) break;
+    }
+  }
+  if (!GH_TOKEN) {
+    if (st) { st.textContent='Save failed: could not load credentials.'; st.className='save-status err'; }
+    return;
+  }
   if (st) { st.textContent='Saving…'; st.className='save-status'; }
   try {
     await pushData(message);
     if (st) { st.textContent='Saved ✓'; st.className='save-status ok'; setTimeout(()=>{if(st)st.textContent='';},3000); }
   } catch(e) {
     if (st) { st.textContent=`Save failed: ${e.message}`; st.className='save-status err'; }
-    if (e.message.includes('401')||e.message.includes('Auth')) { lockAdmin(); renderPasswordGate(); }
   }
 }
 
@@ -927,7 +938,7 @@ function resetForm(){
   resetIconPreview(); buildCatBoxes([]);
 }
 
-function signOut(){ lockAdmin(); renderPasswordGate(); }
+function signOut(){ lockAdmin(); closeAdmin(); }
 
 function toast(msg){
   const t=document.createElement('div'); t.className='toast'; t.textContent=msg;
