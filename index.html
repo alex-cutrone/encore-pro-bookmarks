@@ -166,6 +166,19 @@
     .toast { padding:10px 16px; background:var(--green); border:1px solid var(--green-2); border-radius:var(--r); font-size:13px; font-weight:500; color:var(--cream); animation:toastIn .2s ease; }
     @keyframes toastIn { from{transform:translateY(8px);opacity:0} to{transform:translateY(0);opacity:1} }
 
+    /* Collapsible sections */
+    .section-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; cursor:default; }
+    .section-header.collapsible { cursor:pointer; user-select:none; }
+    .section-header.collapsible:hover .section-header-label { color:var(--text-2); }
+    .section-collapse-btn {
+      width:18px; height:18px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--text-3); transition:transform .2s;
+    }
+    .section-collapse-btn.collapsed { transform:rotate(-90deg); }
+    .section-body { overflow:hidden; transition:max-height .25s ease, opacity .2s ease; }
+    .section-body.collapsed { max-height:0 !important; opacity:0; pointer-events:none; }
+
     /* Category dropdown */
     .nav-dropdown { position:relative; }
     .nav-dropdown-btn {
@@ -270,6 +283,7 @@ const CATEGORIES    = ['Product', 'Growth', 'Operations', 'Client Success'];
 
 let bookmarks    = [];
 let sections     = []; // populated from bookmarks.json on load
+let sectionMeta  = []; // [{name, collapsible}] — section display config
 let fileSha      = null;
 let editingId    = null;
 let activeTab    = 'all';
@@ -278,6 +292,18 @@ let adminView    = 'bookmarks'; // 'bookmarks' | 'sections'
 let iconSource   = 'auto';
 let customIconData = null;
 let dragSrcId    = null;
+let collapsedSections = new Set(JSON.parse(localStorage.getItem('ep_collapsed_sections')||'[]'));
+function saveCollapsedState() { localStorage.setItem('ep_collapsed_sections', JSON.stringify([...collapsedSections])); }
+function toggleSection(name) {
+  if (collapsedSections.has(name)) collapsedSections.delete(name);
+  else collapsedSections.add(name);
+  saveCollapsedState();
+  // Toggle in DOM without full re-render
+  const body = document.getElementById('sec-body-' + CSS.escape(name));
+  const btn  = document.getElementById('sec-btn-' + CSS.escape(name));
+  if (body) body.classList.toggle('collapsed', collapsedSections.has(name));
+  if (btn)  btn.classList.toggle('collapsed', collapsedSections.has(name));
+}
 
 /* ── Helpers ── */
 function uid()    { return Math.random().toString(36).slice(2,10); }
@@ -348,8 +374,26 @@ async function fetchBookmarks() {
       if (!res.ok) throw new Error();
       data = await res.json();
     }
-    bookmarks = data;
+    // bookmarks.json can be either a plain array (legacy) or {bookmarks, sections, sectionMeta}
+    if (Array.isArray(data)) {
+      bookmarks = data;
+      sectionMeta = [];
+    } else {
+      bookmarks   = data.bookmarks   || [];
+      sectionMeta = data.sectionMeta || [];
+    }
     sections = [...new Set(bookmarks.map(b=>b.section).filter(Boolean))];
+    // Restore sectionMeta order if available
+    if (sectionMeta.length) {
+      const metaOrder = sectionMeta.map(s=>s.name);
+      sections.sort((a,b) => {
+        const ai = metaOrder.indexOf(a), bi = metaOrder.indexOf(b);
+        if (ai===-1 && bi===-1) return 0;
+        if (ai===-1) return 1;
+        if (bi===-1) return -1;
+        return ai - bi;
+      });
+    }
     if (bookmarks.some(b=>!b.section) && !sections.includes('General')) sections.push('General');
   } catch {
     bookmarks = [];
@@ -365,7 +409,9 @@ async function pushData(message) {
   if (!metaRes.ok) throw new Error(`Auth ${metaRes.status}`);
   const meta = await metaRes.json();
   fileSha = meta.sha;
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(bookmarks,null,2))));
+  // Save as structured object so sectionMeta is preserved
+  const payload = { bookmarks, sectionMeta };
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload,null,2))));
   const putRes  = await fetch(API_URL, {
     method:'PUT',
     headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},
@@ -463,10 +509,10 @@ function renderMain() {
 
   // Render only sections that have bookmarks
   const orderedSections = sections.filter(s => grouped[s] && grouped[s].length > 0);
-  // Also catch any section not in our list
   Object.keys(grouped).forEach(s => { if (!orderedSections.includes(s) && grouped[s].length) orderedSections.push(s); });
 
   el.innerHTML = orderedSections.map(sectionName => {
+    const sectionData = sectionMeta.find(s => s.name === sectionName);
     const items = grouped[sectionName];
     const cards = items.map(b => {
       const src  = resolvedIcon(b);
@@ -481,6 +527,26 @@ function renderMain() {
       </a>`;
     }).join('');
 
+    const isCollapsible = sectionData && sectionData.collapsible;
+    const isCollapsed   = collapsedSections.has(sectionName);
+    const secId         = sectionName.replace(/[^a-zA-Z0-9]/g,'-');
+    if (isCollapsible) {
+      return `<div class="section-group">
+        <div class="section-header collapsible" onclick="toggleSection('${esc(sectionName)}')">
+          <div class="section-header-line"></div>
+          <div class="section-header-label">${esc(sectionName)}</div>
+          <svg id="sec-btn-${secId}" class="section-collapse-btn ${isCollapsed?'collapsed':''}"
+            width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+          <div class="section-header-line"></div>
+        </div>
+        <div id="sec-body-${secId}" class="section-body ${isCollapsed?'collapsed':''}"
+          style="max-height:${isCollapsed?'0':'2000px'}">
+          <div class="bookmark-grid">${cards}</div>
+        </div>
+      </div>`;
+    }
     return `<div class="section-group">
       <div class="section-header">
         <div class="section-header-line"></div>
@@ -692,6 +758,12 @@ function renderSectionsView() {
           <button class="icon-btn" title="Rename" onclick="startRename(${i},'${esc(s)}')">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5 2.5l2 2L5 13l-3 .5.5-3 9-8z"/></svg>
           </button>
+          <button class="icon-btn ${(sectionMeta.find(m=>m.name===s)||{}).collapsible?'active':''}"
+            title="${(sectionMeta.find(m=>m.name===s)||{}).collapsible?'Collapsible (click to disable)':'Make collapsible'}"
+            style="${(sectionMeta.find(m=>m.name===s)||{}).collapsible?'color:var(--gold);border-color:rgba(205,155,73,.4);background:rgba(205,155,73,.08);':''}"
+            onclick="toggleCollapsible('${esc(s)}')">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
           ${s!=='General'?`<button class="icon-btn del" title="Delete" onclick="deleteSection('${esc(s)}')">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10"/></svg>
           </button>`:'<div style="width:28px"></div>'}
@@ -736,6 +808,15 @@ function commitRename(i, oldName) {
   renderSectionsView(); renderMain();
   doSave(`Rename section: "${oldName}" to "${newName}"`);
   toast(`Renamed to "${newName}"`);
+}
+
+function toggleCollapsible(name) {
+  const meta = sectionMeta.find(m => m.name === name);
+  if (meta) meta.collapsible = !meta.collapsible;
+  else sectionMeta.push({ name, collapsible: true });
+  renderSectionsView();
+  renderMain();
+  doSave(`Toggle collapsible: ${name}`);
 }
 
 function deleteSection(name) {
