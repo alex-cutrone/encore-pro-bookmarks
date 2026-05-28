@@ -387,5 +387,14 @@
       "Operations"
     ],
     "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idY7x55JLN.svg?c=1bxid64Mup7aczewSAYMX&t=1779346269433"
+  },
+  {
+    "id": "hk5kt1bs",
+    "name": "cE Client Usage",
+    "url": "https://app.crowdengage.com/sql/client-usage/?start_date=2025-01-01&num_months=12&client_id=1",
+    "section": "Tools",
+    "categories": [
+      "Client Success"
+    ]
   }
 ]
