@@ -415,6 +415,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "u0hds40t",
+      "name": "Messages per Flow Step",
+      "url": "https://app.crowdengage.com/sql/messages-per-flow-step/?client_id=1&start_date=2025-01-01&end_date=2026-01-01",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
