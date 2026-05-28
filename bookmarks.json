@@ -523,6 +523,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "f2oopi1f",
+      "name": "Messages per Flow Step",
+      "url": "https://app.crowdengage.com/sql/messages-per-flow-step/",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
