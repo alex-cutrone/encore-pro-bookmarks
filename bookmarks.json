@@ -469,6 +469,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "ckjwk2f9",
+      "name": "Customer Clicks for Instance",
+      "url": "https://app.crowdengage.com/sql/customer-clicks-for-instance/",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
