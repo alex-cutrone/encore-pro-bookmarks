@@ -424,6 +424,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "q1p7iwtf",
+      "name": "Client Seat Information",
+      "url": "https://app.crowdengage.com/sql/client-seat-information-templates/",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
