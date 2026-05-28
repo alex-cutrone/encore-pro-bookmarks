@@ -406,6 +406,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "anhp62cj",
+      "name": "Client Usage",
+      "url": "https://app.crowdengage.com/sql/client-usage/?start_date=2025-01-01&num_months=12&client_id=1",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
