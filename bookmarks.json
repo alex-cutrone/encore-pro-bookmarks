@@ -505,6 +505,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "d8crb04h",
+      "name": "Preorder Items by Event (No Mod)",
+      "url": "https://app.crowdengage.com/sql/preorder-items-by-event-no-modifiers/?client_id=149&start_date=2024-09-01&end_date=2024-10-01",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
