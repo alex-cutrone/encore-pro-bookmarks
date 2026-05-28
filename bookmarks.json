@@ -357,5 +357,15 @@
       "Product"
     ],
     "customIcon": "https://cdn.brandfetch.io/id2veLU_gI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759801156929"
+  },
+  {
+    "id": "i1rhknsz",
+    "name": "Docs",
+    "url": "https://docs.google.com/document/u/0/?tgif=c",
+    "section": "General",
+    "categories": [
+      "Operations"
+    ],
+    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/id9yxSb4R3.svg?c=1bxid64Mup7aczewSAYMX&t=1779346200880"
   }
 ]
