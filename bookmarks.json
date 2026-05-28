@@ -1,409 +1,429 @@
-[
-  {
-    "id": "s06",
-    "name": "Gmail",
-    "url": "https://gmail.com",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id5o3EIREg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1696475443284",
-    "section": "General"
-  },
-  {
-    "id": "s07",
-    "name": "Calendar",
-    "url": "https://calendar.google.com",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idMX2_OMSc.svg?c=1bxid64Mup7aczewSAYMX&t=1779346439033",
-    "section": "General"
-  },
-  {
-    "id": "s04",
-    "name": "Google Drive",
-    "url": "https://drive.google.com",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348",
-    "section": "General"
-  },
-  {
-    "id": "9morn90u",
-    "name": "Hubspot",
-    "url": "https://app-eu1.hubspot.com/crm/144173778",
-    "categories": [
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069",
-    "section": "General"
-  },
-  {
-    "id": "s08",
-    "name": "Encore Pro",
-    "url": "https://app.encorepro.com",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://app.encorepro.com/favicon.ico",
-    "section": "Tenants"
-  },
-  {
-    "id": "s12",
-    "name": "Echange",
-    "url": "https://eu.exchange.activitystream.com/admin",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://eu.exchange.activitystream.com/static/favicon.ico",
-    "section": "Tools"
-  },
-  {
-    "id": "s15",
-    "name": "Slack",
-    "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "section": "General"
-  },
-  {
-    "id": "s09",
-    "name": "Asana",
-    "url": "https://app.asana.com",
-    "categories": [
-      "Product",
-      "Operations",
-      "Client Success"
-    ],
-    "section": "General"
-  },
-  {
-    "id": "s22",
-    "name": "Canva",
-    "url": "https://www.canva.com/",
-    "categories": [
-      "Growth"
-    ],
-    "section": "General"
-  },
-  {
-    "id": "s13",
-    "name": "PropelAuth",
-    "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://www.propelauth.com/imgs/mark.svg",
-    "section": "Tools"
-  },
-  {
-    "id": "s23",
-    "name": "Wiki",
-    "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
-    "categories": [
-      "Operations",
-      "Client Success",
-      "Product",
-      "Growth"
-    ],
-    "section": "Documentation"
-  },
-  {
-    "id": "s11",
-    "name": "cE Admin",
-    "url": "https://app.crowdengage.com/admin",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
-    "section": "Tools"
-  },
-  {
-    "id": "s18",
-    "name": "crowdEngage",
-    "url": "https://crowdengage.activitystream.com/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
-    "section": "Tenants"
-  },
-  {
-    "id": "s19",
-    "name": "Knowledge Base",
-    "url": "https://support.activitystream.com/",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png",
-    "section": "Documentation"
-  },
-  {
-    "id": "xwg9mz04",
-    "name": "Yesplan Learning",
-    "url": "https://learning.yesplan.be/",
-    "categories": [
-      "Growth",
-      "Client Success"
-    ],
-    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png",
-    "section": "Documentation"
-  },
-  {
-    "id": "mhlsev6t",
-    "name": "Yesplan Manual",
-    "url": "https://manual.yesplan.be/",
-    "categories": [
-      "Product",
-      "Growth",
-      "Client Success"
-    ],
-    "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png",
-    "section": "Documentation"
-  },
-  {
-    "id": "s17",
-    "name": "cE Code Snippets",
-    "url": "https://app.crowdengage.com/sql/client-seat-information-templates/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "section": "Tools"
-  },
-  {
-    "id": "s14",
-    "name": "Provisioning",
-    "url": "https://provisioning.encorepro.com/tenants/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "section": "Tenants"
-  },
-  {
-    "id": "8azdkrfa",
-    "name": "EP Django (EU1)",
-    "url": "https://eu1.admin.encorepro.com/admin/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "section": "Tools"
-  },
-  {
-    "id": "pgvbt66a",
-    "name": "EP Django (US1)",
-    "url": "https://us1.admin.encorepro.com/admin/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "section": "Tools"
-  },
-  {
-    "id": "s20",
-    "name": "Service Health",
-    "url": "https://eu.exchange.activitystream.com/service/health/destinations/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "section": "Tools"
-  },
-  {
-    "id": "s16",
-    "name": "Sparkpost",
-    "url": "https://app.eu.sparkpost.com/dashboard",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idTnNve4SY/w/180/h/153/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1719468661393",
-    "section": "Tools"
-  },
-  {
-    "id": "vfvtcoqt",
-    "name": "Twilio",
-    "url": "https://console.twilio.com/",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517",
-    "section": "Tools"
-  },
-  {
-    "id": "mdnzo55g",
-    "name": "Operations Tasks",
-    "url": "https://github.com/crowdengage/operations-tasks/issues/new/choose",
-    "categories": [
-      "Product",
-      "Client Success"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/idZAyF9rlg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1779162684348",
-    "section": "Tools"
-  },
-  {
-    "id": "s02",
-    "name": "GitHub",
-    "url": "https://github.com",
-    "categories": [
-      "Product"
-    ],
-    "section": "General"
-  },
-  {
-    "id": "s03",
-    "name": "Figma",
-    "url": "https://figma.com",
-    "categories": [
-      "Product"
-    ],
-    "section": "General"
-  },
-  {
-    "id": "s05",
-    "name": "Loom",
-    "url": "https://www.loom.com/looms/videos",
-    "categories": [
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "section": "General"
-  },
-  {
-    "id": "s10",
-    "name": "Bamboo",
-    "url": "https://encorepro.bamboohr.com/login.php",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://www.bamboohr.com/favicon.ico",
-    "section": "General"
-  },
-  {
-    "id": "s21",
-    "name": "Booker (EFI)",
-    "url": "https://booker.is.ed.ac.uk/",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://booker.is.ed.ac.uk/favicon.ico",
-    "section": "General"
-  },
-  {
-    "id": "afbt3z06",
-    "name": "Projectboard",
-    "url": "https://encorepro.productboard.com/boards",
-    "section": "General",
-    "categories": [
-      "Product"
-    ],
-    "customIcon": "https://www.productboard.com/favicon.ico"
-  },
-  {
-    "id": "wljbpvgu",
-    "name": "Fireflies.ai",
-    "url": "https://app.fireflies.ai/",
-    "section": "General",
-    "categories": [
-      "Product",
-      "Growth",
-      "Operations",
-      "Client Success"
-    ],
-    "customIcon": "https://fireflies.ai/favicon.ico"
-  },
-  {
-    "id": "bujsy0dp",
-    "name": "Posthog",
-    "url": "https://eu.posthog.com/project/2979/home",
-    "section": "Tools",
-    "categories": [
-      "Product"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id2veLU_gI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759801156929"
-  },
-  {
-    "id": "i1rhknsz",
-    "name": "Docs",
-    "url": "https://docs.google.com/document/u/0/?tgif=c",
-    "section": "General",
-    "categories": [
-      "Operations"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/id9yxSb4R3.svg?c=1bxid64Mup7aczewSAYMX&t=1779346200880"
-  },
-  {
-    "id": "hty5phto",
-    "name": "Sheets",
-    "url": "https://docs.google.com/spreadsheets/",
-    "section": "General",
-    "categories": [
-      "Operations"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idKa2XnbFY.svg?c=1bxid64Mup7aczewSAYMX&t=1779346308528"
-  },
-  {
-    "id": "9ushrj3c",
-    "name": "Slides",
-    "url": "https://docs.google.com/presentation",
-    "section": "General",
-    "categories": [
-      "Operations"
-    ],
-    "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idY7x55JLN.svg?c=1bxid64Mup7aczewSAYMX&t=1779346269433"
-  },
-  {
-    "id": "hk5kt1bs",
-    "name": "cE Client Usage",
-    "url": "https://app.crowdengage.com/sql/client-usage/?start_date=2025-01-01&num_months=12&client_id=1",
-    "section": "Tools",
-    "categories": [
-      "Client Success"
-    ]
-  },
-  {
-    "id": "ide7xu5v",
-    "name": "cE Messages per Flow Step",
-    "url": "https://app.crowdengage.com/sql/messages-per-flow-step/?client_id=1&start_date=2025-01-01&end_date=2026-01-01",
-    "section": "Tools",
-    "categories": [
-      "Client Success"
-    ]
-  }
-]
+{
+  "bookmarks": [
+    {
+      "id": "s06",
+      "name": "Gmail",
+      "url": "https://gmail.com",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id5o3EIREg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1696475443284",
+      "section": "General"
+    },
+    {
+      "id": "s07",
+      "name": "Calendar",
+      "url": "https://calendar.google.com",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idMX2_OMSc.svg?c=1bxid64Mup7aczewSAYMX&t=1779346439033",
+      "section": "General"
+    },
+    {
+      "id": "s04",
+      "name": "Google Drive",
+      "url": "https://drive.google.com",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348",
+      "section": "General"
+    },
+    {
+      "id": "9morn90u",
+      "name": "Hubspot",
+      "url": "https://app-eu1.hubspot.com/crm/144173778",
+      "categories": [
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1761193635069",
+      "section": "General"
+    },
+    {
+      "id": "s08",
+      "name": "Encore Pro",
+      "url": "https://app.encorepro.com",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://app.encorepro.com/favicon.ico",
+      "section": "Tenants"
+    },
+    {
+      "id": "s12",
+      "name": "Echange",
+      "url": "https://eu.exchange.activitystream.com/admin",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://eu.exchange.activitystream.com/static/favicon.ico",
+      "section": "Tools"
+    },
+    {
+      "id": "s15",
+      "name": "Slack",
+      "url": "https://app.slack.com/client/T081GA5DW/C081GA5FA",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "section": "General"
+    },
+    {
+      "id": "s09",
+      "name": "Asana",
+      "url": "https://app.asana.com",
+      "categories": [
+        "Product",
+        "Operations",
+        "Client Success"
+      ],
+      "section": "General"
+    },
+    {
+      "id": "s22",
+      "name": "Canva",
+      "url": "https://www.canva.com/",
+      "categories": [
+        "Growth"
+      ],
+      "section": "General"
+    },
+    {
+      "id": "s13",
+      "name": "PropelAuth",
+      "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://www.propelauth.com/imgs/mark.svg",
+      "section": "Tools"
+    },
+    {
+      "id": "s23",
+      "name": "Wiki",
+      "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
+      "categories": [
+        "Operations",
+        "Client Success",
+        "Product",
+        "Growth"
+      ],
+      "section": "Documentation"
+    },
+    {
+      "id": "s11",
+      "name": "cE Admin",
+      "url": "https://app.crowdengage.com/admin",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
+      "section": "Tools"
+    },
+    {
+      "id": "s18",
+      "name": "crowdEngage",
+      "url": "https://crowdengage.activitystream.com/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://avatars.githubusercontent.com/u/42073433?s=280&v=4",
+      "section": "Tenants"
+    },
+    {
+      "id": "s19",
+      "name": "Knowledge Base",
+      "url": "https://support.activitystream.com/",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://144173778.fs1.hubspotusercontent-eu1.net/hubfs/144173778/Encore%20Pro%20Website%20Mockups%20(11).png",
+      "section": "Documentation"
+    },
+    {
+      "id": "xwg9mz04",
+      "name": "Yesplan Learning",
+      "url": "https://learning.yesplan.be/",
+      "categories": [
+        "Growth",
+        "Client Success"
+      ],
+      "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png",
+      "section": "Documentation"
+    },
+    {
+      "id": "mhlsev6t",
+      "name": "Yesplan Manual",
+      "url": "https://manual.yesplan.be/",
+      "categories": [
+        "Product",
+        "Growth",
+        "Client Success"
+      ],
+      "customIcon": "https://tenbound.com/wp-content/uploads/yesplan.be_-1.png",
+      "section": "Documentation"
+    },
+    {
+      "id": "s17",
+      "name": "cE Code Snippets",
+      "url": "https://app.crowdengage.com/sql/client-seat-information-templates/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tools"
+    },
+    {
+      "id": "s14",
+      "name": "Provisioning",
+      "url": "https://provisioning.encorepro.com/tenants/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tenants"
+    },
+    {
+      "id": "8azdkrfa",
+      "name": "EP Django (EU1)",
+      "url": "https://eu1.admin.encorepro.com/admin/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tools"
+    },
+    {
+      "id": "pgvbt66a",
+      "name": "EP Django (US1)",
+      "url": "https://us1.admin.encorepro.com/admin/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tools"
+    },
+    {
+      "id": "s20",
+      "name": "Service Health",
+      "url": "https://eu.exchange.activitystream.com/service/health/destinations/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tools"
+    },
+    {
+      "id": "s16",
+      "name": "Sparkpost",
+      "url": "https://app.eu.sparkpost.com/dashboard",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/idTnNve4SY/w/180/h/153/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1719468661393",
+      "section": "Tools"
+    },
+    {
+      "id": "vfvtcoqt",
+      "name": "Twilio",
+      "url": "https://console.twilio.com/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/idT7wVo_zL/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668515584517",
+      "section": "Tools"
+    },
+    {
+      "id": "mdnzo55g",
+      "name": "Operations Tasks",
+      "url": "https://github.com/crowdengage/operations-tasks/issues/new/choose",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/idZAyF9rlg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1779162684348",
+      "section": "Tools"
+    },
+    {
+      "id": "s02",
+      "name": "GitHub",
+      "url": "https://github.com",
+      "categories": [
+        "Product"
+      ],
+      "section": "General"
+    },
+    {
+      "id": "s03",
+      "name": "Figma",
+      "url": "https://figma.com",
+      "categories": [
+        "Product"
+      ],
+      "section": "General"
+    },
+    {
+      "id": "s05",
+      "name": "Loom",
+      "url": "https://www.loom.com/looms/videos",
+      "categories": [
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "section": "General"
+    },
+    {
+      "id": "s10",
+      "name": "Bamboo",
+      "url": "https://encorepro.bamboohr.com/login.php",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://www.bamboohr.com/favicon.ico",
+      "section": "General"
+    },
+    {
+      "id": "s21",
+      "name": "Booker (EFI)",
+      "url": "https://booker.is.ed.ac.uk/",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://booker.is.ed.ac.uk/favicon.ico",
+      "section": "General"
+    },
+    {
+      "id": "afbt3z06",
+      "name": "Projectboard",
+      "url": "https://encorepro.productboard.com/boards",
+      "section": "General",
+      "categories": [
+        "Product"
+      ],
+      "customIcon": "https://www.productboard.com/favicon.ico"
+    },
+    {
+      "id": "wljbpvgu",
+      "name": "Fireflies.ai",
+      "url": "https://app.fireflies.ai/",
+      "section": "General",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://fireflies.ai/favicon.ico"
+    },
+    {
+      "id": "bujsy0dp",
+      "name": "Posthog",
+      "url": "https://eu.posthog.com/project/2979/home",
+      "section": "Tools",
+      "categories": [
+        "Product"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id2veLU_gI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759801156929"
+    },
+    {
+      "id": "i1rhknsz",
+      "name": "Docs",
+      "url": "https://docs.google.com/document/u/0/?tgif=c",
+      "section": "General",
+      "categories": [
+        "Operations"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/id9yxSb4R3.svg?c=1bxid64Mup7aczewSAYMX&t=1779346200880"
+    },
+    {
+      "id": "hty5phto",
+      "name": "Sheets",
+      "url": "https://docs.google.com/spreadsheets/",
+      "section": "General",
+      "categories": [
+        "Operations"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idKa2XnbFY.svg?c=1bxid64Mup7aczewSAYMX&t=1779346308528"
+    },
+    {
+      "id": "9ushrj3c",
+      "name": "Slides",
+      "url": "https://docs.google.com/presentation",
+      "section": "General",
+      "categories": [
+        "Operations"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idY7x55JLN.svg?c=1bxid64Mup7aczewSAYMX&t=1779346269433"
+    },
+    {
+      "id": "hk5kt1bs",
+      "name": "cE Client Usage",
+      "url": "https://app.crowdengage.com/sql/client-usage/?start_date=2025-01-01&num_months=12&client_id=1",
+      "section": "Tools",
+      "categories": [
+        "Client Success"
+      ]
+    },
+    {
+      "id": "ide7xu5v",
+      "name": "cE Messages per Flow Step",
+      "url": "https://app.crowdengage.com/sql/messages-per-flow-step/?client_id=1&start_date=2025-01-01&end_date=2026-01-01",
+      "section": "Tools",
+      "categories": [
+        "Client Success"
+      ]
+    }
+  ],
+  "sectionMeta": [
+    {
+      "name": "General",
+      "collapsible": false
+    },
+    {
+      "name": "Tenants",
+      "collapsible": false
+    },
+    {
+      "name": "Tools",
+      "collapsible": false
+    },
+    {
+      "name": "Documentation",
+      "collapsible": false
+    }
+  ]
+}
