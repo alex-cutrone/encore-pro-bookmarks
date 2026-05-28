@@ -451,6 +451,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "b5qgepvm",
+      "name": "Messages per Event",
+      "url": "https://app.crowdengage.com/sql/messages-per-event/",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
