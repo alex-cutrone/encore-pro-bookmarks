@@ -612,8 +612,9 @@ function renderAdminPanel() {
 }
 function switchAdminView(view) {
   adminView=view;
-  document.querySelectorAll('.admin-tab[data-view]').forEach(t=>t.classList.toggle('active', t.dataset.view===view));
-  resetForm();
+  document.querySelectorAll('.admin-tab[data-view]').forEach(t => {
+    t.classList.toggle('active', t.dataset.view === view);
+  });
   renderAdminView();
 }
 function renderAdminView() {
@@ -777,9 +778,11 @@ function addSection() {
   if (!name) return;
   if (sections.includes(name)) { toast('Section already exists.'); return; }
   sections.push(name);
+  sectionMeta.push({ name, collapsible: false });
   inp.value='';
   renderSectionsView();
   renderMain();
+  doSave(`Add section: ${name}`);
   toast(`Added section "${name}"`);
 }
 
@@ -804,6 +807,8 @@ function commitRename(i, oldName) {
   if (!newName || newName === oldName) { renderSectionsView(); return; }
   if (sections.includes(newName)) { toast('A section with that name already exists.'); renderSectionsView(); return; }
   sections[i] = newName;
+  const sm = sectionMeta.find(m => m.name === oldName);
+  if (sm) sm.name = newName; else sectionMeta.push({ name: newName, collapsible: false });
   bookmarks.forEach(b => { if (b.section === oldName) b.section = newName; });
   renderSectionsView(); renderMain();
   doSave(`Rename section: "${oldName}" to "${newName}"`);
@@ -820,9 +825,9 @@ function toggleCollapsible(name) {
 }
 
 function deleteSection(name) {
-  
   bookmarks.forEach(b=>{ if(b.section===name) b.section='General'; });
-  sections = sections.filter(s=>s!==name);
+  sections    = sections.filter(s=>s!==name);
+  sectionMeta = sectionMeta.filter(m=>m.name!==name);
   renderSectionsView(); renderMain();
   doSave(`Delete section: ${name}`);
   toast(`Deleted "${name}"`);
