@@ -396,5 +396,14 @@
     "categories": [
       "Client Success"
     ]
+  },
+  {
+    "id": "ide7xu5v",
+    "name": "cE Messages per Flow Step",
+    "url": "https://app.crowdengage.com/sql/messages-per-flow-step/?client_id=1&start_date=2025-01-01&end_date=2026-01-01",
+    "section": "Tools",
+    "categories": [
+      "Client Success"
+    ]
   }
 ]
