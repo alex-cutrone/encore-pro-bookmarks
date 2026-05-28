@@ -411,7 +411,7 @@
   "sectionMeta": [
     {
       "name": "General",
-      "collapsible": true
+      "collapsible": false
     },
     {
       "name": "Tenants",
