@@ -487,6 +487,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "oo7mirt3",
+      "name": "Total Memberships",
+      "url": "https://app.crowdengage.com/sql/total-memberships/?client_id=1",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
