@@ -433,6 +433,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "miha96oj",
+      "name": "YourVisit Clicks per Event",
+      "url": "https://app.crowdengage.com/sql/yourvisit-clicks-per-event/?client_id=106&start_date=2023-06-26&end_date=2023-07-02",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
