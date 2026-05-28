@@ -478,6 +478,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "1s3x57pc",
+      "name": "Preorder Item Counts (No Mod)",
+      "url": "https://app.crowdengage.com/sql/preorder-item-counts-no-modifiers/?client_id=149&start_date=2023-01-01&end_date=2024-01-01",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
