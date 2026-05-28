@@ -424,6 +424,10 @@
     {
       "name": "Documentation",
       "collapsible": false
+    },
+    {
+      "name": "Reporting",
+      "collapsible": false
     }
   ]
 }
