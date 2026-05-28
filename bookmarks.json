@@ -460,6 +460,15 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "dseylvxe",
+      "name": "SMS Clicks per Event per URL",
+      "url": "https://app.crowdengage.com/sql/sms-clicks-per-event-per-url/",
+      "section": "Reporting",
+      "categories": [
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
