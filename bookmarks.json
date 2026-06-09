@@ -531,6 +531,19 @@
       "categories": [
         "Client Success"
       ]
+    },
+    {
+      "id": "4fksrbej",
+      "name": "Zoho",
+      "url": "https://expense.zoho.com/app/775203961",
+      "section": "General",
+      "categories": [
+        "Product",
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/id17azhl-o/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1776635995536"
     }
   ],
   "sectionMeta": [
