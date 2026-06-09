@@ -279,6 +279,7 @@ const API_URL       = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REP
 const CONFIG_API    = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${CONFIG_FILE}`;
 const PASS_KEY      = 'ep_admin_unlocked';
 const CATEGORIES    = ['Product', 'Growth', 'Operations', 'Client Success'];
+const IS_STARTPAGE  = new URLSearchParams(window.location.search).has('startpage');
 
 
 let bookmarks    = [];
@@ -517,7 +518,7 @@ function renderMain() {
     const cards = items.map(b => {
       const src  = resolvedIcon(b);
       const href = b.url.startsWith('http') ? b.url : 'https://'+b.url;
-      return `<a class="bookmark-card" href="${esc(href)}" target="_blank" rel="noopener">
+      return `<a class="bookmark-card" href="${esc(href)}" ${IS_STARTPAGE ? '' : 'target="_blank" rel="noopener"'}>
         <div class="bookmark-icon">${src?imgHtml(src,24):fallbackHtml()}</div>
         <div class="bookmark-info">
           <div class="bookmark-name">${esc(b.name)}</div>
