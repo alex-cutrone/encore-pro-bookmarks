@@ -229,6 +229,16 @@
       "section": "Tools"
     },
     {
+      "id": "nqdd1kgm",
+      "name": "cE Status",
+      "url": "https://app.crowdengage.com/status/",
+      "section": "Tools",
+      "categories": [
+        "Product",
+        "Client Success"
+      ]
+    },
+    {
       "id": "s16",
       "name": "Sparkpost",
       "url": "https://app.eu.sparkpost.com/dashboard",
@@ -315,16 +325,6 @@
       ],
       "customIcon": "https://booker.is.ed.ac.uk/favicon.ico",
       "section": "General"
-    },
-    {
-      "id": "nqdd1kgm",
-      "name": "cE Status",
-      "url": "https://app.crowdengage.com/status/",
-      "section": "Tools",
-      "categories": [
-        "Product",
-        "Client Success"
-      ]
     },
     {
       "id": "afbt3z06",
