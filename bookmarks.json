@@ -317,6 +317,16 @@
       "section": "General"
     },
     {
+      "id": "nqdd1kgm",
+      "name": "cE Status",
+      "url": "https://app.crowdengage.com/status/",
+      "section": "Tools",
+      "categories": [
+        "Product",
+        "Client Success"
+      ]
+    },
+    {
       "id": "afbt3z06",
       "name": "Projectboard",
       "url": "https://encorepro.productboard.com/boards",
@@ -403,16 +413,6 @@
       "url": "https://app.crowdengage.com/sql/client-seat-information-templates/",
       "section": "Reporting",
       "categories": [
-        "Client Success"
-      ]
-    },
-    {
-      "id": "nqdd1kgm",
-      "name": "cE Status",
-      "url": "https://app.crowdengage.com/status/",
-      "section": "Tools",
-      "categories": [
-        "Product",
         "Client Success"
       ]
     },
