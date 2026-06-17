@@ -535,6 +535,16 @@
         "Client Success"
       ],
       "customIcon": "https://play-lh.googleusercontent.com/WxrJWOx9tfcGIMiq7oXw0JeqVcIUvkBZDH7uKtl8NC2ih-Q_58SgUl-QV323WyiM0Oc"
+    },
+    {
+      "id": "nqdd1kgm",
+      "name": "cE Status",
+      "url": "https://app.crowdengage.com/status/",
+      "section": "Tools",
+      "categories": [
+        "Product",
+        "Client Success"
+      ]
     }
   ],
   "sectionMeta": [
