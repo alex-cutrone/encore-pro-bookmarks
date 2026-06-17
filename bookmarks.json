@@ -407,6 +407,16 @@
       ]
     },
     {
+      "id": "nqdd1kgm",
+      "name": "cE Status",
+      "url": "https://app.crowdengage.com/status/",
+      "section": "Tools",
+      "categories": [
+        "Product",
+        "Client Success"
+      ]
+    },
+    {
       "id": "miha96oj",
       "name": "YourVisit Clicks per Event",
       "url": "https://app.crowdengage.com/sql/yourvisit-clicks-per-event/?client_id=106&start_date=2023-06-26&end_date=2023-07-02",
@@ -535,16 +545,6 @@
         "Client Success"
       ],
       "customIcon": "https://play-lh.googleusercontent.com/WxrJWOx9tfcGIMiq7oXw0JeqVcIUvkBZDH7uKtl8NC2ih-Q_58SgUl-QV323WyiM0Oc"
-    },
-    {
-      "id": "nqdd1kgm",
-      "name": "cE Status",
-      "url": "https://app.crowdengage.com/status/",
-      "section": "Tools",
-      "categories": [
-        "Product",
-        "Client Success"
-      ]
     }
   ],
   "sectionMeta": [
