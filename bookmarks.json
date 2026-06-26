@@ -545,6 +545,18 @@
         "Client Success"
       ],
       "customIcon": "https://play-lh.googleusercontent.com/WxrJWOx9tfcGIMiq7oXw0JeqVcIUvkBZDH7uKtl8NC2ih-Q_58SgUl-QV323WyiM0Oc"
+    },
+    {
+      "id": "dqejzrsa",
+      "name": "Stripe",
+      "url": "https://dashboard.stripe.com/acct_1OecZlJGtrFOtDxS/dashboard",
+      "section": "Tools",
+      "categories": [
+        "Growth",
+        "Operations",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/idxAg10C0L/w/480/h/480/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1761194563315"
     }
   ],
   "sectionMeta": [
