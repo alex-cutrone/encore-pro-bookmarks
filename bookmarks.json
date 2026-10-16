@@ -108,6 +108,17 @@
       "section": "General"
     },
     {
+      "id": "s11",
+      "name": "cE Admin",
+      "url": "https://app.crowdengage.com/admin",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "customIcon": "https://cdn.brandfetch.io/idnYlnDpTD/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "section": "Tools"
+    },
+    {
       "id": "s13",
       "name": "PropelAuth",
       "url": "https://app.propelauth.com/proj/bbd74220-c424-4338-a528-33d0fb68be49",
@@ -129,17 +140,6 @@
         "Growth"
       ],
       "section": "Documentation"
-    },
-    {
-      "id": "s11",
-      "name": "cE Admin",
-      "url": "https://app.crowdengage.com/admin",
-      "categories": [
-        "Product",
-        "Client Success"
-      ],
-      "customIcon": "https://cdn.brandfetch.io/idnYlnDpTD/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
-      "section": "Tools"
     },
     {
       "id": "s18",
