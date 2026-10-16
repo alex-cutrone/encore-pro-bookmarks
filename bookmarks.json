@@ -131,15 +131,16 @@
     },
     {
       "id": "s23",
-      "name": "Wiki",
-      "url": "https://youneedawiki.com/app/page/1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH?p=1rChtI49cKK05KEo2XQJ07TuHUU5Q4BTH",
+      "name": "Documentation",
+      "url": "https://drive.google.com/drive/u/0/folders/1_Z94a3kLq43Ic2W8ZjfW-jbIUXXG70HA",
       "categories": [
-        "Operations",
-        "Client Success",
         "Product",
-        "Growth"
+        "Growth",
+        "Operations",
+        "Client Success"
       ],
-      "section": "Documentation"
+      "section": "Documentation",
+      "customIcon": "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/idncaAgFGT.svg?c=1bxid64Mup7aczewSAYMX&t=1779345717348"
     },
     {
       "id": "s18",
