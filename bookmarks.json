@@ -179,16 +179,6 @@
       "section": "Documentation"
     },
     {
-      "id": "s14",
-      "name": "Provisioning",
-      "url": "https://provisioning.encorepro.com/tenants/",
-      "categories": [
-        "Product",
-        "Client Success"
-      ],
-      "section": "Tenants"
-    },
-    {
       "id": "8azdkrfa",
       "name": "EU1 Backend",
       "url": "https://eu1.admin.encorepro.com/admin/",
@@ -240,6 +230,16 @@
         "Client Success"
       ],
       "section": "Tools"
+    },
+    {
+      "id": "s14",
+      "name": "Provisioning",
+      "url": "https://provisioning.encorepro.com/tenants/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tenants"
     },
     {
       "id": "nqdd1kgm",
