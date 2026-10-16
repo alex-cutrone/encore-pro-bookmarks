@@ -210,6 +210,16 @@
       "section": "Tools"
     },
     {
+      "id": "pgvbt66a",
+      "name": "US1 Backend",
+      "url": "https://us1.admin.encorepro.com/admin/",
+      "categories": [
+        "Product",
+        "Client Success"
+      ],
+      "section": "Tools"
+    },
+    {
       "id": "hezmi4ms",
       "name": "Log An Issue",
       "url": "https://form.asana.com/?k=58AT4rousJWlsxZNdV8Tog&d=532598082380286",
@@ -220,16 +230,6 @@
         "Client Success"
       ],
       "customIcon": "https://cdn.brandfetch.io/idxPi2Evsk/w/480/h/480/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B"
-    },
-    {
-      "id": "pgvbt66a",
-      "name": "US1 Backend",
-      "url": "https://us1.admin.encorepro.com/admin/",
-      "categories": [
-        "Product",
-        "Client Success"
-      ],
-      "section": "Tools"
     },
     {
       "id": "s20",
