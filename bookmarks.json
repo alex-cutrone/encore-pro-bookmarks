@@ -239,7 +239,8 @@
         "Product",
         "Client Success"
       ],
-      "section": "Tools"
+      "section": "Tools",
+      "customIcon": "https://provisioning.encorepro.com/static/provisioning/img/favicon.svg"
     },
     {
       "id": "nqdd1kgm",
